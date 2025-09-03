@@ -1,11 +1,16 @@
 import { useState, useRef, useEffect } from "react";
 
 const HeroSection = ({ scrollOffset }) => {
-    const [size, setSize] = useState({ width: 0, height: 0 });
+    const [particles, setParticles] = useState(200);
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
 
     useEffect(() => {
+        const small = window.innerWidth <= 768;
+
+        if (small) setParticles(0);
+        else setParticles(200);
+
         if (canvasRef.current) {
             const canvas = heroRef.current;
             const ctx = canvas.getContext("2d");
@@ -102,7 +107,7 @@ const HeroSection = ({ scrollOffset }) => {
             }
 
             function init() {
-                let numberOfParticles = (canvas.height * canvas.width) / 6000 + 150;
+                let numberOfParticles = (canvas.height * canvas.width) / 6000 + particles;
 
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 3) + 1;
@@ -150,12 +155,18 @@ const HeroSection = ({ scrollOffset }) => {
                 requestAnimationFrame(animate);
             }
 
-            requestAnimationFrame(animate);
-            // window.addEventListener("resize", resizeHandler);
+            const resizeHandler2 = () => {
+                if (window.innerWidth <= 768) {
+                    setParticles(0);
+                } else {
+                    setParticles(200);
+                }
+            }
 
-            // return () => {
-            //     window.removeEventListener("resize", resizeHandler);
-            // }
+            requestAnimationFrame(animate);
+            window.addEventListener("resize", resizeHandler2);
+
+            return () => window.removeEventListener("resize", resizeHandler2);
         }
     }, [])
 
