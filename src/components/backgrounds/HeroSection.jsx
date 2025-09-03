@@ -1,16 +1,21 @@
 import { useState, useRef, useEffect } from "react";
 
 const HeroSection = ({ scrollOffset }) => {
-    const [particles, setParticles] = useState(300);
+    const [particles, setParticles] = useState(150);
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
 
     useEffect(() => {
         const small = window.innerWidth <= 768;
 
-        if (small) setParticles(0);
-        else setParticles(300);
+        if (small) {
+            setParticles(150);
+        } else {
+            setParticles(350);
+        }
+    }, [])
 
+    useEffect(() => {
         if (canvasRef.current) {
             const canvas = heroRef.current;
             const ctx = canvas.getContext("2d");
@@ -104,7 +109,7 @@ const HeroSection = ({ scrollOffset }) => {
             }
 
             function init() {
-                let numberOfParticles = (canvas.height * canvas.width) / 60000 + particles;
+                let numberOfParticles = particles;
 
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 3) + 1;
@@ -154,7 +159,7 @@ const HeroSection = ({ scrollOffset }) => {
 
             const resizeHandler2 = () => {
                 if (window.innerWidth <= 768) {
-                    setParticles(0);
+                    setParticles(100);
                 } else {
                     setParticles(300);
                 }
@@ -165,7 +170,7 @@ const HeroSection = ({ scrollOffset }) => {
 
             return () => window.removeEventListener("resize", resizeHandler2);
         }
-    }, [])
+    }, [particles])
 
     return <section ref={canvasRef} id="hero" className="relative w-full h-64 lg:h-96 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
         <canvas ref={heroRef}></canvas>
