@@ -12,10 +12,10 @@ const Home = () => {
 
             if (lastClientHeight.current < currentClientHeight) {
                 //scrolled down
-                setScrollOffset(-1000);
+                setScrollOffset(-100);
             } else {
                 // SCROLLED UP
-                setScrollOffset(1000);
+                setScrollOffset(100);
             }
             lastClientHeight.current = currentClientHeight;
         }

@@ -17,7 +17,7 @@ export let hexagonParticlesArray = [];
 let colors = ["rgba(3,252,157,0.4)", "rgba(8, 230, 0, 0.4)", "rgba(252, 69, 3, 0.4)", "rgba(248, 252, 3, 0.4)", "rgba(3, 177, 252, 0.4)", "rgba(252, 3, 3, 0.4)", "rgba(103, 122, 112, 0.4)", "rgba(122, 233, 174, 0.4)", "rgba(255, 255, 255, 0.4)"];
 
 export function circleInit(ctx, canvas) {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 6; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let size = Math.random() * 30 + 8;
@@ -37,7 +37,7 @@ export function circleInit(ctx, canvas) {
 }
 
 export const squareInit = (ctx, canvas) => {
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 20; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let l = Math.random() * 50 + 10;
@@ -61,7 +61,7 @@ export const squareInit = (ctx, canvas) => {
 }
 
 export const triangleInit = (ctx, canvas) => {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 6; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let h = Math.random() * 40 + 20;
@@ -83,7 +83,7 @@ export const triangleInit = (ctx, canvas) => {
 }
 
 export const pentagonInit = (ctx, canvas) => {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let radius = Math.random() * 40 + 10;
@@ -105,7 +105,7 @@ export const pentagonInit = (ctx, canvas) => {
 }
 
 export const hexagonInit = (ctx, canvas) => {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let sides = Math.random() * 80 + 20;
@@ -127,7 +127,7 @@ export const hexagonInit = (ctx, canvas) => {
 }
 
 export const diamondInit = (ctx, canvas) => {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let h = Math.random() * 40 + 20;
