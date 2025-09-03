@@ -102,7 +102,7 @@ const HeroSection = ({ scrollOffset }) => {
             }
 
             function init() {
-                let numberOfParticles = (canvas.height * canvas.width) / 6000 + 180;
+                let numberOfParticles = (canvas.height * canvas.width) / 6000 + 150;
 
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 3) + 1;
