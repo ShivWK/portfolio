@@ -12,10 +12,10 @@ const Home = () => {
 
             if (lastClientHeight.current < currentClientHeight) {
                 //scrolled down
-                setScrollOffset(-10);
+                setScrollOffset(-1000);
             } else {
                 // SCROLLED UP
-                setScrollOffset(10);
+                setScrollOffset(1000);
             }
             lastClientHeight.current = currentClientHeight;
         }
@@ -23,6 +23,8 @@ const Home = () => {
 
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    // console.log(scrollOffset);
 
     return <main>
         <HeroSection scrollOffset={scrollOffset} />

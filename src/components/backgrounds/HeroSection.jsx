@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
 const HeroSection = ({ scrollOffset }) => {
-    const [particles, setParticles] = useState(200);
+    const [particles, setParticles] = useState(300);
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
 
@@ -9,7 +9,7 @@ const HeroSection = ({ scrollOffset }) => {
         const small = window.innerWidth <= 768;
 
         if (small) setParticles(0);
-        else setParticles(200);
+        else setParticles(300);
 
         if (canvasRef.current) {
             const canvas = heroRef.current;
@@ -107,7 +107,7 @@ const HeroSection = ({ scrollOffset }) => {
             }
 
             function init() {
-                let numberOfParticles = (canvas.height * canvas.width) / 6000 + particles;
+                let numberOfParticles = (canvas.height * canvas.width) / 60000 + particles;
 
                 for (let i = 0; i < numberOfParticles; i++) {
                     let size = (Math.random() * 3) + 1;
@@ -159,7 +159,7 @@ const HeroSection = ({ scrollOffset }) => {
                 if (window.innerWidth <= 768) {
                     setParticles(0);
                 } else {
-                    setParticles(200);
+                    setParticles(300);
                 }
             }
 

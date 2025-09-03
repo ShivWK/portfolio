@@ -21,6 +21,13 @@ import {
 const BodySection = ({ scrollOffset }) => {
     const canvasRef = useRef(null);
 
+    function particleHandler(particleArray, canvas) {
+        for (let i = 0; i < particleArray.length; i++) {
+            particleArray[i].update(scrollOffset, canvas);
+            particleArray[i].draw();
+        }
+    }
+
     useEffect(() => {
         if (canvasRef.current) {
             const canvas = canvasRef.current;
@@ -34,13 +41,6 @@ const BodySection = ({ scrollOffset }) => {
             //     canvas.height = document.documentElement.scrollHeight;
             // })
 
-            function particleHandler(particleArray) {
-                for (let i = 0; i < particleArray.length; i++) {
-                    particleArray[i].update(scrollOffset, canvas);
-                    particleArray[i].draw();
-                }
-            }
-
             circleInit(ctx, canvas);
             squareInit(ctx, canvas);
             triangleInit(ctx, canvas);
@@ -51,19 +51,30 @@ const BodySection = ({ scrollOffset }) => {
             function animateSquares() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                particleHandler(pentagonParticlesArray);
-                particleHandler(hexagonParticlesArray)
+                particleHandler(pentagonParticlesArray, canvas);
+                particleHandler(hexagonParticlesArray, canvas)
+                particleHandler(squareParticlesArray, canvas);
+                particleHandler(circleParticlesArray, canvas);
+                particleHandler(triangleParticlesArray, canvas);
+                particleHandler(diamondParticlesArray, canvas);
 
-                particleHandler(squareParticlesArray);
-                particleHandler(circleParticlesArray);
-                particleHandler(triangleParticlesArray);
-                particleHandler(diamondParticlesArray);
- 
                 requestAnimationFrame(animateSquares);
             }
             requestAnimationFrame(animateSquares);
         }
     }, [])
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+
+        particleHandler(pentagonParticlesArray, canvas);
+        particleHandler(hexagonParticlesArray, canvas);
+        particleHandler(squareParticlesArray, canvas);
+        particleHandler(circleParticlesArray, canvas);
+        particleHandler(triangleParticlesArray, canvas);
+        particleHandler(diamondParticlesArray, canvas);
+        
+    }, [scrollOffset])
 
     return <section id="body" className="relative -top-14 lg:-top-20" >
         <canvas className="absolute top-0 left-0 bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20" ref={canvasRef}></canvas>
