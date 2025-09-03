@@ -3,27 +3,23 @@ import { useState, useRef, useEffect } from "react";
 const HeroSection = ({ scrollOffset }) => {
     const [size, setSize] = useState({ width: 0, height: 0 });
     const canvasRef = useRef(null);
-    const hero = useRef(null);
+    const heroRef = useRef(null);
 
     useEffect(() => {
-        if (canvasRef.current && hero.current) {
-            const canvas = canvasRef.current;
+        if (canvasRef.current) {
+            const canvas = heroRef.current;
             const ctx = canvas.getContext("2d");
 
-            const { width, height } = { width: hero.current.offsetWidth, height: hero.current.offsetHeight };
-            setSize({ width, height });
-
-            console.log("inner", hero.current)
-            canvas.width = size.width;
-            canvas.height = size.height;
+            canvas.width = canvasRef.current.offsetWidth;
+            canvas.height = canvasRef.current.offsetHeight;
 
             let particleArray = [];
 
-            const resizeHandler = () => {
-                const { width, height } = { width: hero.current.offsetWidth, height: hero.current.offsetHeight };
-                setSize({ width, height });
-                mouse.radius = (canvas.height / 80) * (canvas.width / 80);
-            }
+            // const resizeHandler = () => {
+            //     const { width, height } = { width: hero.current.offsetWidth, height: hero.current.offsetHeight };
+            //     setSize({ width, height });
+            //     mouse.radius = (canvas.height / 80) * (canvas.width / 80);
+            // }
 
             window.addEventListener("mousemove", (event) => {
                 mouse.x = event.x;
@@ -163,9 +159,9 @@ const HeroSection = ({ scrollOffset }) => {
         }
     }, [])
 
-    return <section ref={hero} id="hero" className="relative w-full h-64 lg:h-80 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
-            <canvas width={100} height={100} ref={canvasRef}></canvas>
-        </section>
+    return <section ref={canvasRef} id="hero" className="relative w-full h-64 lg:h-80 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
+        <canvas ref={heroRef}></canvas>
+    </section>
 }
 
 export default HeroSection;
