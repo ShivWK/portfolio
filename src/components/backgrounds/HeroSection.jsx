@@ -59,8 +59,7 @@ const HeroSection = ({ scrollOffset }) => {
                     ctx.fill();
                 }
 
-                update(scrollOffset = 0) {
-                    const drift = scrollOffset * 0.02;
+                update() {
                     // boundary check
                     if (this.x > canvas.width || this.x < 0) {
                         this.directionX = -this.directionX;
@@ -101,8 +100,6 @@ const HeroSection = ({ scrollOffset }) => {
 
                     this.x += this.directionX;
                     this.y += this.directionY;
-
-                    this.y += drift;
                 }
             }
 

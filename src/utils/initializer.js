@@ -14,7 +14,7 @@ export let pentagonParticlesArray = [];
 export let diamondParticlesArray = [];
 export let hexagonParticlesArray = [];
 
-let colors = ["rgba(3,252,157,0.6)", "rgba(8, 230, 0, 0.6)", "rgba(252, 69, 3, 0.6)", "rgba(248, 252, 3, 0.6)", "rgba(3, 177, 252, 0.6)", "rgba(252, 3, 3, 0.6)", "rgba(103, 122, 112, 0.6)", "rgba(122, 233, 174, 0.6)", "rgba(255, 255, 255, 0.6)"];
+let colors = ["rgba(3,252,157,0.5)", "rgba(8, 230, 0, 0.5)", "rgba(252, 69, 3, 0.5)", "rgba(248, 252, 3, 0.5)", "rgba(3, 177, 252, 0.5)", "rgba(252, 3, 3, 0.5)", "rgba(103, 122, 112, 0.5)", "rgba(122, 233, 174, 0.5)", "rgba(255, 255, 255, 0.5)"];
 
 export function circleInit(ctx, canvas) {
     for (let i = 0; i < 8; i++) {
