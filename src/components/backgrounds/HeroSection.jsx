@@ -163,7 +163,7 @@ const HeroSection = ({ scrollOffset }) => {
         }
     }, [])
 
-    return <section ref={hero} id="hero" className="relative w-full h-56 lg:h-80 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
+    return <section ref={hero} id="hero" className="relative w-full h-64 lg:h-80 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
             <canvas width={100} height={100} ref={canvasRef}></canvas>
         </section>
 }

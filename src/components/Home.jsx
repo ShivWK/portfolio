@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import HeroSection from "./backgrounds/HeroSection";
+import BodySection from "./backgrounds/BodySection";
 
 const Home = () => {
     const [scrollOffset, setScrollOffset] = useState(0);
@@ -25,9 +26,7 @@ const Home = () => {
 
     return <main>
         <HeroSection scrollOffset={scrollOffset} />
-        <section id="body">
-
-        </section>
+        <BodySection scrollOffset={scrollOffset} />
     </main>
 }
 
