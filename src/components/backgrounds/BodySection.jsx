@@ -65,7 +65,7 @@ const BodySection = ({ scrollOffset }) => {
         }
     }, [])
 
-    return <section id="body" className="relative -top-14" >
+    return <section id="body" className="relative -top-14 lg:-top-20" >
         <canvas className="absolute top-0 left-0 bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20" ref={canvasRef}></canvas>
     </section>
 }
