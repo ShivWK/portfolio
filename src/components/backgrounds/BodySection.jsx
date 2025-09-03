@@ -29,10 +29,10 @@ const BodySection = ({ scrollOffset }) => {
             canvas.width = window.innerWidth;
             canvas.height = document.documentElement.scrollHeight;
 
-            window.addEventListener("resize", () => {
-                canvas.width = window.innerWidth;
-                canvas.height = document.documentElement.scrollHeight;
-            })
+            // window.addEventListener("resize", () => {
+            //     canvas.width = window.innerWidth;
+            //     canvas.height = document.documentElement.scrollHeight;
+            // })
 
             function particleHandler(particleArray) {
                 for (let i = 0; i < particleArray.length; i++) {
@@ -62,7 +62,6 @@ const BodySection = ({ scrollOffset }) => {
                 requestAnimationFrame(animateSquares);
             }
             requestAnimationFrame(animateSquares);
-
         }
     }, [])
 

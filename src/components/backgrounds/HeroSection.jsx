@@ -155,11 +155,11 @@ const HeroSection = ({ scrollOffset }) => {
             }
 
             requestAnimationFrame(animate);
-            window.addEventListener("resize", resizeHandler);
+            // window.addEventListener("resize", resizeHandler);
 
-            return () => {
-                window.removeEventListener("resize", resizeHandler);
-            }
+            // return () => {
+            //     window.removeEventListener("resize", resizeHandler);
+            // }
         }
     }, [])
 
