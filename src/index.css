@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+    --animate-wave: wave 8s ease-in-out infinite;
+
+    @keyframes wave {
+
+        0%,
+        100% {
+            clip-path: polygon(0 85%, 10% 88%, 25% 90%, 39% 89%, 52% 83%, 66% 81%, 82% 82%, 92% 84%, 100% 90%, 100% 0, 0 0);
+        }
+
+        50% {
+           clip-path: polygon(0 86%, 12% 81%, 25% 79%, 42% 81%, 55% 85%, 68% 89%, 80% 90%, 92% 84%, 100% 83%, 100% 0, 0 0);
+        }
+    }
+}
