@@ -3,6 +3,7 @@ import { Download } from "lucide-react";
 
 const HeroSection = ({ scrollOffset }) => {
     const [particles, setParticles] = useState(150);
+    const isSmall = window.innerWidth <= 768;
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
 
@@ -81,7 +82,7 @@ const HeroSection = ({ scrollOffset }) => {
 
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < mouse.radius + this.size) {
+                    if (distance < mouse.radius + this.size && !isSmall) {
                         // mouse and particle collides
 
                         if (mouse.x < this.x && this.x < canvas.width - this.size + 10) {
