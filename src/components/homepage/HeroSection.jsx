@@ -174,14 +174,14 @@ const HeroSection = ({ scrollOffset }) => {
     }, [particles]) //Frontend Developer | Web Developer
 
     return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-72 lg:h-96 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
-        <div className="flex items-center gap-3 lg:gap-5 -mt-8 lg:-mt-5 w-[75%] lg:w-[55%]">
+        <div className="flex items-center gap-1 lg:gap-5 -mt-10 lg:-mt-5 w-[80%] lg:w-[55%]">
             <div className="text-white flex flex-col justify-center">
-                <p className="text-sm lg:text-3xl font-semibold tracking-wider">Hi, I’m Shivendra Web Developer
+                <p className="text-sm lg:text-3xl font-semibold tracking-wider">Hi, I’m Shivendra
                     <span className="fl"></span>
                 </p>
-                <p className="text-xs lg:text-xl">I build modern, fast, and user-focused web applications</p>
+                <p className="text-xs lg:text-xl">Crafting modern, user-first web experiences.</p>
 
-                <button className="flex items-center gap-2 text-white bg-blue-500 rounded-md py-1 px-2 lg:px-3 font-semibold w-fit mt-1">
+                <button className="flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-0.5 px-2 lg:px-3 font-semibold w-fit mt-1">
                     <span className="tracking-wide max-lg:text-sm">Resume</span>
                     <Download size={15} strokeWidth={3} />
                 </button>
