@@ -171,22 +171,25 @@ const HeroSection = ({ scrollOffset }) => {
 
             return () => window.removeEventListener("resize", resizeHandler2);
         }
-    }, [particles]) //Frontend Developer | Web Developer
+    }, [particles]) //Frontend Developer | Web Developer border-2 border-white
 
     return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-72 lg:h-96 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
-        <div className="flex items-center gap-1 lg:gap-5 -mt-10 lg:-mt-5 w-[80%] lg:w-[55%]">
+        <div className="flex items-center gap-1 lg:gap-8 -mt-11 lg:-mt-8 w-[80%] lg:w-[55%]">
             <div className="text-white flex flex-col justify-center">
-                <p className="text-sm lg:text-3xl font-semibold tracking-wider">Hi, I’m Shivendra
-                    <span className="fl"></span>
+                <p className="text-lg lg:text-3xl font-semibold tracking-wider">Hi, I’m Shivendra
+                    <span className="hidden lg:inline">Web Developer</span>
                 </p>
-                <p className="text-xs lg:text-xl">Crafting modern, user-first web experiences.</p>
+                <p className="text-xl hidden lg:block">I build modern, fast, and user-focused web applications</p>
 
-                <button className="flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-0.5 px-2 lg:px-3 font-semibold w-fit mt-1">
-                    <span className="tracking-wide max-lg:text-sm">Resume</span>
-                    <Download size={15} strokeWidth={3} />
+                <p className="text-xs lg:text-xl lg:hidden">I create sleek, fast, user-centric websites.</p>
+
+                <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-0.5 px-2 lg:px-4 lg:py-1 font-semibold w-fit mt-1 cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear">
+                    <span className={`absolute top-0 left-0 h-full w-0 group-hover:w-full bg-blue-700/70 transition-all duration-150 ease-linear`}></span>
+                    <span className="tracking-wide max-lg:text-sm z-10">Resume</span>
+                    <Download size={15} strokeWidth={3} className="z-10 group-hover:animate-pulse"/>
                 </button>
 
-                <div className="flex flex-col gap-3 w-full mt-3">
+                <div className="flex flex-col gap-3 w-full mt-1.5 lg:mt-3">
                     <div className="flex gap-3">
                         <a
                             href="https://www.linkedin.com/in/shivendra-dwivedi"
