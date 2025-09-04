@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import HeroSection from "./backgrounds/HeroSection";
-import BodySection from "./backgrounds/BodySection";
+import HeroSection from "./HeroSection";
+import BodySection from "./BodySection";
 
 const Home = () => {
     const [scrollOffset, setScrollOffset] = useState(0);
