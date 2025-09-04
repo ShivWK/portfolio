@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Download } from "lucide-react";
 
 const HeroSection = ({ scrollOffset }) => {
     const [particles, setParticles] = useState(150);
@@ -170,13 +171,69 @@ const HeroSection = ({ scrollOffset }) => {
 
             return () => window.removeEventListener("resize", resizeHandler2);
         }
-    }, [particles])
+    }, [particles]) //Frontend Developer | Web Developer
 
     return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-72 lg:h-96 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
-        <div>
-            
+        <div className="flex items-center gap-3 lg:gap-5 -mt-8 lg:-mt-5 w-[75%] lg:w-[55%]">
+            <div className="text-white flex flex-col justify-center">
+                <p className="text-sm lg:text-3xl font-semibold tracking-wider">Hi, I’m Shivendra Web Developer
+                    <span className="fl"></span>
+                </p>
+                <p className="text-xs lg:text-xl">I build modern, fast, and user-focused web applications</p>
+
+                <button className="flex items-center gap-2 text-white bg-blue-500 rounded-md py-1 px-2 lg:px-3 font-semibold w-fit mt-1">
+                    <span className="tracking-wide max-lg:text-sm">Resume</span>
+                    <Download size={15} strokeWidth={3} />
+                </button>
+
+                <div className="flex flex-col gap-3 w-full mt-3">
+                    <div className="flex gap-3">
+                        <a
+                            href="https://www.linkedin.com/in/shivendra-dwivedi"
+                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
+                            target="__block"
+                        >
+                            <i
+                                className="fa-brands fa-linkedin text-xl lg:text-2xl text-[#0077b5] dark:text-[rgb(41,140,240)]"
+                            ></i>
+                        </a>
+                        <a
+                            href="https://github.com/ShivWK"
+                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
+                            target="__block"
+                        >
+                            <i className="fa-brands fa-square-github text-xl lg:text-2xl dark:text-gray-300"></i>
+                        </a>
+                        <a
+                            href="https://x.com/Shivendrawk"
+                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
+                            target="__block"
+                        >
+                            <i className="fa-brands fa-square-x-twitter text-xl lg:text-2xl dark:text-gray-300"></i>
+                        </a>
+                        <a
+                            href="https://instagram.com/shivendrawk"
+                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
+                            target="__block"
+                        >
+                            <i
+                                className="fa-brands fa-instagram text-xl lg:text-2xl"
+                                style={{ color: "#e1306c" }}
+                            ></i>
+                        </a>
+                        <a
+                            href="mailto:shivendra@shivendra.site"
+                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
+                        >
+                            <i className="fa-solid fa-envelope text-xl lg:text-2xl text-[#d93025]"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div className="rounded-full bg-[url(/me4.jpeg)] bg-[position:center] h-28 lg:h-44 w-28 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
         </div>
-        <canvas className="absolute top-0 left-0" ref={heroRef}></canvas>
+        <canvas className="absolute top-0 left-0 -z-10" ref={heroRef}></canvas>
     </section>
 }
 
