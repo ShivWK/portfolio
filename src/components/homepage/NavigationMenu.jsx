@@ -20,7 +20,7 @@ const NavigationMenu = () => {
         setNavSliderStyle({ left, width });
     }
 
-    return <nav className="sticky top-5 flex items-center mx-auto text-lg lg:text-2xl font-semibold backdrop-blur-md bg-white/5 w-fit rounded-4xl overflow-hidden shadow-[0_0_20px_5px_rgba(0,15,50,0.6)]">
+    return <nav className="sticky top-5 flex items-center mx-auto text-lg lg:text-xl font-semibold backdrop-blur-md bg-white/5 w-fit rounded-4xl overflow-hidden shadow-[0_0_20px_5px_rgba(0,15,50,0.6)]">
         <a href="#hero" ref={firstNavLink} onMouseEnter={hoverHandler} className="hover:text-blue-300 px-3 lg:px-5 pl-4 lg:pl-6 py-1.5 lg;py-2">About</a>
         <a href="#about" onMouseEnter={hoverHandler} className="hover:text-blue-300 px-3 lg:px-5 py-1.5 lg;py-2">Projects</a>
         <a href="#projects" onMouseEnter={hoverHandler} className="hover:text-blue-300 px-3 lg:px-5 py-1.5 lg;py-2">Content</a>
