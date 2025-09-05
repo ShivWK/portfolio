@@ -174,7 +174,7 @@ const HeroSection = ({ scrollOffset }) => {
         }
     }, [particles]) //Frontend Developer | Web Developer border-2 border-white
 
-    return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-96 lg:h-96 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
+    return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-[27rem] lg:h-96 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
         <div className="flex flex-col max-lg:gap-2 lg:flex-row items-center justify-center lg:justify-between -mt-14 lg:-mt-8 w-[85%] lg:w-[52%] ">
             <div className="lg:order-1 order-2 text-white flex flex-col max-lg::gap-1 justify-center items-center basis-[60%] lg:basis-[75%]">
                 <p className="text-2xl lg:text-3xl font-semibold tracking-wider leading-5">Shivendra Dwivedi
