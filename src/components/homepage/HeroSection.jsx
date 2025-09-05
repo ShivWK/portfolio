@@ -191,7 +191,7 @@ const HeroSection = ({ scrollOffset }) => {
                     <Download size={15} strokeWidth={3} className="z-10 group-hover:animate-pulse" />
                 </button>
 
-                <div className="flex items-center gap-3 mt-1 lg:mt-1 rounded-2xl bg-blue-950 px-3 py-1.5">
+                <div className="flex items-center gap-3 mt-1 lg:mt-1 rounded-4xl bg-blue-950 px-4 py-1.5">
                     <a
                         href="https://www.linkedin.com/in/shivendra-dwivedi"
                         className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
