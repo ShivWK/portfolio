@@ -198,7 +198,7 @@ const HeroSection = ({ scrollOffset }) => {
                         target="__block"
                     >
                         <i
-                            className="fa-brands fa-linkedin text-xl lg:text-2xl text-[#0077b5] dark:text-[rgb(41,140,240)]"
+                            className="fa-brands fa-linkedin text-2xl text-[#0077b5] dark:text-[rgb(41,140,240)]"
                         ></i>
                     </a>
                     <a
@@ -206,14 +206,14 @@ const HeroSection = ({ scrollOffset }) => {
                         className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
                         target="__block"
                     >
-                        <i className="fa-brands fa-square-github text-xl lg:text-2xl dark:text-gray-300"></i>
+                        <i className="fa-brands fa-square-github text-2xl dark:text-gray-300"></i>
                     </a>
                     <a
                         href="https://x.com/Shivendrawk"
                         className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
                         target="__block"
                     >
-                        <i className="fa-brands fa-square-x-twitter text-xl lg:text-2xl dark:text-gray-300"></i>
+                        <i className="fa-brands fa-square-x-twitter text-2xl dark:text-gray-300"></i>
                     </a>
                     <a
                         href="https://instagram.com/shivendrawk"
@@ -221,7 +221,7 @@ const HeroSection = ({ scrollOffset }) => {
                         target="__block"
                     >
                         <i
-                            className="fa-brands fa-instagram text-xl lg:text-2xl"
+                            className="fa-brands fa-instagram text-2xl"
                             style={{ color: "#e1306c" }}
                         ></i>
                     </a>
@@ -229,7 +229,7 @@ const HeroSection = ({ scrollOffset }) => {
                         href="mailto:shivendra@shivendra.site"
                         className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
                     >
-                        <i className="fa-solid fa-envelope text-xl lg:text-2xl text-[#d93025]"></i>
+                        <i className="fa-solid fa-envelope text-2xl text-[#d93025]"></i>
                     </a>
                 </div>
             </div>
