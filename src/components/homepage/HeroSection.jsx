@@ -175,8 +175,8 @@ const HeroSection = ({ scrollOffset }) => {
     }, [particles]) //Frontend Developer | Web Developer border-2 border-white
 
     return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-[26rem] lg:h-96 animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
-        <div className="flex flex-col max-lg:gap-2 lg:flex-row items-center justify-center lg:justify-between -mt-14 lg:-mt-8 w-[85%] lg:w-[52%] ">
-            <div className="lg:order-1 order-2 text-white flex flex-col max-lg::gap-1 justify-center items-center basis-[60%] lg:basis-[75%]">
+        <div className="flex flex-col max-lg:gap-2 lg:flex-row items-center justify-center lg:justify-between -mt-14 lg:-mt-8 w-[85%] lg:w-[53%] ">
+            <div className="lg:order-1 order-2 text-white flex flex-col gap-1 lg:gap-2 justify-center items-center basis-[60%] lg:basis-[75%]">
                 <p className="text-2xl lg:text-3xl font-semibold tracking-wider leading-5">Shivendra Dwivedi
                     <span className="hidden lg:inline"> Web Developer</span>
                 </p>
@@ -185,13 +185,13 @@ const HeroSection = ({ scrollOffset }) => {
 
                 <p className="text-sm lg:text-xl lg:hidden leading-3.5 tracking-wide text-center">I create sleek, fast, user-centric web applications.</p>
 
-                <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-1 px-3 lg:px-4 lg:py-1 font-semibold w-fit lg:mt-2 cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear max-lg:mb-2 max-lg:mt-3">
-                    <span className={`absolute top-0 left-0 h-full w-0 group-hover:w-full bg-blue-700/70 transition-all duration-150 ease-linear`}></span>
+                <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-1 px-3 lg:px-4 lg:py-1 font-semibold w-fit cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear max-lg:mb-2 max-lg:mt-3">
+                    <span className={`absolute top-0 left-0 h-full w-0 group-hover:w-full max-lg:group-active:w-full bg-blue-700/70 transition-all duration-150 ease-linear`}></span>
                     <span className="tracking-wide max-lg:text-sm z-10">Resume</span>
                     <Download size={15} strokeWidth={3} className="z-10 group-hover:animate-pulse" />
                 </button>
 
-                <div className="flex items-center gap-3 mt-1 lg:mt-3 rounded-2xl bg-blue-950 px-3 py-1.5">
+                <div className="flex items-center gap-3 mt-1 lg:mt-1 rounded-2xl bg-blue-950 px-3 py-1.5">
                     <a
                         href="https://www.linkedin.com/in/shivendra-dwivedi"
                         className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
