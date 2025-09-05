@@ -3,6 +3,9 @@ import { Download } from "lucide-react";
 
 const HeroSection = ({ scrollOffset }) => {
     const [particles, setParticles] = useState(150);
+    const [hovered, setHovered] = useState(false);
+    const [color, setColor] = useState("rgba(0,0,0,1)"); // #298CF0
+
     const isSmall = window.innerWidth <= 768;
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
@@ -172,65 +175,108 @@ const HeroSection = ({ scrollOffset }) => {
 
             return () => window.removeEventListener("resize", resizeHandler2);
         }
-    }, [particles]) //Frontend Developer | Web Developer border-2 border-white
+    }, [particles]) // border-2 border-white
+
+    const hoverHandler = (color) => {
+        if (window.innerWidth <= 768) return;
+
+        setColor(color);
+        setHovered(true);
+    }
+
+    const clickHandler = (color) => {
+        if (window.innerWidth <= 768) {
+            setColor(color);
+            setHovered(true);
+        }
+
+        setTimeout(() => {
+            setHovered(false);
+        }, 200)
+    }
 
     return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-[27rem] lg:h-96 animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
-        <div className="flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[53%] ">
+        <div className="flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[60%] ">
             <div className="lg:order-1 order-2 text-white flex flex-col gap-1 lg:gap-2 justify-center items-center basis-[60%] lg:basis-[75%]">
-                <p className="text-2xl lg:text-3xl font-semibold tracking-wider leading-5">Shivendra Dwivedi
-                    <span className="hidden lg:inline"> Web Developer</span>
+                <p className="text-2xl flex items-center lg:text-3xl font-semibold tracking-wider leading-5 lg:leading-6 text-center">Shivendra Dwivedi
+                    <span>︱</span>
+                    <span className="hidden lg:inline">Frontend Developer</span>
                 </p>
                 <p className="lg:hidden text-lg font-semibold">Hi, I’m Frontend Web Developer </p>
                 <p className="text-xl hidden lg:block">I build modern, fast, and user-focused web applications</p>
 
                 <p className=" lg:text-xl lg:hidden leading-4 tracking-wide text-center">I create sleek, fast, user-centric web applications.</p>
 
-                <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-1 px-3 lg:px-4 lg:py-1 font-semibold w-fit cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear max-lg:mb-2 max-lg:mt-3">
+                <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-1.5 px-3.5 lg:px-5 lg:py-1.5 font-semibold w-fit cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear max-lg:mb-2 max-lg:mt-3">
                     <span className={`absolute top-0 left-0 h-full w-0 group-hover:w-full max-lg:group-active:w-full bg-blue-700/70 transition-all duration-150 ease-linear`}></span>
                     <span className="tracking-wide max-lg:text-sm z-10">Resume</span>
                     <Download size={15} strokeWidth={3} className="z-10 group-hover:animate-pulse" />
                 </button>
 
-                <div className="flex items-center gap-3 mt-1 lg:mt-1 rounded-4xl bg-blue-950 px-4 py-1.5">
+                <div className="flex relative items-center gap-3 mt-1 lg:mt-1 overflow-hidden rounded-4xl bg-blue-950 px-4 py-1.5">
                     <a
                         href="https://www.linkedin.com/in/shivendra-dwivedi"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
                         target="__block"
                     >
                         <i
-                            className="fa-brands fa-linkedin text-2xl text-[#0077b5] dark:text-[rgb(41,140,240)]"
+                            onMouseEnter={() => hoverHandler("rgba(41,140,240)")}
+                            onMouseOut={() => setHovered(false)}
+                            onClick={() => clickHandler("rgba(41,140,240)")}
+                            className="fa-brands fa-linkedin text-2xl text-[rgb(41,140,240)] hover:text-black"
                         ></i>
                     </a>
                     <a
                         href="https://github.com/ShivWK"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
-                        target="__block"
-                    >
-                        <i className="fa-brands fa-square-github text-2xl dark:text-gray-300"></i>
-                    </a>
-                    <a
-                        href="https://x.com/Shivendrawk"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
-                        target="__block"
-                    >
-                        <i className="fa-brands fa-square-x-twitter text-2xl dark:text-gray-300"></i>
-                    </a>
-                    <a
-                        href="https://instagram.com/shivendrawk"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
                         target="__block"
                     >
                         <i
-                            className="fa-brands fa-instagram text-2xl"
-                            style={{ color: "#e1306c" }}
+                            onMouseEnter={() => hoverHandler("#d1d5dc")}
+                            onMouseOut={() => setHovered(false)}
+                            onClick={() => clickHandler("#d1d5dc")}
+                            className="fa-brands fa-square-github text-2xl text-gray-300 hover:text-black"
+                        ></i>
+                    </a>
+                    <a
+                        href="https://x.com/Shivendrawk"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
+                        target="__block"
+                    >
+                        <i
+                            onMouseEnter={() => hoverHandler("#000000")}
+                            onMouseOut={() => setHovered(false)}
+                            onClick={() => clickHandler("#000000")}
+                            className="fa-brands fa-square-x-twitter text-2xl text-black hover:text-gray-300"
+                        ></i>
+                    </a>
+                    <a
+                        href="https://instagram.com/shivendrawk"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
+                        target="__block"
+                    >
+                        <i
+                            onMouseEnter={() => hoverHandler("linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)")}
+                            onMouseOut={() => setHovered(false)}
+                            onClick={() => clickHandler("linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)")}
+                            className="fa-brands fa-instagram text-2xl text-[#e13030] hover:text-black"
                         ></i>
                     </a>
                     <a
                         href="mailto:shivendra@shivendra.site"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
                     >
-                        <i className="fa-solid fa-envelope text-2xl text-[#d93025]"></i>
+                        <i
+                            onMouseEnter={() => hoverHandler("#d93025")}
+                            onMouseOut={() => setHovered(false)}
+                            onClick={() => clickHandler("#d93025")}
+                            className="fa-solid fa-envelope text-2xl text-[#d93025] hover:text-black"
+                        ></i>
                     </a>
+
+                    <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full z-10 ${hovered ? "[clip-path:circle(100%)]" : "[clip-path:circle(0%)]"} transition-all duration-200 ease-linear`}
+                        style={{ background: color }}
+                    ></span>
                 </div>
             </div>
             <div className="rounded-full lg:order-2 order-1 bg-[url(/me4.jpeg)] bg-[position:center] h-32 lg:h-44 w-32 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
