@@ -195,8 +195,8 @@ const HeroSection = ({ scrollOffset }) => {
         }, 300)
     }
 
-    return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-[27rem] lg:h-96 animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
-        <div className="flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[60%] ">
+    return <section ref={canvasRef} id="hero" className="relative  w-full h-[28rem] lg:h-96 animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
+        <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[60%] ">
             <div className="lg:order-1 order-2 text-white flex flex-col gap-1 lg:gap-2 justify-center items-center basis-[60%] lg:basis-[75%]">
                 <p className="text-2xl flex items-center lg:text-3xl font-semibold tracking-wider leading-5 lg:leading-6 text-center">Shivendra Dwivedi
                     <span className="hidden lg:inline">︱</span>
@@ -281,7 +281,7 @@ const HeroSection = ({ scrollOffset }) => {
             </div>
             <div className="rounded-full lg:order-2 order-1 bg-[url(/me4.jpeg)] bg-[position:center] h-32 lg:h-44 w-32 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
         </div>
-        <canvas className="absolute top-0 left-0 -z-10" ref={heroRef}></canvas>
+        <canvas className="-z-10" ref={heroRef}></canvas>
     </section>
 }
 
