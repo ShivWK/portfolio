@@ -183,7 +183,7 @@ const HeroSection = ({ scrollOffset }) => {
                 <p className="lg:hidden text-lg font-semibold">Hi, I’m Frontend Web Developer </p>
                 <p className="text-xl hidden lg:block">I build modern, fast, and user-focused web applications</p>
 
-                <p className="text-sm lg:text-xl lg:hidden leading-3.5 tracking-wide text-center">I create sleek, fast, user-centric web applications.</p>
+                <p className=" lg:text-xl lg:hidden leading-4 tracking-wide text-center">I create sleek, fast, user-centric web applications.</p>
 
                 <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-1 px-3 lg:px-4 lg:py-1 font-semibold w-fit cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear max-lg:mb-2 max-lg:mt-3">
                     <span className={`absolute top-0 left-0 h-full w-0 group-hover:w-full max-lg:group-active:w-full bg-blue-700/70 transition-all duration-150 ease-linear`}></span>
