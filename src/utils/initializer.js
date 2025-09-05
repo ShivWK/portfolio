@@ -105,7 +105,7 @@ export const pentagonInit = (ctx, canvas) => {
 }
 
 export const hexagonInit = (ctx, canvas) => {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let sides = Math.random() * 80 + 20;

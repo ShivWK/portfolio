@@ -39,8 +39,6 @@ const BodySection = ({ scrollOffset }) => {
         }
     }, [])
 
-    console.log(size)
-
     useEffect(() => {
         if (canvasRef.current) {
             const canvas = canvasRef.current;
