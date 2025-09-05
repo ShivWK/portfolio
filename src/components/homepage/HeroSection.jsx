@@ -199,7 +199,7 @@ const HeroSection = ({ scrollOffset }) => {
         <div className="flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[60%] ">
             <div className="lg:order-1 order-2 text-white flex flex-col gap-1 lg:gap-2 justify-center items-center basis-[60%] lg:basis-[75%]">
                 <p className="text-2xl flex items-center lg:text-3xl font-semibold tracking-wider leading-5 lg:leading-6 text-center">Shivendra Dwivedi
-                    <span>︱</span>
+                    <span className="hidden lg:inline">︱</span>
                     <span className="hidden lg:inline">Frontend Developer</span>
                 </p>
                 <p className="lg:hidden text-lg font-semibold">Hi, I’m Frontend Web Developer </p>
