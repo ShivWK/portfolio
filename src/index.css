@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    --animate-waveLg: waveLg 7s ease infinite;
+    --animate-waveLg: waveLg 7s ease infinite, fadeInLg 0.8s ease forwards;
 
     @keyframes waveLg {
         0%,
@@ -14,7 +14,7 @@
         }
     }
 
-    --animate-waveSm: waveSm 6s ease infinite;
+    --animate-waveSm: waveSm 6s ease infinite, fadeInSm 0.8s ease forwards;
 
     @keyframes waveSm {
         0%,
@@ -24,6 +24,50 @@
 
         50% {
           clip-path: polygon(0 93%, 8% 90%, 14% 88%, 23% 87%, 31% 89%, 39% 91%, 47% 92%, 55% 93%, 63% 92%, 70% 90%, 78% 89%, 86% 88%, 93% 88%, 100% 90%, 100% 0%, 0% 0%);
+        }
+    }
+
+    @keyframes fadeInLg {
+        0% {
+            top: -24rem
+        }
+
+        100% {
+            top: 0;
+        }
+    }
+
+    @keyframes fadeInSm {
+        0% {
+            top: -29rem
+        }
+
+        100% {
+            top: 0;
+        }
+    }
+
+    --animate-bodyFadeInLg: bodyFadeInLg 0.8s ease forwards;
+
+    @keyframes bodyFadeInLg {
+        0% {
+            padding-top: 0;
+        }
+
+        100% {
+            padding-top: 24rem;
+        }
+    }
+
+    --animate-bodyFadeInSm: bodyFadeInSm 0.8s ease forwards;
+
+    @keyframes bodyFadeInSm {
+        0% {
+            padding-top: 0;
+        }
+
+        100% {
+            padding-top: 29rem;
         }
     }
 }
