@@ -59,7 +59,7 @@
         }
     }
 
-    --animate-bodyFadeInSm: bodyFadeInSm 0.8s ease forwards;
+    --animate-bodyFadeInSm: bodyFadeInSm 0.6s ease forwards;
 
     @keyframes bodyFadeInSm {
         0% {
