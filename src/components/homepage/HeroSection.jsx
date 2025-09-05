@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Download } from "lucide-react";
 
 const HeroSection = ({ scrollOffset }) => {
-    const [particles, setParticles] = useState(150);
+    const [particles, setParticles] = useState(170);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)"); // #298CF0
 
@@ -14,7 +14,7 @@ const HeroSection = ({ scrollOffset }) => {
         const small = window.innerWidth <= 768;
 
         if (small) {
-            setParticles(150);
+            setParticles(170);
         } else {
             setParticles(350);
         }
@@ -164,7 +164,7 @@ const HeroSection = ({ scrollOffset }) => {
 
             const resizeHandler2 = () => {
                 if (window.innerWidth <= 768) {
-                    setParticles(100);
+                    setParticles(170);
                 } else {
                     setParticles(300);
                 }
