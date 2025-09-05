@@ -192,7 +192,7 @@ const HeroSection = ({ scrollOffset }) => {
 
         setTimeout(() => {
             setHovered(false);
-        }, 200)
+        }, 300)
     }
 
     return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-[27rem] lg:h-96 animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
@@ -209,7 +209,7 @@ const HeroSection = ({ scrollOffset }) => {
 
                 <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-1.5 px-3.5 lg:px-5 lg:py-1.5 font-semibold w-fit cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear max-lg:mb-2 max-lg:mt-3">
                     <span className={`absolute top-0 left-0 h-full w-0 group-hover:w-full max-lg:group-active:w-full bg-blue-700/70 transition-all duration-150 ease-linear`}></span>
-                    <span className="tracking-wide max-lg:text-sm z-10">Resume</span>
+                    <span className="tracking-wide z-10">Resume</span>
                     <Download size={15} strokeWidth={3} className="z-10 group-hover:animate-pulse" />
                 </button>
 
