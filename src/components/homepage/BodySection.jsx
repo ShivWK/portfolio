@@ -78,7 +78,7 @@ const BodySection = ({ scrollOffset }) => {
 
     }, [scrollOffset])
 
-    return <section id="body" className="relative -top-16 lg:-top-24 text-gray-300 pt-14 lg:pt-18 h-full" >
+    return <section id="body" className="relative -top-20 lg:-top-24 text-gray-300 pt-16 lg:pt-18 h-full" >
         <NavigationMenu />
 
         <canvas className="absolute top-0 left-0 bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20" ref={canvasRef}></canvas>

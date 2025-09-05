@@ -174,68 +174,66 @@ const HeroSection = ({ scrollOffset }) => {
         }
     }, [particles]) //Frontend Developer | Web Developer border-2 border-white
 
-    return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-64 lg:h-96 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
-        <div className="flex items-center justify-between -mt-11 lg:-mt-8 w-[80%] lg:w-[52%] ">
-            <div className="text-white flex flex-col justify-center basis-[60%] lg:basis-[75%]">
-                <p className="text-lg lg:text-3xl font-semibold tracking-wider">Hi, I’m Shivendra
+    return <section ref={canvasRef} id="hero" className="relative flex items-center justify-center w-full h-96 lg:h-96 animate-wave bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)]">
+        <div className="flex flex-col max-lg:gap-2 lg:flex-row items-center justify-center lg:justify-between -mt-14 lg:-mt-8 w-[85%] lg:w-[52%] ">
+            <div className="lg:order-1 order-2 text-white flex flex-col max-lg::gap-1 justify-center items-center basis-[60%] lg:basis-[75%]">
+                <p className="text-2xl lg:text-3xl font-semibold tracking-wider leading-5">Shivendra Dwivedi
                     <span className="hidden lg:inline"> Web Developer</span>
                 </p>
+                <p className="lg:hidden text-lg font-semibold">Hi, I’m Frontend Web Developer </p>
                 <p className="text-xl hidden lg:block">I build modern, fast, and user-focused web applications</p>
 
-                <p className="text-sm lg:text-xl lg:hidden leading-3.5 tracking-wide">I create sleek, fast, user-centric web applications.</p>
+                <p className="text-sm lg:text-xl lg:hidden leading-3.5 tracking-wide text-center">I create sleek, fast, user-centric web applications.</p>
 
-                <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-0.5 px-2 lg:px-4 lg:py-1 font-semibold w-fit mt-1.5 lg:mt-2 cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear">
+                <button className="group relative flex items-center gap-1 lg:gap-2 text-white bg-blue-500 rounded-md py-0.5 px-3 lg:px-4 lg:py-1 font-semibold w-fit lg:mt-2 cursor-pointer overflow-hidden active:scale-95 transition-all duration-200 ease-linear max-lg:my-2">
                     <span className={`absolute top-0 left-0 h-full w-0 group-hover:w-full bg-blue-700/70 transition-all duration-150 ease-linear`}></span>
                     <span className="tracking-wide max-lg:text-sm z-10">Resume</span>
-                    <Download size={15} strokeWidth={3} className="z-10 group-hover:animate-pulse"/>
+                    <Download size={15} strokeWidth={3} className="z-10 group-hover:animate-pulse" />
                 </button>
 
-                <div className="flex flex-col gap-3 w-full mt-1.5 lg:mt-3">
-                    <div className="flex gap-3">
-                        <a
-                            href="https://www.linkedin.com/in/shivendra-dwivedi"
-                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
-                            target="__block"
-                        >
-                            <i
-                                className="fa-brands fa-linkedin text-xl lg:text-2xl text-[#0077b5] dark:text-[rgb(41,140,240)]"
-                            ></i>
-                        </a>
-                        <a
-                            href="https://github.com/ShivWK"
-                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
-                            target="__block"
-                        >
-                            <i className="fa-brands fa-square-github text-xl lg:text-2xl dark:text-gray-300"></i>
-                        </a>
-                        <a
-                            href="https://x.com/Shivendrawk"
-                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
-                            target="__block"
-                        >
-                            <i className="fa-brands fa-square-x-twitter text-xl lg:text-2xl dark:text-gray-300"></i>
-                        </a>
-                        <a
-                            href="https://instagram.com/shivendrawk"
-                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
-                            target="__block"
-                        >
-                            <i
-                                className="fa-brands fa-instagram text-xl lg:text-2xl"
-                                style={{ color: "#e1306c" }}
-                            ></i>
-                        </a>
-                        <a
-                            href="mailto:shivendra@shivendra.site"
-                            className="hover:scale-[1.3] hover:shadow-lg transition-all duration-100 ease-in"
-                        >
-                            <i className="fa-solid fa-envelope text-xl lg:text-2xl text-[#d93025]"></i>
-                        </a>
-
-                    </div>
+                <div className="flex items-center gap-3 mt-1 lg:mt-3 rounded-2xl bg-blue-950 px-3 py-1.5">
+                    <a
+                        href="https://www.linkedin.com/in/shivendra-dwivedi"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
+                        target="__block"
+                    >
+                        <i
+                            className="fa-brands fa-linkedin text-xl lg:text-2xl text-[#0077b5] dark:text-[rgb(41,140,240)]"
+                        ></i>
+                    </a>
+                    <a
+                        href="https://github.com/ShivWK"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
+                        target="__block"
+                    >
+                        <i className="fa-brands fa-square-github text-xl lg:text-2xl dark:text-gray-300"></i>
+                    </a>
+                    <a
+                        href="https://x.com/Shivendrawk"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
+                        target="__block"
+                    >
+                        <i className="fa-brands fa-square-x-twitter text-xl lg:text-2xl dark:text-gray-300"></i>
+                    </a>
+                    <a
+                        href="https://instagram.com/shivendrawk"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
+                        target="__block"
+                    >
+                        <i
+                            className="fa-brands fa-instagram text-xl lg:text-2xl"
+                            style={{ color: "#e1306c" }}
+                        ></i>
+                    </a>
+                    <a
+                        href="mailto:shivendra@shivendra.site"
+                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-75 ease-linear mt-1"
+                    >
+                        <i className="fa-solid fa-envelope text-xl lg:text-2xl text-[#d93025]"></i>
+                    </a>
                 </div>
             </div>
-            <div className="rounded-full bg-[url(/me4.jpeg)] bg-[position:center] h-28 lg:h-44 w-28 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
+            <div className="rounded-full lg:order-2 order-1 bg-[url(/me4.jpeg)] bg-[position:center] h-32 lg:h-44 w-32 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
         </div>
         <canvas className="absolute top-0 left-0 -z-10" ref={heroRef}></canvas>
     </section>
