@@ -25,7 +25,7 @@ const NavigationMenu = () => {
         <a href="#" onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2.5 lg:px-5 py-1.5 lg:py-2">Projects</a>
         <a href="#" onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2.5 lg:px-5 py-1.5 lg:py-2">Content</a>
         <a href="#" onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2.5 lg:px-5 pr-4 lg:pr-6 py-1.5 lg:py-2">Contact</a>
-        <span className={`absolute h-full bg-[linear-gradient(90deg,rgba(2,0,36,1)_0%,rgba(9,9,121,1)_35%,rgba(0,212,255,0.5)_100%)] rounded-3xl -z-10 transition-all duration-200 ease-linear`} style={{
+        <span className={`absolute h-full bg-[linear-gradient(90deg,rgba(2,0,36,1)_0%,rgba(9,9,121,1)_35%,rgba(0,212,255,0.5)_100%)] rounded-2xl lg:rounded-3xl -z-10 transition-all duration-200 ease-linear`} style={{
             left: navSliderStyle.left,
             width: navSliderStyle.width
         }}></span>
