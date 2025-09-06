@@ -1,5 +1,6 @@
 import NavigationMenu from "./NavigationMenu";
 import About from "./About";
+import Skills from "./Skillls";
 
 const BodySection = () => {
 
@@ -9,6 +10,8 @@ const BodySection = () => {
         <div className="mx-auto lg:w-[1024px] max-lg:px-3">
             <About />
         </div>
+    <Skills />
+
     </section>
 }
 
