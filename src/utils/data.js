@@ -138,11 +138,6 @@ export const skillRowData = [
     },
 
     {
-        icon: "skill-icons:git",
-        text: "git"
-    },
-
-    {
         icon: "vscode-icons:file-type-cpp3",
         text: "C++"
     },

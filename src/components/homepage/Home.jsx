@@ -47,7 +47,7 @@ const Home = () => {
             const ctx = canvas.getContext("2d");
 
             canvas.width = window.innerWidth;
-            canvas.height = document.documentElement.scrollHeight;
+            canvas.height = document.documentElement.scrollHeight + size;
 
             circleInit(ctx, canvas);
             squareInit(ctx, canvas);
@@ -79,7 +79,7 @@ const Home = () => {
 
             // return () => window.removeEventListener("resize", resizeHandler);
         }
-    }, [])
+    }, [size])
 
     useEffect(() => {
         const canvas = canvasRef.current;

@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { skillRowData } from "../../utils/data";
 
 const SkillBadge1 = ({ icon, text, size }) => {
-    return <div className="rounded-xl flex items-center justify-center py-2 pb-1 px-3 lg:px-4 w-fit h-fit bg-[#03336698] border border-blue-400">
+    return <div className="rounded-xl flex items-center justify-center py-2 pb-1 px-2 lg:px-3 w-fit h-fit bg-[#03336698] border border-blue-400">
         <div className="flex flex-col gap-2 items-center">
-            <Icon icon={icon} width={size === "small" ? 40 : 50} height={size === "small" ? 40 : 50} />
+            <Icon icon={icon} width={size === "small" ? 35 : 45} height={size === "small" ? 35 : 55} />
             <span className="text-gray-100 font-bold font-heading tracking-wide text-xs lg:text-sm">{text}</span>
         </div>
     </div>
@@ -40,12 +40,12 @@ const About = () => {
         <div>
             <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">About</h2>
 
-            <p className="text-justify my-4 lg:my-3 lg:text-lg tracking-wider font-medium font-content hidden lg:block">
+            <p className="text-justify my-4 lg:text-lg tracking-wider font-medium font-content hidden lg:block">
                 I’m Shivendra Dwivedi, a passionate Web Developer skilled in building modern, fast, and user-focused applications.
                 With experience in React, Redux, JavaScript and TypeScript, I love turning ideas into clean, scalable solutions.
             </p>
 
-            <p className="text-justify my-4 lg:my-3 lg:text-lg tracking-wider font-medium font-content hidden lg:block">
+            <p className="text-justify my-4 lg:text-lg tracking-wider font-medium font-content hidden lg:block">
                 Currently, I’m focused on frontend development roles where I can contribute to product-based companies, solve real-world problems, and keep growing my technical expertise.
             </p>
 
@@ -58,10 +58,10 @@ const About = () => {
             </p>
         </div>
 
-        <div className="my-10 lg:my-14">
+        <div className="my-12 lg:my-16">
             <h3 className="text-2xl lg:text-3xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Skills</h3>
 
-            <div id="skillIconHeader" className="my-4 lg:my-6 flex items-center gap-4 lg:gap-6 flex-wrap">
+            <div id="skillIconHeader" className="my-6 lg:my-7 flex items-center gap-4 lg:gap-6 flex-wrap">
                 {
                     skillRowData.map((icon) => <SkillBadge1 icon={icon.icon} text={icon.text} size={size} />)
                 }
