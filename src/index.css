@@ -14,7 +14,7 @@
         }
     }
 
-    --animate-waveSm: waveSm 6s ease infinite, fadeInSm 0.6s ease forwards;
+    --animate-waveSm: waveSm 6s ease infinite, fadeInSm 0.7s ease forwards;
 
     @keyframes waveSm {
         0%,
