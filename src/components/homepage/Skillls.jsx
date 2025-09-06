@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { skillRowData } from "../../utils/data"
 import { Icon } from "@iconify/react";
 
@@ -20,6 +20,8 @@ const SkillBadge2 = ({ text, icon, bgColor }) => {
 
 const Skills = () => {
     const [size, setSize] = useState("");
+    const [scrollRow, setScrollRow] = useState(true);
+    const rowRef = useRef(null);
 
     useEffect(() => {
         const resizeHandler = () => {
@@ -30,23 +32,47 @@ const Skills = () => {
             }
         }
 
+        if (rowRef.current) {
+            rowRef.current.scrollTo({
+                left: 500,
+                behavior: "smooth"
+            })
+        }
+
         resizeHandler();
 
         window.addEventListener("resize", resizeHandler);
         return () => window.removeEventListener("resize", resizeHandler);
-    }, [])
+    }, []);
+
+    useEffect(() => {
+
+        const observer = new IntersectionObserver((entries) => {
+                setScrollRow(entries[0].isIntersecting)
+        }, { root: null, threshold: 0.1 });
+
+        const scrollHandler = () => {
+            if (scrollRow) rowRef.current.scrollLeft = window.scrollY * 0.6;
+        }
+
+        if (rowRef.current) {
+            observer.observe(rowRef.current);
+        }
+
+        window.addEventListener("scroll", scrollHandler);
+        return () => window.removeEventListener("scroll", scrollHandler);
+    }, [scrollRow])
 
     return <div className="-my-15 lg:-my-20">
         <div className="mx-auto lg:w-[1024px] max-lg:px-3">
             <h3 className="text-2xl lg:text-3xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Skills</h3>
         </div>
 
-        <div id="skillIconHeader" className="w-full my-6 lg:my-7 flex items-center gap-4 lg:gap-6 overflow-hidden">
-            {skillRowData.map((icon) => <SkillBadge1 icon={icon.icon} text={icon.text} size={size} />)}
+
+        <div ref={rowRef} id="skillsRow" className="w-full my-6 lg:my-7 flex items-center gap-4 lg:gap-6 overflow-auto hide-scrollbar">
+            {skillRowData.map((icon, index) => <SkillBadge1 key={index} icon={icon.icon} text={icon.text} size={size} />)}
         </div>
-
         <div className="lg:w-[1024px]">
-
         </div>
     </div>
 }

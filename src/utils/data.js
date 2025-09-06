@@ -108,36 +108,6 @@ export const skillRowData = [
     },
 
     {
-        icon: "devicon:canva",
-        text: "Canva"
-    },
-
-    {
-        icon: "devicon:oauth",
-        text: "OAuth"
-    },
-
-    {
-        icon: "skill-icons:netlify-light",
-        text: "Netlify"
-    },
-
-    {
-        icon: "simple-icons:render",
-        text: "Render"
-    },
-
-    {
-        icon: "simple-icons:zod",
-        text: "Zod"
-    },
-
-    {
-        icon: "skill-icons:postman",
-        text: "Postman"
-    },
-
-    {
         icon: "skill-icons:java-light",
         text: "Java"
     },

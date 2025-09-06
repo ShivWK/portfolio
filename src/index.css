@@ -6,7 +6,6 @@
 @theme {
     --font-heading: "Space Grotesk", sans-serif;
     --font-content: "Atkinson Hyperlegible Mono", sans-serif;
-
     --animate-waveLg: waveLg 7s ease infinite, fadeInLg 0.8s ease forwards;
 
     @keyframes waveLg {
@@ -75,5 +74,11 @@
         100% {
             padding-top:30rem;
         }
+    }
+}
+
+@layer utilities {
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
     }
 }
