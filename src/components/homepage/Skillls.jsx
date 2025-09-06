@@ -52,7 +52,7 @@ const Skills = () => {
         }, { root: null, threshold: 0.1 });
 
         const scrollHandler = () => {
-            if (scrollRow) rowRef.current.scrollLeft = window.scrollY * 0.6;
+            if (scrollRow) rowRef.current.scrollLeft = window.scrollY * (size === "small" ? 0.3 : 0.6);
         }
 
         if (rowRef.current) {
