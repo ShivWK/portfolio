@@ -13,11 +13,11 @@ const About = () => {
             Currently, I’m focused on frontend development roles where I can contribute to product-based companies, solve real-world problems, and keep growing my technical expertise.
         </p>
 
-        <p className="text-justify my-3 text-sm sm:text-base lg:my-3 lg:text-lg tracking-wide font-medium font-content lg:hidden">
+        <p className="text-justify my-3  sm:text-base tracking-wide font-medium font-content lg:hidden">
             I’m Shivendra Dwivedi, a Web Developer skilled in React, Redux, JavaScript, and TypeScript. I build modern, fast, and user-focused applications.
         </p>
 
-        <p className="text-justify my-3 text-sm sm:text-base lg:my-3 lg:text-lg tracking-wide font-medium font-content lg:hidden">
+        <p className="text-justify my-3  sm:text-base tracking-wide font-medium font-content lg:hidden">
             Currently focused on frontend roles where I can contribute to product-based companies and grow my expertise.
         </p>
     </section>
