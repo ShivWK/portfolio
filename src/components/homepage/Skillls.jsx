@@ -41,7 +41,7 @@ const Skills = () => {
             <h3 className="text-2xl lg:text-3xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Skills</h3>
         </div>
 
-        <div id="skillIconHeader" className="w-full my-6 lg:my-7 flex items-center gap-4 lg:gap-6">
+        <div id="skillIconHeader" className="w-full my-6 lg:my-7 flex items-center gap-4 lg:gap-6 overflow-hidden">
             {skillRowData.map((icon) => <SkillBadge1 icon={icon.icon} text={icon.text} size={size} />)}
         </div>
 
