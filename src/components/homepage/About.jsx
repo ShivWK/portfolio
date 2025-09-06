@@ -5,7 +5,7 @@ import { skillRowData } from "../../utils/data";
 const SkillBadge1 = ({ icon, text, size }) => {
     return <div className="rounded-xl flex items-center justify-center py-2 pb-1 px-2 lg:px-3 w-fit h-fit bg-[#03336698] border border-blue-400">
         <div className="flex flex-col gap-2 items-center">
-            <Icon icon={icon} width={size === "small" ? 35 : 45} height={size === "small" ? 35 : 55} />
+            <Icon icon={icon} width={size === "small" ? 30 : 45} height={size === "small" ? 30 : 55} />
             <span className="text-gray-100 font-bold font-heading tracking-wide text-xs lg:text-sm">{text}</span>
         </div>
     </div>
