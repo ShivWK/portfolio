@@ -19,6 +19,7 @@ import {
 } from "../../utils/initializer";
 
 import NavigationMenu from "./NavigationMenu";
+import About from "./About";
 
 const BodySection = ({ scrollOffset }) => {
     const canvasRef = useRef(null);
@@ -83,11 +84,15 @@ const BodySection = ({ scrollOffset }) => {
 
     }, [scrollOffset])
 
-    return <section id="body" className="relative -top-[29rem] lg:-top-[24rem] animate-bodyFadeInSm lg:animate-bodyFadeInLg text-gray-300 pt-18 lg:pt-96 h-full" >
+    return <section id="body" className="relative flex flex-col gap-14 lg:gap-32 -top-[29rem] lg:-top-[24rem] animate-bodyFadeInSm lg:animate-bodyFadeInLg text-gray-300 pt-18 lg:pt-96 h-full " >
         <NavigationMenu />
+
+        <div className="mx-auto lg:w-[1024px] max-lg:px-3">
+            <About />
+        </div>
 
         <canvas className="absolute top-0 left-0 bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20" ref={canvasRef}></canvas>
     </section>
-} 
+}
 
 export default BodySection;

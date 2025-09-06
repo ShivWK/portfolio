@@ -196,8 +196,8 @@ const HeroSection = ({ scrollOffset }) => {
     }
 
     return <section ref={canvasRef} id="hero" className="relative w-full h-[29rem] lg:h-96 animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)] z-30">
-        <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[60%] ">
-            <div className="lg:order-1 order-2 text-white flex flex-col gap-1 lg:gap-2 justify-center items-center basis-[60%] lg:basis-[75%]">
+        <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[65%] ">
+            <div className="lg:order-1 order-2 text-white flex flex-col gap-1 lg:gap-2 justify-center items-center basis-[60%] lg:basis-[75%] font-heading">
                 <p className="text-2xl flex items-center lg:text-3xl font-semibold tracking-wider leading-5 lg:leading-6 text-center">Shivendra Dwivedi
                     <span className="hidden lg:inline">︱</span>
                     <span className="hidden lg:inline">Frontend Developer</span>
