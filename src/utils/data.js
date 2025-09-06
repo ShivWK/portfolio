@@ -128,6 +128,11 @@ export const skillRowData = [
     },
 
     {
+        icon: "simple-icons:zod",
+        text: "Zod"
+    },
+
+    {
         icon: "skill-icons:postman",
         text: "Postman"
     },
