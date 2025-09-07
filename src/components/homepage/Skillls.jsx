@@ -79,10 +79,11 @@ const Skills = () => {
         <div ref={rowRef} id="skillsRow" className="w-full my-6 lg:my-7 flex items-center gap-4 lg:gap-6 overflow-auto hide-scrollbar">
             {skillRowData.map((icon, index) => <SkillBadge1 key={index} icon={icon.icon} text={icon.text} size={size} />)}
         </div>
+
         <div className="lg:max-w-[1024px] max-lg:px-3 mx-auto my-10">
             {
                 Object.entries(mainSkills).map((data, index) => {
-                   return <div key={index} className={`${data[0] === "coreSkills" ? "lg:mb-6 mb-3" : "lg:my-6 my-3"}`}>
+                   return <div key={index} className={`${data[0] === "coreSkills" ? "lg:mb-6 lg:-mt-3 mb-3 -mt-4" : "lg:my-6 my-3"}`}>
                         <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">{data[1][0]}</h4>
                         <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                             {
