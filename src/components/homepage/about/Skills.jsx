@@ -20,24 +20,8 @@ const SkillBadge2 = ({ text, icon, bgColor = "#ff5200", size }) => {
 }
 
 const Skills = ({ size }) => {
-    // const [size, setSize] = useState("");
     const [scrollRow, setScrollRow] = useState(true);
     const rowRef = useRef(null);
-
-    // useEffect(() => {
-    //     const resizeHandler = () => {
-    //         if (window.innerWidth <= 768) {
-    //             setSize("small");
-    //         } else {
-    //             setSize("large");
-    //         }
-    //     }
-
-    //     resizeHandler();
-
-    //     window.addEventListener("resize", resizeHandler);
-    //     return () => window.removeEventListener("resize", resizeHandler);
-    // }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
