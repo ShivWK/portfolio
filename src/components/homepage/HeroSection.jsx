@@ -4,7 +4,8 @@ import { Download } from "lucide-react";
 const HeroSection = () => {
     const [particles, setParticles] = useState(170);
     const [hovered, setHovered] = useState(false);
-    const [color, setColor] = useState("rgba(0,0,0,1)"); // #298CF0
+    const [color, setColor] = useState("rgba(0,0,0,1)");
+    const [ ready, setReady ] = useState(false);
 
     const isSmall = window.innerWidth <= 768;
     const canvasRef = useRef(null);
@@ -21,161 +22,169 @@ const HeroSection = () => {
     }, [])
 
     useEffect(() => {
-        if (canvasRef.current) {
-            const canvas = heroRef.current;
-            const ctx = canvas.getContext("2d");
+        const startCanvas = () => {
+            if (canvasRef.current) {
+                const canvas = heroRef.current;
+                const ctx = canvas.getContext("2d");
 
-            canvas.width = canvasRef.current.offsetWidth;
-            canvas.height = canvasRef.current.offsetHeight;
+                canvas.width = canvasRef.current.offsetWidth;
+                canvas.height = canvasRef.current.offsetHeight;
 
-            let particleArray = [];
+                let particleArray = [];
 
-            // const resizeHandler = () => {
-            //     const { width, height } = { width: hero.current.offsetWidth, height: hero.current.offsetHeight };
-            //     setSize({ width, height });
-            //     mouse.radius = (canvas.height / 80) * (canvas.width / 80);
-            // }
+                // const resizeHandler = () => {
+                //     const { width, height } = { width: hero.current.offsetWidth, height: hero.current.offsetHeight };
+                //     setSize({ width, height });
+                //     mouse.radius = (canvas.height / 80) * (canvas.width / 80);
+                // }
 
-            window.addEventListener("mousemove", (event) => {
-                mouse.x = event.x;
-                mouse.y = event.y;
-            });
+                window.addEventListener("mousemove", (event) => {
+                    mouse.x = event.x;
+                    mouse.y = event.y;
+                });
 
-            window.addEventListener("mouseout", () => {
-                mouse.x = undefined;
-                mouse.y = undefined;
-            });
+                window.addEventListener("mouseout", () => {
+                    mouse.x = undefined;
+                    mouse.y = undefined;
+                });
 
-            let mouse = {
-                x: null,
-                y: null,
-                radius: (canvas.height / 80) * (canvas.width / 80),
-            }
-
-            class Particle {
-                constructor(x, y, directionX, directionY, size, color) {
-                    this.x = x;
-                    this.y = y;
-                    this.directionX = directionX;
-                    this.directionY = directionY;
-                    this.size = size;
-                    this.color = color;
+                let mouse = {
+                    x: null,
+                    y: null,
+                    radius: (canvas.height / 80) * (canvas.width / 80),
                 }
 
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
-                }
-
-                update() {
-                    // boundary check
-                    if (this.x > canvas.width || this.x < 0) {
-                        this.directionX = -this.directionX;
+                class Particle {
+                    constructor(x, y, directionX, directionY, size, color) {
+                        this.x = x;
+                        this.y = y;
+                        this.directionX = directionX;
+                        this.directionY = directionY;
+                        this.size = size;
+                        this.color = color;
                     }
 
-                    if (this.y > canvas.height || this.y < 0) {
-                        this.directionY = -this.directionY;
+                    draw() {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                        ctx.fillStyle = this.color;
+                        ctx.fill();
                     }
 
-                    // mouse collision check
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < mouse.radius + this.size && !isSmall) {
-                        // mouse and particle collides
-
-                        if (mouse.x < this.x && this.x < canvas.width - this.size + 10) {
-                            //check if particle is in right of the mouse so move it in right
-                            this.x += 3;
+                    update() {
+                        // boundary check
+                        if (this.x > canvas.width || this.x < 0) {
+                            this.directionX = -this.directionX;
                         }
 
-                        if (mouse.x > this.x && this.x > this.size * 10) {
-                            this.x -= 3;
+                        if (this.y > canvas.height || this.y < 0) {
+                            this.directionY = -this.directionY;
                         }
 
-                        if (mouse.y < this.y && this.y < canvas.height - this.size + 10) {
-                            this.y += 3;
+                        // mouse collision check
+                        let dx = mouse.x - this.x;
+                        let dy = mouse.y - this.y;
+
+                        let distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < mouse.radius + this.size && !isSmall) {
+                            // mouse and particle collides
+
+                            if (mouse.x < this.x && this.x < canvas.width - this.size + 10) {
+                                //check if particle is in right of the mouse so move it in right
+                                this.x += 3;
+                            }
+
+                            if (mouse.x > this.x && this.x > this.size * 10) {
+                                this.x -= 3;
+                            }
+
+                            if (mouse.y < this.y && this.y < canvas.height - this.size + 10) {
+                                this.y += 3;
+                            }
+
+                            if (mouse.y > this.y && this.y > this.size * 10) {
+                                this.y -= 3;
+                            }
                         }
 
-                        if (mouse.y > this.y && this.y > this.size * 10) {
-                            this.y -= 3;
-                        }
-                    }
+                        // if it is not colliding then move it by its direction value;
 
-                    // if it is not colliding then move it by its direction value;
-
-                    this.x += this.directionX;
-                    this.y += this.directionY;
-                }
-            }
-
-            function init() {
-                let numberOfParticles = particles;
-
-                for (let i = 0; i < numberOfParticles; i++) {
-                    let size = (Math.random() * 3) + 1;
-                    let x = (Math.random() * ((canvas.width - (size * 2)) - (size * 2)) + (size * 2));
-                    let y = (Math.random() * ((canvas.height - (size * 2)) - (size * 2)) + (size * 2));
-                    let directionX = (Math.random() * 1) - 0.5;
-                    let directionY = (Math.random() * 1) - 0.5;
-                    let color = "#0099ffff";
-
-                    particleArray.push(new Particle(x, y, directionX, directionY, size, color));
-                }
-            }
-            init()
-
-            function connect() {
-                for (let a = 0; a < particleArray.length; a++) {
-                    for (let b = 0; b < particleArray.length; b++) {
-                        let dx = particleArray[a].x - particleArray[b].x;
-                        let dy = particleArray[a].y - particleArray[b].y;
-                        let distance = dx * dx + dy * dy;
-
-                        if (distance < (canvas.width / 11) * (canvas.height) / 11) {
-                            ctx.strokeStyle = "rgba(24, 117, 179, 0.49)",
-                                ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(particleArray[a].x, particleArray[a].y);
-                            ctx.lineTo(particleArray[b].x, particleArray[b].y);
-                            ctx.stroke()
-                        }
+                        this.x += this.directionX;
+                        this.y += this.directionY;
                     }
                 }
-            }
 
-            function particleHandler(particleArray) {
-                for (let i = 0; i < particleArray.length; i++) {
-                    particleArray[i].update();
-                    particleArray[i].draw();
+                function init() {
+                    let numberOfParticles = particles;
+
+                    for (let i = 0; i < numberOfParticles; i++) {
+                        let size = (Math.random() * 3) + 1;
+                        let x = (Math.random() * ((canvas.width - (size * 2)) - (size * 2)) + (size * 2));
+                        let y = (Math.random() * ((canvas.height - (size * 2)) - (size * 2)) + (size * 2));
+                        let directionX = (Math.random() * 1) - 0.5;
+                        let directionY = (Math.random() * 1) - 0.5;
+                        let color = "#0099ffff";
+
+                        particleArray.push(new Particle(x, y, directionX, directionY, size, color));
+                    }
                 }
-            }
+                init()
 
-            function animate() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particleHandler(particleArray);
-                connect()
+                function connect() {
+                    for (let a = 0; a < particleArray.length; a++) {
+                        for (let b = 0; b < particleArray.length; b++) {
+                            let dx = particleArray[a].x - particleArray[b].x;
+                            let dy = particleArray[a].y - particleArray[b].y;
+                            let distance = dx * dx + dy * dy;
+
+                            if (distance < (canvas.width / 11) * (canvas.height) / 11) {
+                                ctx.strokeStyle = "rgba(24, 117, 179, 0.49)",
+                                    ctx.lineWidth = 1;
+                                ctx.beginPath();
+                                ctx.moveTo(particleArray[a].x, particleArray[a].y);
+                                ctx.lineTo(particleArray[b].x, particleArray[b].y);
+                                ctx.stroke()
+                            }
+                        }
+                    }
+                }
+
+                function particleHandler(particleArray) {
+                    for (let i = 0; i < particleArray.length; i++) {
+                        particleArray[i].update();
+                        particleArray[i].draw();
+                    }
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    particleHandler(particleArray);
+                    connect()
+                    requestAnimationFrame(animate);
+                }
+
+                const resizeHandler2 = () => {
+                    if (window.innerWidth <= 768) {
+                        setParticles(170);
+                    } else {
+                        setParticles(300);
+                    }
+                }
+
                 requestAnimationFrame(animate);
+                window.addEventListener("resize", resizeHandler2);
+
+                return () => window.removeEventListener("resize", resizeHandler2);
             }
-
-            const resizeHandler2 = () => {
-                if (window.innerWidth <= 768) {
-                    setParticles(170);
-                } else {
-                    setParticles(300);
-                }
-            }
-
-            requestAnimationFrame(animate);
-            window.addEventListener("resize", resizeHandler2);
-
-            return () => window.removeEventListener("resize", resizeHandler2);
         }
-    }, [particles]) // border-2 border-white
+
+        const schedule = window.requestIdleCallback || ((cb) => setTimeout(cd, 200));
+        schedule(() => {
+            startCanvas();
+            setReady(true);
+        }, {timeout: 1000})
+    }, [particles])
 
     const hoverHandler = (color) => {
         if (window.innerWidth <= 768) return;
@@ -281,7 +290,7 @@ const HeroSection = () => {
             </div>
             <div className="rounded-full lg:order-2 order-1 bg-[url(/images/me4.jpeg)] bg-[position:center] h-32 lg:h-44 w-32 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
         </div>
-        <canvas className="-z-10" ref={heroRef}></canvas>
+        <canvas className={`${ready && "animate-canvasFadeIn"} -z-10`} ref={heroRef}></canvas>
     </section>
 }
 
