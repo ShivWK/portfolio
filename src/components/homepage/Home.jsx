@@ -121,7 +121,7 @@ const Home = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    return <main className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-30">
+    return <main className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-10">
         <HeroSection scrollOffset={scrollOffset} />
         <BodySection scrollOffset={scrollOffset} />
         <canvas className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`} ref={canvasRef}></canvas>
