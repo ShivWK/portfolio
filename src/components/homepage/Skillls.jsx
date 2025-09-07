@@ -12,7 +12,7 @@ const SkillBadge1 = ({ icon, text, size }) => {
 }
 
 const SkillBadge2 = ({ text, icon, bgColor = "#ff5200" }) => {
-    return <div className="flex items-center gap-1 px-1 lg:px-2 lg:py-1 rounded-md" style={{ background: bgColor }}>
+    return <div className="flex items-center gap-1 px-1 lg:px-2 py-0.5 lg:py-1 rounded-md" style={{ background: bgColor }}>
         <Icon icon={icon} width="30" height="30" />
         <p className="text-sm text-gray-300 font-semibold font-content">{text}</p>
     </div>
