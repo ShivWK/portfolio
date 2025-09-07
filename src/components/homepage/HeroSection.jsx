@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Download } from "lucide-react";
 
-const HeroSection = ({ scrollOffset }) => {
+const HeroSection = () => {
     const [particles, setParticles] = useState(170);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)"); // #298CF0

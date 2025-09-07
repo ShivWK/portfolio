@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { skillRowData, mainSkills } from "../../utils/data"
 import { Icon } from "@iconify/react";
+import { mainSkills, skillRowData } from "../../../utils/data";
+
 
 const SkillBadge1 = ({ icon, text, size }) => {
     return <div className="rounded-xl flex items-center justify-center py-2 pb-1 px-2 lg:px-3 w-fit h-fit bg-[#03336698] border border-blue-400 shrink-0">
@@ -12,7 +13,7 @@ const SkillBadge1 = ({ icon, text, size }) => {
 }
 
 const SkillBadge2 = ({ text, icon, bgColor = "#ff5200", size }) => {
-    return <div className="flex items-center gap-1 px-1 lg:px-2 py-0.5 lg:py-1 rounded-md" style={{ background: bgColor }}>
+    return <div className="flex items-center gap-1 px-1.5 lg:px-2 py-0.5 lg:py-1 rounded-md" style={{ background: bgColor }}>
         <Icon icon={icon} width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} />
         <p className="text-sm text-gray-100 font-semibold font-content">{text}</p>
     </div>
