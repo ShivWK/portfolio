@@ -62,7 +62,7 @@ const Skills = () => {
         </div>
 
 
-        <div ref={rowRef} id="skillsRow" className="w-full my-6 lg:my-7 flex items-center gap-4 lg:gap-6 overflow-auto hide-scrollbar">
+        <div ref={rowRef} id="skillsRow" className="w-full my-6 lg:my-7 px-1 flex items-center gap-4 lg:gap-6 overflow-auto hide-scrollbar">
             {skillRowData.map((icon, index) => <SkillBadge1 key={index} icon={icon.icon} text={icon.text} size={size} />)}
         </div>
 
