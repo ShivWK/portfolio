@@ -23,13 +23,6 @@ const Skills = () => {
     const [scrollRow, setScrollRow] = useState(true);
     const rowRef = useRef(null);
 
-    const coreSkills = mainSkills.coreSkills;
-    const frameworks = mainSkills.frameworks;
-    const dataFetching = mainSkills.dataFetchingApis;
-    const auth = mainSkills.auth;
-    const backend = mainSkills.backend;
-    const tools = mainSkills.tools;
-
     useEffect(() => {
         const resizeHandler = () => {
             if (window.innerWidth <= 768) {
@@ -93,60 +86,6 @@ const Skills = () => {
                     </div>
                 })
             }
-
-            {/* <div id="frontend" className="lg:mb-6 mb-3">
-                <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Core Skills</h4>
-                <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
-                    {
-                        coreSkills.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
-                    }
-                </div>
-            </div>
-
-            <div id="frameworksAndLibraries" className="lg:my-6 my-3">
-                <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Frameworks & Libraries</h4>
-                <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
-                    {
-                        frameworks.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
-                    }
-                </div>
-            </div>
-
-            <div id="dataFetchingAndAPIs" className="lg:my-6 my-3">
-                <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Data Fetching & APIs</h4>
-                <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
-                    {
-                        dataFetching.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
-                    }
-                </div>
-            </div>
-
-            <div id="authentication" className="lg:my-6 my-3">
-                <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Authentication & Security</h4>
-                <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
-                    {
-                        auth.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
-                    }
-                </div>
-            </div>
-
-            <div id="backendAndDatabase" className="lg:my-6 my-3">
-                <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Backend & Databases</h4>
-                <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
-                    {
-                        backend.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
-                    }
-                </div>
-            </div>
-
-            <div id="ToolsAndPlatforms" className="lg:my-6 my-2">
-                <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Tools & Platforms</h4>
-                <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
-                    {
-                        tools.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
-                    }
-                </div>
-            </div> */}
         </div>
     </div>
 }
