@@ -11,9 +11,9 @@ const SkillBadge1 = ({ icon, text, size }) => {
     </div>
 }
 
-const SkillBadge2 = ({ text, icon, bgColor = "#ff5200" }) => {
+const SkillBadge2 = ({ text, icon, bgColor = "#ff5200", size }) => {
     return <div className="flex items-center gap-1 px-1 lg:px-2 py-0.5 lg:py-1 rounded-md" style={{ background: bgColor }}>
-        <Icon icon={icon} width="30" height="30" />
+        <Icon icon={icon} width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} />
         <p className="text-sm text-gray-300 font-semibold font-content">{text}</p>
     </div>
 }
@@ -84,7 +84,7 @@ const Skills = () => {
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Core Skills</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
-                        coreSkills.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} />)
+                        coreSkills.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
                     }
                 </div>
             </div>
@@ -93,7 +93,7 @@ const Skills = () => {
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Frameworks & Libraries</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
-                        frameworks.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} />)
+                        frameworks.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
                     }
                 </div>
             </div>
@@ -102,7 +102,7 @@ const Skills = () => {
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Data Fetching & APIs</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
-                        dataFetching.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} />)
+                        dataFetching.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
                     }
                 </div>
             </div>
@@ -111,7 +111,7 @@ const Skills = () => {
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Authentication & Security</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
-                        auth.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} />)
+                        auth.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
                     }
                 </div>
             </div>
@@ -120,7 +120,7 @@ const Skills = () => {
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Backend & Databases</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
-                        backend.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} />)
+                        backend.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
                     }
                 </div>
             </div>
@@ -129,7 +129,7 @@ const Skills = () => {
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Tools & Platforms</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
-                        tools.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} />)
+                        tools.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
                     }
                 </div>
             </div>
