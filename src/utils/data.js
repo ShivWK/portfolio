@@ -120,6 +120,7 @@ export const skillRowData = [
 
 export const mainSkills = {
     coreSkills: [
+        "Core Skills",
         {
             icon: "ri:html5-fill",
             text: "HTML5",
@@ -164,6 +165,7 @@ export const mainSkills = {
     ],
 
     frameworks: [
+        "Frameworks & Libraries",
         {
             icon: "ri:reactjs-line",
             text: "ReactJS",
@@ -208,6 +210,7 @@ export const mainSkills = {
     ],
 
     dataFetchingApis: [
+        "Data Fetching & APIs",
         {
             icon: "mdi:api",
             text: "Fetch API",
@@ -239,6 +242,7 @@ export const mainSkills = {
     ],
 
     auth: [
+        "Authentication & Security",
         {
             icon: "simple-icons:jsonwebtokens",
             text: "JWT",
@@ -265,6 +269,7 @@ export const mainSkills = {
     ],
 
     backend: [
+        "Backend & Databases",
         {
             icon: "mdi:nodejs",
             text: "Node.js",
@@ -291,6 +296,7 @@ export const mainSkills = {
     ],
 
     tools: [
+        "Tools & Platforms",
         {
             icon: "mdi:github",
             text: "git & github",

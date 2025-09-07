@@ -55,7 +55,7 @@ const Skills = () => {
     useEffect(() => {
 
         const observer = new IntersectionObserver((entries) => {
-                setScrollRow(entries[0].isIntersecting)
+            setScrollRow(entries[0].isIntersecting)
         }, { root: null, threshold: 0.1 });
 
         const scrollHandler = () => {
@@ -80,7 +80,20 @@ const Skills = () => {
             {skillRowData.map((icon, index) => <SkillBadge1 key={index} icon={icon.icon} text={icon.text} size={size} />)}
         </div>
         <div className="lg:max-w-[1024px] max-lg:px-3 mx-auto my-10">
-            <div id="frontend" className="lg:mb-6 mb-3">
+            {
+                Object.entries(mainSkills).map((data, index) => {
+                   return <div key={index} className={`${data[0] === "coreSkills" ? "lg:mb-6 mb-3" : "lg:my-6 my-3"}`}>
+                        <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">{data[1][0]}</h4>
+                        <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
+                            {
+                                data[1].slice(1).map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
+                            }
+                        </div>
+                    </div>
+                })
+            }
+
+            {/* <div id="frontend" className="lg:mb-6 mb-3">
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Core Skills</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
@@ -132,7 +145,7 @@ const Skills = () => {
                         tools.map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} size={size} />)
                     }
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>
 }
