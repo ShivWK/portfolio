@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 const SkillBadge1 = ({ icon, text, size }) => {
     return <div className="rounded-xl flex items-center justify-center py-2 pb-1 px-2 lg:px-3 w-fit h-fit bg-[#03336698] border border-blue-400 shrink-0">
         <div className="flex flex-col gap-0.5 lg:gap-2 items-center">
-            <Icon icon={icon} width={size === "small" ? 30 : 45} height={size === "small" ? 30 : 55} />
+            <Icon icon={icon} width={size === "small" ? 35 : 45} height={size === "small" ? 35 : 55} />
             <span className="text-gray-100 font-bold font-heading tracking-wide text-xs lg:text-sm">{text}</span>
         </div>
     </div>
@@ -14,7 +14,7 @@ const SkillBadge1 = ({ icon, text, size }) => {
 const SkillBadge2 = ({ text, icon, bgColor = "#ff5200", size }) => {
     return <div className="flex items-center gap-1 px-1 lg:px-2 py-0.5 lg:py-1 rounded-md" style={{ background: bgColor }}>
         <Icon icon={icon} width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} />
-        <p className="text-sm text-gray-300 font-semibold font-content">{text}</p>
+        <p className="text-sm text-gray-100 font-semibold font-content">{text}</p>
     </div>
 }
 
@@ -31,13 +31,6 @@ const Skills = () => {
                 setSize("large");
             }
         }
-
-        // if (rowRef.current) {
-        //     rowRef.current.scrollTo({
-        //         left: 500,
-        //         behavior: "smooth"
-        //     })
-        // }
 
         resizeHandler();
 

@@ -136,7 +136,7 @@ export const mainSkills = {
         {
             icon: "ri:javascript-fill",
             text: "JavaScript",
-            bgColor: "#615907"
+            bgColor: "#b0a109"
         },
 
         {
@@ -264,7 +264,7 @@ export const mainSkills = {
         {
             icon: "ri:firebase-fill",
             text: "Firebase Auth",
-            bgColor: "#c4ae08",
+            bgColor: "#b0a109",
         },
     ],
 
@@ -291,7 +291,7 @@ export const mainSkills = {
         {
             icon: "ri:firebase-fill",
             text: "Firebase",
-            bgColor: "#c4ae08",
+            bgColor: "#b0a109",
         },
     ],
 
