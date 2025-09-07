@@ -32,12 +32,12 @@ const Skills = () => {
             }
         }
 
-        if (rowRef.current) {
-            rowRef.current.scrollTo({
-                left: 500,
-                behavior: "smooth"
-            })
-        }
+        // if (rowRef.current) {
+        //     rowRef.current.scrollTo({
+        //         left: 500,
+        //         behavior: "smooth"
+        //     })
+        // }
 
         resizeHandler();
 

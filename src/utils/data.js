@@ -1,29 +1,14 @@
 export const skillRowData = [
     {
-        icon: "devicon:html5",
-        text: "HTML5"
-    },
-
-    {
-        icon: "devicon:css3",
-        text: "CSS3"
-    },
-
-    {
-        icon: "skill-icons:javascript",
-        text: "JavaScript"
+        icon: "vscode-icons:file-type-reactjs",
+        text: "ReactJS"
     },
 
     {
         icon: "skill-icons:typescript",
         text: "TypeScript"
     },
-
-    {
-        icon: "vscode-icons:file-type-reactjs",
-        text: "ReactJS"
-    },
-
+    
     {
         icon: "skill-icons:redux",
         text: "Redux"
@@ -77,6 +62,21 @@ export const skillRowData = [
     {
         icon: "simple-icons:reacthookform",
         text: "React Hook Form"
+    },
+
+    {
+        icon: "devicon:html5",
+        text: "HTML5"
+    },
+
+    {
+        icon: "devicon:css3",
+        text: "CSS3"
+    },
+
+    {
+        icon: "skill-icons:javascript",
+        text: "JavaScript"
     },
 
     {
