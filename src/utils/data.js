@@ -117,3 +117,202 @@ export const skillRowData = [
         text: "C++"
     },
 ]
+
+export const mainSkills = {
+    coreSkills: [
+        {
+            icon: "ri:html5-fill",
+            text: "HTML5",
+            bgColor: "#E34F26"
+        },
+
+        {
+            icon: "lineicons:css3",
+            text: "CSS3",
+            bgColor: "#1572B6"
+        },
+
+        {
+            icon: "ri:javascript-fill",
+            text: "JavaScript",
+            bgColor: "#615907"
+        },
+
+        {
+            icon: "lineicons:typescript",
+            text: "TypeScript",
+            bgColor: "#3178C6"
+        },
+
+        {
+            icon: "ri:java-fill",
+            text: "Java",
+            bgColor: "#007396"
+        },
+
+        {
+            icon: "mdi:language-cpp",
+            text: "C++",
+            bgColor: "#00599C"
+        },
+
+        {
+            icon: "bitcoin-icons:graph-filled",
+            text: "OOP",
+            bgColor: "#d44ab1"
+        },
+    ],
+
+    frameworks: [
+        {
+            icon: "ri:reactjs-line",
+            text: "ReactJS",
+            bgColor: "#08b5c4"
+        },
+
+        {
+            icon: "akar-icons:redux-fill",
+            text: "Redux Toolkit",
+            bgColor: "#764ABC"
+        },
+
+        {
+            icon: "devicon-plain:reactrouter",
+            text: "React Router",
+            bgColor: "#CA4245"
+        },
+
+        {
+            icon: "mdi:tailwind",
+            text: "TailwindCSS",
+            bgColor: "#06B6D4"
+        },
+
+        {
+            icon: "ri:bootstrap-fill",
+            text: "Bootstrap",
+            bgColor: "#7952B3"
+        },
+
+        {
+            icon: "simple-icons:mui",
+            text: "MUI",
+            bgColor: "#007FFF"
+        },
+
+        {
+            icon: "tabler:brand-framer-motion",
+            text: "Framer Motion",
+            bgColor: "#E44EFD"
+        },
+    ],
+
+    dataFetchingApis: [
+        {
+            icon: "mdi:api",
+            text: "Fetch API",
+            bgColor: "#6E6E6E",
+        },
+        {
+            icon: "simple-icons:axios",
+            text: "Axios",
+            bgColor: "#671DDF",
+        },
+
+        {
+            icon: "simple-icons:redux",
+            text: "RTK Query",
+            bgColor: "#764ABC",
+        },
+
+        {
+            icon: "tabler:api",
+            text: "RESTful APIs",
+            bgColor: "#0A66C2",
+        },
+
+        // {
+        //     icon: "",
+        //     text: "",
+        //     bgColor: "",
+        // },
+    ],
+
+    auth: [
+        {
+            icon: "simple-icons:jsonwebtokens",
+            text: "JWT",
+            bgColor: "#000000",
+        },
+
+        {
+            icon: "devicon-plain:oauth",
+            text: "OAuth 2.0",
+            bgColor: "#3C8DBC",
+        },
+
+        {
+            icon: "logos:google-recaptcha",
+            text: "reCAPTCHA",
+            bgColor: "#4285F4",
+        },
+
+        {
+            icon: "ri:firebase-fill",
+            text: "Firebase Auth",
+            bgColor: "#c4ae08",
+        },
+    ],
+
+    backend: [
+        {
+            icon: "mdi:nodejs",
+            text: "Node.js",
+            bgColor: "#339933",
+        },
+
+        {
+            icon: "skill-icons:expressjs-light",
+            text: "Express.js",
+            bgColor: "#000000",
+        },
+
+        {
+            icon: "lineicons:mongodb",
+            text: "MongoDB",
+            bgColor: "#47A248",
+        },
+
+        {
+            icon: "ri:firebase-fill",
+            text: "Firebase",
+            bgColor: "#c4ae08",
+        },
+    ],
+
+    tools: [
+        {
+            icon: "mdi:github",
+            text: "git & github",
+            bgColor: "linear-gradient(to right, #F05032 10%, #000000)",
+        },
+
+        {
+            icon: "simple-icons:postman",
+            text: "Postman",
+            bgColor: "#FF6C37",
+        },
+
+        {
+            icon: "simple-icons:vercel",
+            text: "Vercel",
+            bgColor: "#000000",
+        },
+
+        {
+            icon: "simple-icons:render",
+            text: "Render",
+            bgColor: "#000000",
+        },
+    ]
+}
