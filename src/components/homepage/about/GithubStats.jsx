@@ -4,14 +4,14 @@ const GithubStats = ({ size }) => {
 
         <div className="flex items-center justify-center">
             <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-4 my-6 lg:my-8">
-            <img src="https://github-readme-streak-stats.herokuapp.com/?user=ShivWK&theme=highcontrast&show_icons=true&border_color=53eafd&bg_color=011026" />
+            <img src="https://github-readme-streak-stats.herokuapp.com/?user=ShivWK&theme=highcontrast&border_color=53eafd&bg_color=011026" />
+            
             <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShivWK&layout=compact&theme=highcontrast&show_icons=true&title_color=53eafd&border_color=53eafd&bg_color=011026&card_width=500px" />
         </div>
         </div>
-        <div className="backdrop-blur-xl my-6 lg:my-7 hidden lg:block">
-            <img src={`https://github-readme-activity-graph.vercel.app/graph?username=ShivWK&theme=github-compact&color=ffffff&border_color=53eafd&point=53eafd&radius=16&height=${size === "small" ? 500 : 350}&from=2024-14-20`} />
+        <div className="my-6 lg:my-7 hidden lg:block">
+            <img className="-z-50" src={`https://github-readme-activity-graph.vercel.app/graph?username=ShivWK&theme=react-dark&color=ffffff&border_color=53eafd&point=53eafd&radius=16&height=${size === "small" ? 500 : 350}&from=2024-14-20`} />
         </div>
-
     </div>
 }
 

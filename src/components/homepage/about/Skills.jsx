@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
-import { mainSkills, skillRowData } from "../../../utils/data";
+import { mainSkills, skillRowData } from "../../../utils/skillsData";
 
 
 const SkillBadge1 = ({ icon, text, size }) => {
