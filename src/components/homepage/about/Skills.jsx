@@ -40,7 +40,7 @@ const Skills = ({ size }) => {
         return () => window.removeEventListener("scroll", scrollHandler);
     }, [scrollRow])
 
-    return <div className="-my-15 lg:-my-20">
+    return <div className="">
         <div className="mx-auto lg:max-w-[1024px] max-lg:px-3">
             <h3 className="text-2xl lg:text-3xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Skills</h3>
         </div>
