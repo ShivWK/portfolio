@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { mainSkills, skillRowData } from "../../../utils/skillsData";
-
+import useIntersection from "../../../utils/IntersectionObserver";
 
 const SkillBadge1 = ({ icon, text, size }) => {
     return <div className="rounded-xl flex items-center justify-center py-2 pb-1 px-2 lg:px-3 w-fit h-fit bg-[#03336698] border border-blue-400 shrink-0">
@@ -21,7 +21,11 @@ const SkillBadge2 = ({ text, icon, bgColor = "#ff5200", size }) => {
 
 const Skills = ({ size }) => {
     const [scrollRow, setScrollRow] = useState(true);
+    const [ ready, setReady ] = useState(false);
     const rowRef = useRef(null);
+    const mainSkillRef = useRef(null);
+
+    useIntersection(mainSkillRef, setReady, 0.2);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -40,6 +44,7 @@ const Skills = ({ size }) => {
         return () => window.removeEventListener("scroll", scrollHandler);
     }, [scrollRow])
 
+
     return <div className="">
         <div className="mx-auto lg:max-w-[1024px] max-lg:px-3">
             <h3 className="text-2xl lg:text-3xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Skills</h3>
@@ -50,7 +55,7 @@ const Skills = ({ size }) => {
             {skillRowData.map((icon, index) => <SkillBadge1 key={index} icon={icon.icon} text={icon.text} size={size} />)}
         </div>
 
-        <div className="lg:max-w-[1024px] max-lg:px-3 mx-auto my-10">
+        <div ref={mainSkillRef} className={`lg:max-w-[1024px] max-lg:px-3 mx-auto my-10 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
             {
                 Object.entries(mainSkills).map((data, index) => {
                    return <div key={index} className={`${data[0] === "coreSkills" ? "lg:mb-6 lg:-mt-3 mb-3 -mt-4" : "lg:my-6 my-4"}`}>

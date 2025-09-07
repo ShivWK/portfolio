@@ -89,7 +89,7 @@ const Home = () => {
             setReady(true);
         }, { timeout: 1000 })
 
-    }, [size])
+    }, [])
 
     useEffect(() => {
         const canvas = canvasRef.current;

@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 import NavigationMenu from "./NavigationMenu";
 import About from "./about/About";
-import Skills from "./about/Skills";
-import GithubStats from "./about/GithubStats";
+// import Skills from "./about/Skills";
+const Skills = lazy(() => import("./about/Skills"))
+// import GithubStats from "./about/GithubStats";
+const GithubStats = lazy(() => import("./about/GithubStats"));
 import Projects from "./projects/Projects";
 
 const BodySection = () => {
@@ -29,8 +31,12 @@ const BodySection = () => {
             <div className="mx-auto lg:max-w-[1024px] max-lg:px-3">
                 <About />
             </div>
-            <Skills size={size} />
-            <GithubStats size={size} />
+            <Suspense fallback={<p>Loading...</p>}>
+                <Skills size={size} />
+            </Suspense>
+            <Suspense fallback={<p>Loading...</p>}>
+                <GithubStats size={size} />
+            </Suspense>
         </div>
         <Projects />
     </section>
