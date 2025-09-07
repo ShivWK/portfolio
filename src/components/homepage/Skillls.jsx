@@ -80,7 +80,7 @@ const Skills = () => {
             {skillRowData.map((icon, index) => <SkillBadge1 key={index} icon={icon.icon} text={icon.text} size={size} />)}
         </div>
         <div className="lg:max-w-[1024px] max-lg:px-3 mx-auto my-10">
-            <div id="frontend" className="lg:my-6 my-2">
+            <div id="frontend" className="lg:mb-6 mb-3">
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Core Skills</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
@@ -89,7 +89,7 @@ const Skills = () => {
                 </div>
             </div>
 
-            <div id="frameworksAndLibraries" className="lg:my-6 my-2">
+            <div id="frameworksAndLibraries" className="lg:my-6 my-3">
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Frameworks & Libraries</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
@@ -98,7 +98,7 @@ const Skills = () => {
                 </div>
             </div>
 
-            <div id="dataFetchingAndAPIs" className="lg:my-6 my-2">
+            <div id="dataFetchingAndAPIs" className="lg:my-6 my-3">
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Data Fetching & APIs</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
@@ -107,7 +107,7 @@ const Skills = () => {
                 </div>
             </div>
 
-            <div id="authentication" className="lg:my-6 my-2">
+            <div id="authentication" className="lg:my-6 my-3">
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Authentication & Security</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
@@ -116,7 +116,7 @@ const Skills = () => {
                 </div>
             </div>
 
-            <div id="backendAndDatabase" className="lg:my-6 my-2">
+            <div id="backendAndDatabase" className="lg:my-6 my-3">
                 <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Backend & Databases</h4>
                 <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                     {
