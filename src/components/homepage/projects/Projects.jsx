@@ -14,7 +14,7 @@ const Projects = ({ size }) => {
     return <section id="projects" ref={containerRef} className={`mx-auto lg:w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear scroll-mt-30`}>
         <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-6 lg:mb-9 self-start">Projects</h2>
 
-        <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 w-full lg:h-[30rem]" >
+        <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 w-full" >
             <div className="flex flex-col items-center gap-0.5 lg:gap-1 lg:basis-[48%] basis-full backdrop-blur-md rounded-xl shadow-[0_0_15px_2px_rgba(3,165,252,0.6)]">
                 <div id="projectPic" className="relative group h-52 lg:h-72 overflow-hidden border-4 border-[#011932] rounded-xl">
                     <img src="/images/zestyeats.png" alt="Project home screen" className="object-cover w-full h-full  hover:scale-110 transition-all duration-300 ease-in-out" />
@@ -53,6 +53,15 @@ const Projects = ({ size }) => {
                     <p className="text-justify font-medium leading-5">
                         A full-stack food delivery app inspired by Swiggy, featuring location-based restaurant discovery, secure authentication, and seamless online payments.
                     </p>
+
+                    <ul>
+                        <li className="text-justify">Seamless Payments – Integrated Razorpay for secure and fast transactions</li>
+                        <li className="text-justify">Smart Location Services – Used Geocoding API to fetch user’s real-time location</li>
+                        <li className="text-justify">Dynamic Restaurant Data – Fetches menus & restaurants for multiple cities and localities across India</li>
+                        <li className="text-justify">Optimized Performance – Implemented debouncing, lazy loading, infinite scroll, shimmer UI for smooth UX</li>
+                        <li className="text-justify">Clean & Scalable Codebase – Modular architecture with best practices</li>
+                        <li className="text-justify">Proxy Server for APIs – Implemented secure API proxy server.</li>
+                    </ul>
 
                 </div>
             </div>
