@@ -256,7 +256,7 @@ export const mainSkills = {
         },
 
         {
-            icon: "logos:google-recaptcha",
+            icon: "logos:recaptcha",
             text: "reCAPTCHA",
             bgColor: "#4285F4",
         },
