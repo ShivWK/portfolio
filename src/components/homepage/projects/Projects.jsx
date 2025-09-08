@@ -14,7 +14,7 @@ const Projects = ({ size }) => {
 
         <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 w-full lg:h-[30rem]" >
             <div className="flex flex-col items-center gap-4 lg:basis-[48%] basis-full">
-                <div id="projectPic" className="relative group h-48 lg:h-72 overflow-hidden border-4 border-[#011932] rounded-xl">
+                <div id="projectPic" className="relative group h-52 lg:h-72 overflow-hidden border-4 border-[#011932] rounded-xl">
                     <img src="/images/zestyeats.png" alt="Project home screen" className="object-cover w-full h-full  hover:scale-110 transition-all duration-300 ease-in-out" />
                     <div className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
                         <p>Live</p>
