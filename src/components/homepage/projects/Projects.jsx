@@ -18,7 +18,7 @@ const Projects = ({ size }) => {
                     <img src="/images/zestyeats.png" alt="Project home screen" className="object-cover w-full h-full  hover:scale-110 transition-all duration-300 ease-in-out" />
                     <div className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
                         <p>Live</p>
-                        <CircleArrowRight size={20} strokeWidth={2} className="transform rotate-[-45deg] group-hover:animate-pulse" />
+                        <CircleArrowRight size={size === "small" ? 18 : 20} strokeWidth={2.5} className="transform rotate-[-45deg] group-hover:animate-pulse" />
                     </div>
                     <div className="group projectTag z-10 tracking-wider -bottom-1 -right-1 rounded-tl-xl flex items-center gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
                         <p>github </p>
