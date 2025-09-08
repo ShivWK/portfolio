@@ -38,6 +38,7 @@ const Projects = ({ size }) => {
                         <Icon icon="skill-icons:mongodb" width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />
                         <Icon icon="devicon-plain:oauth" width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />
                         <Icon icon="logos:recaptcha" width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="simple-icons:razorpay" width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />
                     </div>
                 </div>
             </div>
