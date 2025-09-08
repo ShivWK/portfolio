@@ -93,3 +93,7 @@
         }
     }
 }
+
+* {
+    box-sizing: border-box;
+}
