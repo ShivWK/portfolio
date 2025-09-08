@@ -27,7 +27,7 @@ const Projects = ({ size }) => {
                         <Icon icon="skill-icons:github-light" width={size === "small" ? 18 : 20} height={size === "small" ? 18 : 20} className="group-hover:animate-pulse" />
                     </a>
                 </div>
-                <div id="projectInfo" className="w-full p-1 flex flex-col gap-1 lg:gap-4">
+                <div id="projectInfo" className="w-full p-1 flex flex-col gap-2 lg:gap-4">
                     <p id="title" className="text-xl lg:text-2xl font-bold font-heading tracking-wide bg-gradient-to-r from-blue-200 to-cyan-300 bg-clip-text text-transparent leading-6">
                         ZestyEats – Online Food Delivery App
                     </p>
