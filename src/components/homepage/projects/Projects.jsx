@@ -18,11 +18,11 @@ const Projects = ({ size }) => {
             <div className="flex flex-col items-center gap-0.5 lg:gap-1 lg:basis-[48%] basis-full backdrop-blur-md rounded-xl shadow-[0_0_15px_2px_rgba(3,165,252,0.6)]">
                 <div id="projectPic" className="relative group h-52 lg:h-72 overflow-hidden border-4 border-[#011932] rounded-xl">
                     <img src="/images/zestyeats.png" alt="Project home screen" className="object-cover w-full h-full  hover:scale-110 transition-all duration-300 ease-in-out" />
-                    <a href="https://zestyeats.shivendra.site/" target="__blank" className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
+                    <a href="https://zestyeats.shivendra.site/" target="__blank" className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
                         <p>Live</p>
                         <CircleArrowRight size={size === "small" ? 18 : 20} strokeWidth={2.5} className="transform rotate-[-45deg] group-hover:animate-pulse" />
                     </a>
-                    <a href="https://github.com/ShivWK/ZestyEats.git" target="__blank" className="group projectTag z-10 tracking-wider -bottom-1 -right-1 rounded-tl-xl flex items-center gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
+                    <a href="https://github.com/ShivWK/ZestyEats.git" target="__blank" className="group projectTag z-10 tracking-wider -bottom-1 -right-1 rounded-tl-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
                         <p>github </p>
                         <Icon icon="skill-icons:github-light" width={size === "small" ? 18 : 20} height={size === "small" ? 18 : 20} className="group-hover:animate-pulse" />
                     </a>
