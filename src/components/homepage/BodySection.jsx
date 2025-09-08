@@ -8,11 +8,18 @@ import GithubStats from "./about/GithubStats";
 import Projects from "./projects/Projects";
 
 const BodySection = ({ scrollOffset, size }) => {
-     //border border-white
+    const [ ready, setReady ] = useState(false);
+    const aboutRef = useRef(null);
+    
+    useEffect(() => {
+        setTimeout(() => {
+            setReady(true);
+        }, 300)
+    }, [])
 
-    return <section id="body" className="relative flex flex-col gap-14 lg:gap-24 -top-16 lg:-top-20 text-gray-300 " >
+    return <section id="body" className={`relative flex flex-col gap-14 lg:gap-24 -top-16 lg:-top-20 text-gray-300 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-500 ease-linear`}>
         <NavigationMenu />
-        <div className="">
+        <div ref={aboutRef} className={``}>
             <div className="mx-auto lg:max-w-[1024px] max-lg:px-3">
                 <About />
             </div>
