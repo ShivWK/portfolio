@@ -28,16 +28,16 @@ const Projects = ({ size }) => {
                 <div id="projectInfo" className="w-full px-1 flex flex-col gap-2">
                     <p id="title" className="text-xl lg:text-2xl font-bold font-heading tracking-wide bg-gradient-to-r from-blue-200 to-cyan-300 bg-clip-text text-transparent leading-6">ZestyEats – Online Food Delivery App</p>
                     <div className="flex items-center gap-3 flex-wrap">
-                        <Icon icon="vscode-icons:file-type-reactjs" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="skill-icons:javascript" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="devicon:tailwindcss" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="devicon:reactrouter" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="skill-icons:redux" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="logos:nodejs-icon" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="skill-icons:expressjs-light" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="skill-icons:mongodb" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="devicon-plain:oauth" width={size === "small" ? 15 : 30} height={size === "small" ? 15 : 30} className="group-hover:animate-pulse" />
-                        <Icon icon="logos:recaptcha" width={size === "small" ? 15 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="vscode-icons:file-type-reactjs" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="skill-icons:javascript" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="devicon:tailwindcss" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="devicon:reactrouter" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="skill-icons:redux" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="logos:nodejs-icon" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="skill-icons:expressjs-light" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="skill-icons:mongodb" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="devicon-plain:oauth" width={size === "small" ? 20 : 30} height={size === "small" ? 20 : 30} className="group-hover:animate-pulse" />
+                        <Icon icon="logos:recaptcha" width={size === "small" ? 20 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />
                     </div>
                 </div>
             </div>
