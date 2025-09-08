@@ -45,7 +45,7 @@ const Projects = ({ size }) => {
                         <Icon icon="simple-icons:razorpay" width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />
                     </div>
                     <div className="flex flex-wrap items-center gap-1 lg:gap-2 self-start">
-                        {badges.map(data => <div className="px-1.5 py-0.5 lg:px-3 lg:py-1 rounded-md bg-[#d13b21]">
+                        {badges.map(data => <div className="px-1.5 py-0.5 lg:px-3 lg:py-1 rounded-md bg-[#9f0712]">
                             <p className="tracking-wider font-semibold text-white">{data}</p>
                         </div>)}
                     </div>
