@@ -22,14 +22,14 @@ const BodySection = ({ scrollOffset, size }) => {
             <div className="mx-auto lg:max-w-[1024px] max-lg:px-3">
                 <About />
             </div>
-            <Suspense fallback={<p>Loading...</p>}>
+            {/* <Suspense fallback={<p>Loading...</p>}> */}
                 <Skills size={size} />
-            </Suspense>
-            <Suspense fallback={<p>Loading...</p>}>
+            {/* </Suspense> */}
+            {/* <Suspense fallback={<p>Loading...</p>}> */}
                 <GithubStats size={size} />
-            </Suspense>
+            {/* </Suspense> */}
         </div>
-        <Projects />
+        <Projects size={size} />
     </section>
 }
 

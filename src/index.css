@@ -6,6 +6,15 @@
     .hide-scrollbar::-webkit-scrollbar {
         display: none;
     }
+
+    .projectTag {
+        color: white;
+        background-color: #0362c7;
+        position: absolute;
+        font-family: "Space Grotesk", sans-serif;
+        border: 4px solid #011932;
+        cursor: pointer;
+    }
 }
 
 @theme {
