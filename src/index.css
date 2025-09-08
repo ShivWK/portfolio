@@ -11,7 +11,7 @@
 @theme {
     --font-heading: "Space Grotesk", sans-serif;
     --font-content: "Atkinson Hyperlegible Mono", sans-serif;
-    --animate-waveLg: waveLg 7s ease infinite, fadeInLg 0.8s ease forwards;
+    --animate-waveLg: waveLg 6s ease infinite, fadeInLg 0.8s ease forwards;
 
     @keyframes waveLg {
         0%,
@@ -24,7 +24,7 @@
         }
     }
 
-    --animate-waveSm: waveSm 4s ease infinite, fadeInSm 0.7s ease forwards;
+    --animate-waveSm: waveSm 6s ease infinite, fadeInSm 0.7s ease forwards;
 
     @keyframes waveSm {
         0%,
