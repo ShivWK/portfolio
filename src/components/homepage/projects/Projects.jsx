@@ -9,7 +9,7 @@ const Projects = ({ size }) => {
 
     useIntersection(containerRef, setReady);
 
-    return <section ref={containerRef} className={`mx-auto lg:w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
+    return <section id="projects" ref={containerRef} className={`mx-auto lg:w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear scroll-mt-30`}>
         <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-4 lg:mb-8 self-start">Projects</h2>
 
         <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 w-full lg:h-[30rem]" >
