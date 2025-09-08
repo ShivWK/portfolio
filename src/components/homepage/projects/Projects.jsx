@@ -54,13 +54,14 @@ const Projects = ({ size }) => {
                         A full-stack food delivery app inspired by Swiggy, featuring location-based restaurant discovery, secure authentication, and seamless online payments.
                     </p>
 
-                    <ul>
-                        <li className="text-justify">Seamless Payments – Integrated Razorpay for secure and fast transactions</li>
-                        <li className="text-justify">Smart Location Services – Used Geocoding API to fetch user’s real-time location</li>
-                        <li className="text-justify">Dynamic Restaurant Data – Fetches menus & restaurants for multiple cities and localities across India</li>
-                        <li className="text-justify">Optimized Performance – Implemented debouncing, lazy loading, infinite scroll, shimmer UI for smooth UX</li>
-                        <li className="text-justify">Clean & Scalable Codebase – Modular architecture with best practices</li>
+                    <ul className="">
+                        <li className="text-justify">Seamless Payments – Integrated Razorpay for secure and fast transactions.</li>
+                        <li className="text-justify">Smart Location Services – Used Geocoding API to fetch user’s real-time location.</li>
+                        <li className="text-justify">Dynamic Restaurant Data – Fetches menus & restaurants for multiple cities and localities across India.</li>
+                        <li className="text-justify">Optimized Performance – Implemented debouncing, lazy loading, infinite scroll, shimmer UI for smooth UX.</li>
+                        <li className="text-justify">Clean & Scalable Codebase – Modular architecture with best practices.</li>
                         <li className="text-justify">Proxy Server for APIs – Implemented secure API proxy server.</li>
+                        <li className="text-justify">Robust Authentication – Supports OTP login (phone + email) and OAuth 2.0 (Google email login).</li>
                     </ul>
 
                 </div>
