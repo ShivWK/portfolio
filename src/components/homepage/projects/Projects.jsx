@@ -9,7 +9,7 @@ const Projects = ({ size }) => {
 
     const badges = ["FullStack", "API Integration", "Authentication"]
 
-    useIntersection(containerRef, setReady);
+    useIntersection(containerRef, setReady, 0.2);
 
     return <section id="projects" ref={containerRef} className={`mx-auto lg:w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear scroll-mt-30`}>
         <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-6 lg:mb-9 self-start">Projects</h2>
