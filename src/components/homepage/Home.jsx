@@ -124,7 +124,7 @@ const Home = () => {
 
     }, [scrollOffset]);
 
-    return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-10">
+    return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
         <HeroSection scrollOffset={scrollOffset} size={size} />
         <BodySection scrollOffset={scrollOffset} size={size} />
 
