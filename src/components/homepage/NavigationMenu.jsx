@@ -14,44 +14,44 @@ const NavigationMenu = ({ currentSection }) => {
         }
     }, []);
 
-    useEffect(() => {
-        switch (currentSection?.id) {
-            case "about": {
-                const link = HomeNavLink.current;
-                const left = link.offsetLeft;
-                const width = link.offsetWidth;
-                setNavSliderStyle({ left: 0, width });
-                break;
-            }
+    // useEffect(() => {
+    //     switch (currentSection?.id) {
+    //         case "about": {
+    //             const link = HomeNavLink.current;
+    //             const left = link.offsetLeft;
+    //             const width = link.offsetWidth;
+    //             setNavSliderStyle({ left: 0, width });
+    //             break;
+    //         }
 
-            case "projects": {
-                const link = ProjectsNavLink.current;
-                const left = link.offsetLeft;
-                const width = link.offsetWidth;
-                setNavSliderStyle({ left, width });
-                break;
-            }
+    //         case "projects": {
+    //             const link = ProjectsNavLink.current;
+    //             const left = link.offsetLeft;
+    //             const width = link.offsetWidth;
+    //             setNavSliderStyle({ left, width });
+    //             break;
+    //         }
 
-            case "content": {
-                const link = ContentNavLink.current;
-                const left = link.offsetLeft;
-                const width = link.offsetWidth;
-                setNavSliderStyle({ left, width });
-                break;
-            }
+    //         case "content": {
+    //             const link = ContentNavLink.current;
+    //             const left = link.offsetLeft;
+    //             const width = link.offsetWidth;
+    //             setNavSliderStyle({ left, width });
+    //             break;
+    //         }
 
-            case "contact": {
-                const link = ContactNavLink.current;
-                const left = link.offsetLeft;
-                const width = link.offsetWidth;
-                setNavSliderStyle({ left, width });
-                break;
-            }
+    //         case "contact": {
+    //             const link = ContactNavLink.current;
+    //             const left = link.offsetLeft;
+    //             const width = link.offsetWidth;
+    //             setNavSliderStyle({ left, width });
+    //             break;
+    //         }
 
-            default:
-                break;
-        }
-    }, [currentSection])
+    //         default:
+    //             break;
+    //     }
+    // }, [currentSection])
 
     const hoverHandler = (e) => {
         const link = e.target;
