@@ -11,7 +11,7 @@ const Projects = ({ size }) => {
 
     useIntersection(containerRef, setReady, 0.2);
 
-    return <section id="projects" ref={containerRef} className={`mx-auto lg:w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear scroll-mt-30`}>
+    return <section ref={containerRef} className={`mx-auto lg:w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
         <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-6 lg:mb-9 self-start">Projects</h2>
 
         <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 w-full" >
@@ -49,7 +49,7 @@ const Projects = ({ size }) => {
                         <Icon icon="simple-icons:razorpay" width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />
                     </div>
                     <div className="flex flex-wrap items-center gap-1 lg:gap-2 self-start">
-                        {badges.map(data => <div className="px-1.5 py-0.5 lg:px-3 lg:py-1 rounded-md bg-[#9f0712]">
+                        {badges.map((data, index) => <div key={index} className="px-1.5 py-0.5 lg:px-3 lg:py-1 rounded-md bg-[#9f0712]">
                             <p className="tracking-wider font-semibold text-white">{data}</p>
                         </div>)}
                     </div>

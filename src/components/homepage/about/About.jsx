@@ -1,5 +1,5 @@
 const About = () => {
-    return <section id="about" className="scroll-mt-30 scroll-smooth pb-6 lg:pb-8">
+    return <div className="pb-6 lg:pb-8">
         <div>
             <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-4 lg:mb-6">About</h2>
 
@@ -20,7 +20,7 @@ const About = () => {
                 Currently focused on frontend roles where I can contribute to product-based companies and grow my expertise.
             </p>
         </div>
-    </section>
+    </div>
 }
 
 export default About;

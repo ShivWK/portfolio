@@ -6,21 +6,6 @@ const GithubStats = ({ size }) => {
     const containerRef = useRef(null);
     useIntersection(containerRef, setReady);
 
-    // useEffect(() => {
-    //     if (containerRef.current) {
-    //        const observer = new IntersectionObserver((entries, observer) => {
-    //             entries.forEach((data) => {
-    //                 if (data.isIntersecting) {
-    //                     setReady(true);
-    //                     observer.unobserve(data.target);
-    //                 }
-    //             })
-    //        }, { threshold: 0.3 })
-
-    //        observer.observe(containerRef.current);
-    //     }
-    // }, [])
-
     return <div ref={containerRef} className={`flex flex-col items-center gap-6 lg:gap-8 mx-auto lg:max-w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
         <h3 className="self-start text-2xl lg:text-3xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Github Stats</h3>
 
