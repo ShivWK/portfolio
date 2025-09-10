@@ -314,7 +314,7 @@ const HeroSection = () => {
             </div>
             <div className="rounded-full lg:order-2 order-1 bg-[url(/images/me4.jpeg)] bg-[position:center] h-32 lg:h-44 w-32 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
         </div>
-        <canvas ref={canvasRef} className={`-z-30 w-full h-full ${ready && "animate-canvasFadeIn"}`} ></canvas>
+        <canvas ref={canvasRef} className={`-z-30 ${ready && "animate-canvasFadeIn"}`} ></canvas>
     </section>
 }
 
