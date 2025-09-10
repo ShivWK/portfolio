@@ -1,33 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { Download } from "lucide-react";
 
-const HeroSection = ({ isSmall }) => {
+const HeroSection = () => {
     const [particles, setParticles] = useState(200);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)");
     const [ready, setReady] = useState(false);
+    const isSmall = window.innerWidth <= 768;
 
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
-
-    // const setupCanvas = (canvas) => {
-    //     const canvas = canvasRef.current;
-    //     const rect = canvas.getBoundingClientRect();
-    //     const dpr = window.devicePixelRatio || 1;
-
-    //     canvas.width = rect.width * dpr;
-    //     canvas.height = rect.height * dpr;
-
-    //     canvas.style.width = `${rect.width}px`;
-    //     canvas.style.height = `${rect.height}px`;
-
-    //     // canvas.width = canvasRef.current.offsetWidth * dpr;
-    //     // canvas.height = canvasRef.current.offsetHeight * dpr;
-
-    //     const ctx = canvas.getContext("2d");
-    //     ctx.scale(dpr, dpr);
-
-    // }
 
     useEffect(() => {
         if (isSmall) {
