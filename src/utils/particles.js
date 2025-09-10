@@ -21,7 +21,7 @@ export class CircleParticles {
     update(scrollOffset = 0, canvas) {
         const drift = scrollOffset * 0.02;
 
-        if (this.y > canvas.height + 60) {
+        if (this.y > canvas.height) {
             this.directionY = -1;
         } else if (this.y < 0 - 60) {
             this.directionY = 1;
@@ -29,7 +29,7 @@ export class CircleParticles {
 
         this.y += this.directionY * 0.3;
 
-        if (this.x > canvas.width + 10) {
+        if (this.x > canvas.width) {
             this.directionX = -1;
         } else if (this.x < 0 - 10) {
             this.directionX = 1;

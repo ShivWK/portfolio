@@ -78,9 +78,6 @@ const Home = () => {
 
                 ctx.scale(dpr, dpr);
 
-                // canvas.width = window.innerWidth;
-                // canvas.height = document.getElementById("main").scrollHeight;
-
                 circleInit(ctx, canvas);
                 squareInit(ctx, canvas);
                 triangleInit(ctx, canvas);

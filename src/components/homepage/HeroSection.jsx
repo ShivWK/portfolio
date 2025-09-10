@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Download } from "lucide-react";
 
 const HeroSection = () => {
-    const [particles, setParticles] = useState(170);
+    const [particles, setParticles] = useState(200);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)");
     const [ ready, setReady ] = useState(false);
@@ -15,9 +15,9 @@ const HeroSection = () => {
         const small = window.innerWidth <= 768;
 
         if (small) {
-            setParticles(170);
+            setParticles(200);
         } else {
-            setParticles(350);
+            setParticles(320);
         }
     }, [])
 
@@ -25,22 +25,22 @@ const HeroSection = () => {
         const startCanvas = () => {
             if (canvasRef.current) {
                 const canvas = heroRef.current;
-                const ctx = canvas.getContext("2d");
-                
+                const rect = canvas.getBoundingClientRect();
                 const dpr = window.devicePixelRatio || 1;
 
-                canvas.width = canvasRef.current.offsetWidth * dpr;
-                canvas.height = canvasRef.current.offsetHeight * dpr;
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
 
+                canvas.style.width = `${rect.width}px`;
+                canvas.style.height = `${rect.height}px`;
+
+                // canvas.width = canvasRef.current.offsetWidth * dpr;
+                // canvas.height = canvasRef.current.offsetHeight * dpr;
+
+                const ctx = canvas.getContext("2d");
                 ctx.scale(dpr, dpr);
 
                 let particleArray = [];
-
-                // const resizeHandler = () => {
-                //     const { width, height } = { width: hero.current.offsetWidth, height: hero.current.offsetHeight };
-                //     setSize({ width, height });
-                //     mouse.radius = (canvas.height / 80) * (canvas.width / 80);
-                // }
 
                 window.addEventListener("mousemove", (event) => {
                     mouse.x = event.x;
@@ -170,9 +170,9 @@ const HeroSection = () => {
 
                 const resizeHandler2 = () => {
                     if (window.innerWidth <= 768) {
-                        setParticles(170);
+                        setParticles(200);
                     } else {
-                        setParticles(300);
+                        setParticles(320);
                     }
                 }
 
