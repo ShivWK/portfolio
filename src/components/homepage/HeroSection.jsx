@@ -142,8 +142,8 @@ const HeroSection = () => {
                         let size = (Math.random() * (isSmall ? 2.5 : 4)) + 1;
                         let x = (Math.random() * ((canvas.width - (size * 2)) - (size * 2)) + (size * 2));
                         let y = (Math.random() * ((canvas.height - (size * 2)) - (size * 2)) + (size * 2));
-                        let directionX = (Math.random() * 1) - (isSmall ? 0.4 : 0.5);
-                        let directionY = (Math.random() * 1) - (isSmall ? 0.4 : 0.5);
+                        let directionX = (Math.random() * 1) - (isSmall ? 0.6 : 0.5);
+                        let directionY = (Math.random() * 1) - (isSmall ? 0.6 : 0.5);
                         let color = "#0099ffff";
 
                         particleArray.push(new Particle(x, y, directionX, directionY, size, color));
@@ -160,7 +160,7 @@ const HeroSection = () => {
 
                             if (distance < (canvas.width / 11) * (canvas.height) / 11) {
                                 ctx.strokeStyle = "rgba(24, 117, 179, 0.49)",
-                                ctx.lineWidth = isSmall ? 1 : 1;
+                                ctx.lineWidth = isSmall ? 0.6 : 1;
                                 ctx.beginPath();
                                 ctx.moveTo(particleArray[a].x, particleArray[a].y);
                                 ctx.lineTo(particleArray[b].x, particleArray[b].y);
