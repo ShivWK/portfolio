@@ -142,8 +142,8 @@ const HeroSection = () => {
                         let size = (Math.random() * (isSmall ? 8 : 4)) + 1;
                         let x = (Math.random() * ((canvas.width - (size * 2)) - (size * 2)) + (size * 2));
                         let y = (Math.random() * ((canvas.height - (size * 2)) - (size * 2)) + (size * 2));
-                        let directionX = (Math.random() * 1) - (isSmall ? 1.5 : 0.5);
-                        let directionY = (Math.random() * 1) - (isSmall ? 1.5 : 0.5);
+                        let directionX = (Math.random() * 1) - (isSmall ? 2 : 0.5);
+                        let directionY = (Math.random() * 1) - (isSmall ? 2 : 0.5);
                         let color = "#0099ffff";
 
                         particleArray.push(new Particle(x, y, directionX, directionY, size, color));
