@@ -26,9 +26,13 @@ const HeroSection = () => {
             if (canvasRef.current) {
                 const canvas = heroRef.current;
                 const ctx = canvas.getContext("2d");
+                
+                const dpr = window.devicePixelRatio || 1;
 
-                canvas.width = canvasRef.current.offsetWidth;
-                canvas.height = canvasRef.current.offsetHeight;
+                canvas.width = canvasRef.current.offsetWidth * dpr;
+                canvas.height = canvasRef.current.offsetHeight * dpr;
+
+                ctx.scale(dpr, dpr);
 
                 let particleArray = [];
 
@@ -290,7 +294,7 @@ const HeroSection = () => {
             </div>
             <div className="rounded-full lg:order-2 order-1 bg-[url(/images/me4.jpeg)] bg-[position:center] h-32 lg:h-44 w-32 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
         </div>
-        <canvas ref={heroRef} className={`-z-30 ${ready && "animate-canvasFadeIn"}`} ></canvas>
+        <canvas ref={heroRef} className={`-z-30 w-full h-full ${ready && "animate-canvasFadeIn"}`} ></canvas>
     </section>
 }
 

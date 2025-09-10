@@ -70,8 +70,16 @@ const Home = () => {
                 const canvas = canvasRef.current;
                 const ctx = canvas.getContext("2d");
 
-                canvas.width = window.innerWidth;
-                canvas.height = document.getElementById("main").scrollHeight;
+                const dpr = window.devicePixelRatio || 1;
+
+                const main = document.getElementById("main") ;
+                canvas.width = window.innerWidth * dpr;
+                canvas.height = main.scrollHeight * dpr;
+
+                ctx.scale(dpr, dpr);
+
+                // canvas.width = window.innerWidth;
+                // canvas.height = document.getElementById("main").scrollHeight;
 
                 circleInit(ctx, canvas);
                 squareInit(ctx, canvas);
@@ -128,7 +136,7 @@ const Home = () => {
         <HeroSection scrollOffset={scrollOffset} size={size} />
         <BodySection scrollOffset={scrollOffset} size={size} />
 
-        <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
+        <canvas ref={canvasRef} className={`absolute top-0 left-0 w-full h-full bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
     </main>
 }
 

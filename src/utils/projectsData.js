@@ -40,19 +40,26 @@ export const majorProjects = [
                 icon: "skill-icons:expressjs-light",
                 text: "ExpressJS"
             },
+
             {
                 icon: "skill-icons:mongodb",
                 text: "MongoDB"
             },
+
             {
                 icon: "devicon-plain:oauth",
                 text: "OAuth 2.0"
             },
+
             {
                 icon: "logos:recaptcha",
                 text: "Google reCAPTCHA"
             },
 
+            {
+                icon: "simple-icons:razorpay",
+                text: "Rayzorpay"
+            },
         ],
 
         badges: ["FullStack", "API Integration", "Authentication", "Payment Integration"],
@@ -64,7 +71,7 @@ export const majorProjects = [
 
             "<strong style='color: oklch(70.7% 0.165 254.624);'>Robust Authentication:</strong> Supports <span style='font-weight: 500; color: #53eafd'>OTP login (phone + email)</span> and <span style='font-weight: 500; color: #53eafd'>OAuth 2.0</span> (Google email login).",
 
-            "<strong style='color: oklch(70.7% 0.165 254.624);'>Smart Location Services:</strong> Used <span style='font-weight: 500; color: #53eafd'>Geocoding API</span> to fetch user’s real-time location.",
+            "<strong style='color: oklch(70.7% 0.165 254.624);'>Smart Location Services:</strong> Used <span style='font-weight: 500; color: #53eafd'>Geolocation and Geocoding API</span> to fetch user’s real-time location.",
 
             "<strong style='color: oklch(70.7% 0.165 254.624);'>Dynamic Restaurant Data:</strong> Fetches menus & restaurants for <span style='font-weight: 500; color: #53eafd'>multiple cities</span> and localities <span style='font-weight: 500; color: #53eafd'>across India.</span>",
 
