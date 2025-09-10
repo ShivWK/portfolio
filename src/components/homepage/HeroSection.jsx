@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Download } from "lucide-react";
 
 const HeroSection = () => {
-    const [particles, setParticles] = useState(200);
+    const [particles, setParticles] = useState(400);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)");
     const [ready, setReady] = useState(false);
@@ -34,7 +34,7 @@ const HeroSection = () => {
         const small = window.innerWidth <= 768;
 
         if (small) {
-            setParticles(200);
+            setParticles(400);
         } else {
             setParticles(320);
         }
@@ -52,10 +52,10 @@ const HeroSection = () => {
                 canvas.width = rect.offsetWidth * dpr;
                 canvas.height = rect.offsetHeight * dpr;
 
-                ctx.scale(dpr, dpr);
-
                 canvas.style.width = `${rect.width}px`;
                 canvas.style.height = `${rect.height}px`;
+
+                ctx.scale(dpr, dpr);
 
                 let particleArray = [];
 
@@ -190,7 +190,7 @@ const HeroSection = () => {
 
 
                     if (window.innerWidth <= 768) {
-                        setParticles(200);
+                        setParticles(400);
                     } else {
                         setParticles(320);
                     }

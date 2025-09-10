@@ -74,12 +74,12 @@ const Home = () => {
         canvas.width = rect.width * dpr;
         canvas.height = rect.height * dpr;
 
-        ctx.scale(dpr, dpr);
 
         canvas.style.width = `${rect.width}px`;
         canvas.style.height = `${rect.height}px`;
 
         // ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
 
         circleParticlesArray.length = 0;
         squareParticlesArray.length = 0;
