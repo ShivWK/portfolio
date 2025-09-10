@@ -27,6 +27,13 @@ const Home = () => {
     const canvasRef = useRef(null);
     const lastClientHeight = useRef(0);
 
+    function particleHandler(particleArray, canvas) {
+        for (let i = 0; i < particleArray.length; i++) {
+            particleArray[i].update(scrollOffset, canvas);
+            particleArray[i].draw();
+        }
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const currentClientHeight = window.scrollY;
@@ -43,13 +50,6 @@ const Home = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    function particleHandler(particleArray, canvas) {
-        for (let i = 0; i < particleArray.length; i++) {
-            particleArray[i].update(scrollOffset, canvas);
-            particleArray[i].draw();
-        }
-    }
-
     useEffect(() => {
         const resizeHandler = () => {
             if (window.innerWidth <= 768) {
@@ -64,26 +64,61 @@ const Home = () => {
         return () => window.removeEventListener("resize", resizeHandler);
     }, []);
 
+    function setupCanvas(canvas) {
+        const ctx = canvas.getContext("2d");
+        const dpr = window.devicePixelRatio || 1;
+
+        const main = document.getElementById("main");
+        const rect = main.getBoundingClientRect();
+
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+
+        canvas.style.width = `${rect.width}px`;
+        canvas.style.height = `${rect.height}px`;
+
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+
+        circleParticlesArray.length = 0;
+        squareParticlesArray.length = 0;
+        triangleParticlesArray.length = 0;
+        pentagonParticlesArray.length = 0;
+        hexagonParticlesArray.length = 0;
+        diamondParticlesArray.length = 0;
+
+        circleInit(ctx, canvas);
+        squareInit(ctx, canvas);
+        triangleInit(ctx, canvas);
+        pentagonInit(ctx, canvas);
+        hexagonInit(ctx, canvas);
+        diamondInit(ctx, canvas);
+
+        return ctx;
+    }
+
     useEffect(() => {
         const startCanvas = () => {
             if (canvasRef.current) {
                 const canvas = canvasRef.current;
-                const ctx = canvas.getContext("2d");
+                // const ctx = canvas.getContext("2d");
 
-                const dpr = window.devicePixelRatio || 1;
+                // const dpr = window.devicePixelRatio || 1;
 
-                const main = document.getElementById("main") ;
-                canvas.width = window.innerWidth * dpr;
-                canvas.height = main.scrollHeight * dpr;
+                // const main = document.getElementById("main");
+                // canvas.width = window.innerWidth * dpr;
+                // canvas.height = main.scrollHeight * dpr;
 
-                ctx.scale(dpr, dpr);
+                // ctx.scale(dpr, dpr);
 
-                circleInit(ctx, canvas);
-                squareInit(ctx, canvas);
-                triangleInit(ctx, canvas);
-                pentagonInit(ctx, canvas);
-                hexagonInit(ctx, canvas);
-                diamondInit(ctx, canvas);
+                // circleInit(ctx, canvas);
+                // squareInit(ctx, canvas);
+                // triangleInit(ctx, canvas);
+                // pentagonInit(ctx, canvas);
+                // hexagonInit(ctx, canvas);
+                // diamondInit(ctx, canvas);
+
+                const ctx = setupCanvas(canvas);
 
                 function animateSquares() {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -100,11 +135,10 @@ const Home = () => {
                 requestAnimationFrame(animateSquares);
 
                 const resizeHandler = () => {
-                    canvas.height = document.getElementById("body").scrollHeight;
-                    canvas.width = window.width;
+                    const ctx = setupCanvas(canvasRef.current);
                 }
 
-                document.getElementById("body").addEventListener("resize", resizeHandler);
+                window.addEventListener("resize", resizeHandler);
                 return () => window.removeEventListener("resize", resizeHandler);
             }
         }

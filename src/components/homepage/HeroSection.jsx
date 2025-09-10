@@ -5,11 +5,30 @@ const HeroSection = () => {
     const [particles, setParticles] = useState(200);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)");
-    const [ ready, setReady ] = useState(false);
+    const [ready, setReady] = useState(false);
 
     const isSmall = window.innerWidth <= 768;
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
+
+    const setupCanvas = (canvas) => {
+        const canvas = canvasRef.current;
+        const rect = canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+
+        canvas.style.width = `${rect.width}px`;
+        canvas.style.height = `${rect.height}px`;
+
+        // canvas.width = canvasRef.current.offsetWidth * dpr;
+        // canvas.height = canvasRef.current.offsetHeight * dpr;
+
+        const ctx = canvas.getContext("2d");
+        ctx.scale(dpr, dpr);
+
+    }
 
     useEffect(() => {
         const small = window.innerWidth <= 768;
@@ -23,8 +42,8 @@ const HeroSection = () => {
 
     useEffect(() => {
         const startCanvas = () => {
-            if (canvasRef.current) {
-                const canvas = heroRef.current;
+            if (heroRef.current && canvasRef.current) {
+                const canvas = canvasRef.current;
                 const rect = canvas.getBoundingClientRect();
                 const dpr = window.devicePixelRatio || 1;
 
@@ -168,7 +187,11 @@ const HeroSection = () => {
                     requestAnimationFrame(animate);
                 }
 
-                const resizeHandler2 = () => {
+                const resizeHandler = () => {
+                    if (!canvasRef.current) return;
+
+
+
                     if (window.innerWidth <= 768) {
                         setParticles(200);
                     } else {
@@ -177,9 +200,9 @@ const HeroSection = () => {
                 }
 
                 requestAnimationFrame(animate);
-                window.addEventListener("resize", resizeHandler2);
+                window.addEventListener("resize", resizeHandler);
 
-                return () => window.removeEventListener("resize", resizeHandler2);
+                return () => window.removeEventListener("resize", resizeHandler);
             }
         }
 
@@ -187,7 +210,7 @@ const HeroSection = () => {
         schedule(() => {
             startCanvas();
             setReady(true);
-        }, {timeout: 1000})
+        }, { timeout: 1000 })
     }, [particles])
 
     const hoverHandler = (color) => {
@@ -208,7 +231,7 @@ const HeroSection = () => {
         }, 300)
     }
 
-    return <section ref={canvasRef} id="hero" className="relative w-full h-[29rem] lg:h-96 animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)] z-30">
+    return <section ref={heroRef} id="hero" className="relative w-full h-[29rem] lg:h-96 animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)] z-30">
         <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[63%] z-50 ">
             <div className="lg:order-1 order-2 text-white flex flex-col gap-1 lg:gap-2 justify-center items-center basis-[60%] lg:basis-[75%] font-heading">
                 <p className="text-2xl flex items-center lg:text-3xl font-semibold tracking-wider leading-5 lg:leading-6 text-center">Shivendra Dwivedi
@@ -294,7 +317,7 @@ const HeroSection = () => {
             </div>
             <div className="rounded-full lg:order-2 order-1 bg-[url(/images/me4.jpeg)] bg-[position:center] h-32 lg:h-44 w-32 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
         </div>
-        <canvas ref={heroRef} className={`-z-30 w-full h-full ${ready && "animate-canvasFadeIn"}`} ></canvas>
+        <canvas ref={canvasRef} className={`-z-30 w-full h-full ${ready && "animate-canvasFadeIn"}`} ></canvas>
     </section>
 }
 
