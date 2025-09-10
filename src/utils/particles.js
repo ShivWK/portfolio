@@ -8,6 +8,9 @@ export class CircleParticles {
         this.lineWidth = lineWidth;
         this.directionY = -1;
         this.directionX = 1;
+        this.timestamp = 0;
+        this.interval = 1000;
+        this.timer = 0;
     }
 
     draw() {
@@ -50,6 +53,9 @@ export class SquareParticles {
         this.color = color;
         this.lineWidth = lineWidth;
         this.joinStyle = joinStyle;
+        this.timestamp = 0;
+        this.interval = 1000 / 60;
+        this.timer = 0;
     }
 
     draw() {
@@ -66,7 +72,7 @@ export class SquareParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas) {
+    update(scrollOffset = 0, canvas, isSmall) {
         const drift = scrollOffset * 0.002;
         this.lineWidth = 0.5 + Math.sin(Date.now() * 0.0004 + this.x) * 0.5
         // this.y += drift
@@ -85,6 +91,9 @@ export class TriangleParticles {
         this.lineWidth = lineWidth;
         this.color = color;
         this.joinStyle = joinStyle;
+        this.timestamp = 0;
+        this.interval = 1000 / 60;
+        this.timer = 0;
     }
 
     draw() {
@@ -101,7 +110,7 @@ export class TriangleParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas) {
+    update(scrollOffset = 0, canvas, isSmall) {
         const drift = scrollOffset * 0.02;
         this.y += Math.sin(Date.now() * 0.0001 + this.x) * 0.8;
         this.y1 += Math.sin(Date.now() * 0.0001 + this.x) * 0.8;
@@ -122,6 +131,9 @@ export class PentagonParticles {
         this.lineWidth = lineWidth;
         this.color = color;
         this.joinStyle = joinStyle;
+        this.timestamp = 0;
+        this.interval = 1000 / 60;
+        this.timer = 0;
     }
 
     draw() {
@@ -140,7 +152,7 @@ export class PentagonParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas) {
+    update(scrollOffset = 0, canvas, isSmall) {
         const drift = scrollOffset * 0.02;
         this.y += Math.sin(Date.now() * 0.001 + this.x) * 0.2;
         // this.y += drift;
@@ -156,6 +168,9 @@ export class HexagonParticles {
         this.lineWidth = lineWidth;
         this.color = color;
         this.joinStyle = joinStyle;
+        this.timestamp = 0;
+        this.interval = 1000 / 60;
+        this.timer = 0;
     }
 
     draw() {
@@ -176,7 +191,7 @@ export class HexagonParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas) {
+    update(scrollOffset = 0, canvas, isSmall) {
         const drift = scrollOffset * 0.02;
         this.y += Math.sin(Date.now() * 0.001 + this.x) * 0.2;
         // this.y += drift;
@@ -194,6 +209,9 @@ export class DiamondParticles {
         this.color = color;
         this.joinStyle = joinStyle;
         this.direction = -1;
+        this.timestamp = 0;
+        this.interval = 1000 / 60;
+        this.timer = 0;
     }
 
     draw() {
@@ -210,7 +228,7 @@ export class DiamondParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas) {
+    update(scrollOffset = 0, canvas, isSmall) {
         const drift = scrollOffset * 0.002;
 
         if (this.y > canvas.height + 100) {

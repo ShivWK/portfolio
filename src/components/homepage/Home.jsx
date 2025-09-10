@@ -27,11 +27,21 @@ const Home = () => {
     const canvasRef = useRef(null);
     const lastClientHeight = useRef(0);
 
-    function particleHandler(particleArray, canvas) {
+    function particleHandler(particleArray, canvas, timestamp) {
         for (let i = 0; i < particleArray.length; i++) {
-            const isSmall = size === "small";
-            particleArray[i].update(scrollOffset, canvas, isSmall);
-            particleArray[i].draw();
+            // const deltaTime = timestamp - particleArray[i].timestamp;
+            // particleArray[i].timestamp = timestamp;
+
+            // console.log("timer =", particleArray[i].timer, "Interval =", particleArray[i].interval, "deltaTime =", deltaTime, "timestamp =",timestamp)
+
+            // if (particleArray[i].timer > particleArray[i].interval) {
+                const isSmall = size === "small";
+                particleArray[i].update(scrollOffset, canvas, isSmall);
+                particleArray[i].draw();
+                // particleArray[i].timer = 0;
+            // } else {
+                // particleArray[i].timer += deltaTime;
+            // }
         }
     }
 
@@ -105,15 +115,15 @@ const Home = () => {
                 const canvas = canvasRef.current;
                 const ctx = setupCanvas(canvas);
 
-                function animateSquares() {
+                function animateSquares(timeStamp) {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                    particleHandler(pentagonParticlesArray, canvas);
-                    particleHandler(hexagonParticlesArray, canvas)
-                    particleHandler(squareParticlesArray, canvas);
-                    particleHandler(circleParticlesArray, canvas);
-                    particleHandler(triangleParticlesArray, canvas);
-                    particleHandler(diamondParticlesArray, canvas);
+                    particleHandler(pentagonParticlesArray, canvas, timeStamp);
+                    particleHandler(hexagonParticlesArray, canvas, timeStamp)
+                    particleHandler(squareParticlesArray, canvas, timeStamp);
+                    particleHandler(circleParticlesArray, canvas, timeStamp);
+                    particleHandler(triangleParticlesArray, canvas, timeStamp);
+                    particleHandler(diamondParticlesArray, canvas, timeStamp);
 
                     requestAnimationFrame(animateSquares);
                 }
@@ -136,20 +146,20 @@ const Home = () => {
 
     }, [])
 
-    useEffect(() => {
-        const canvas = canvasRef.current;
+    // useEffect(() => {
+    //     const canvas = canvasRef.current;
 
-        particleHandler(pentagonParticlesArray, canvas);
-        particleHandler(hexagonParticlesArray, canvas);
-        particleHandler(squareParticlesArray, canvas);
-        particleHandler(circleParticlesArray, canvas);
-        particleHandler(triangleParticlesArray, canvas);
-        particleHandler(diamondParticlesArray, canvas);
+    //     particleHandler(pentagonParticlesArray, canvas);
+    //     particleHandler(hexagonParticlesArray, canvas);
+    //     particleHandler(squareParticlesArray, canvas);
+    //     particleHandler(circleParticlesArray, canvas);
+    //     particleHandler(triangleParticlesArray, canvas);
+    //     particleHandler(diamondParticlesArray, canvas);
 
-    }, [scrollOffset]);
+    // }, [scrollOffset]);
 
     return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
-        <HeroSection scrollOffset={scrollOffset} size={size} />
+        {/* <HeroSection scrollOffset={scrollOffset} size={size} /> */}
         <BodySection scrollOffset={scrollOffset} size={size} />
 
         <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
