@@ -139,7 +139,7 @@ const HeroSection = () => {
                     let numberOfParticles = particles;
 
                     for (let i = 0; i < numberOfParticles; i++) {
-                        let size = (Math.random() * (isSmall ? 4 : 4)) + 1;
+                        let size = (Math.random() * (isSmall ? 2.5 : 4)) + 1;
                         let x = (Math.random() * ((canvas.width - (size * 2)) - (size * 2)) + (size * 2));
                         let y = (Math.random() * ((canvas.height - (size * 2)) - (size * 2)) + (size * 2));
                         let directionX = (Math.random() * 1) - (isSmall ? 0.4 : 0.5);
