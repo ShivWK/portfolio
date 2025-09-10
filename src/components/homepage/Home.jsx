@@ -67,11 +67,12 @@ const Home = () => {
 
     function setupCanvas(canvas) {
         const ctx = canvas.getContext("2d");
-        // const dpr = window.devicePixelRatio || 1;
+        const dpr = window.devicePixelRatio || 1;
+        const isSmall = size === "small";
 
         const main = document.getElementById("main");
-        canvas.height = main.scrollHeight;
-        canvas.width = window.innerWidth;
+        canvas.height = main.scrollHeight * dpr;
+        canvas.width = window.innerWidth * dpr;
         // const rect = canvas.getBoundingClientRect();
         
         // console.log(rect);
@@ -93,12 +94,12 @@ const Home = () => {
         hexagonParticlesArray.length = 0;
         diamondParticlesArray.length = 0;
 
-        circleInit(ctx, canvas);
-        squareInit(ctx, canvas);
-        triangleInit(ctx, canvas);
-        pentagonInit(ctx, canvas);
-        hexagonInit(ctx, canvas);
-        diamondInit(ctx, canvas);
+        circleInit(ctx, canvas, isSmall);
+        squareInit(ctx, canvas, isSmall);
+        triangleInit(ctx, canvas, isSmall);
+        pentagonInit(ctx, canvas, isSmall);
+        hexagonInit(ctx, canvas, isSmall);
+        diamondInit(ctx, canvas, isSmall);
 
         return ctx;
     }
