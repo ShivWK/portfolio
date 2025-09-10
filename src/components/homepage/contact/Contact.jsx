@@ -1,8 +1,10 @@
 import { memo, useRef, useState } from "react";
+import useIntersection from "../../../utils/IntersectionObserver";
 // import { toast } from "react-toastify";
 
 const Contact = memo(() => {
   const formRef = useRef(null);
+  const [ready, setReady] = useState(false);
   const [errorIn, setErrorIn] = useState("");
   const [loading, setLoading] = useState(false);
   const [fieldValues, setFieldValues] = useState({
@@ -10,6 +12,8 @@ const Contact = memo(() => {
     email: "",
     query: "",
   });
+
+  useIntersection(formRef, setReady, 0.2);
 
   const fieldValuesHandler = (e) => {
     setFieldValues((prv) => ({
@@ -19,49 +23,50 @@ const Contact = memo(() => {
   };
 
   const submitHandler = async () => {
+    if (loading) return;
     const name = fieldValues.name;
     const email = fieldValues.email;
     const message = fieldValues.query;
 
     if (name.length === 0 || name.length > 100) {
       setErrorIn("name");
-      toast.info("Name must be between 1 and 100 characters.", {
-        autoClose: 3000,
-        style: {
-          backgroundColor: "red",
-          color: "white",
-          fontWeight: "medium",
-        },
-        progressClassName: "progress-style",
-      });
+      // toast.info("Name must be between 1 and 100 characters.", {
+      //   autoClose: 3000,
+      //   style: {
+      //     backgroundColor: "red",
+      //     color: "white",
+      //     fontWeight: "medium",
+      //   },
+      //   progressClassName: "progress-style",
+      // });
       return;
     }
 
     if (email.length === 0 || email.length > 254 || !email.includes("@")) {
       setErrorIn("email");
-      toast.info("Enter a valid email address.", {
-        autoClose: 3000,
-        style: {
-          backgroundColor: "red",
-          color: "white",
-          fontWeight: "medium",
-        },
-        progressClassName: "progress-style",
-      });
+      // toast.info("Enter a valid email address.", {
+      //   autoClose: 3000,
+      //   style: {
+      //     backgroundColor: "red",
+      //     color: "white",
+      //     fontWeight: "medium",
+      //   },
+      //   progressClassName: "progress-style",
+      // });
       return;
     }
 
     if (message.length === 0 || message.length > 1000) {
       setErrorIn("query");
-      toast.info("Message must be between 1 and 1000 characters.", {
-        autoClose: 3000,
-        style: {
-          backgroundColor: "red",
-          color: "white",
-          fontWeight: "medium",
-        },
-        progressClassName: "progress-style",
-      });
+      // toast.info("Message must be between 1 and 1000 characters.", {
+      //   autoClose: 3000,
+      //   style: {
+      //     backgroundColor: "red",
+      //     color: "white",
+      //     fontWeight: "medium",
+      //   },
+      //   progressClassName: "progress-style",
+      // });
       return;
     }
 
@@ -78,15 +83,15 @@ const Contact = memo(() => {
 
       if (result.success) {
         setLoading(false);
-        toast.info("Message sent successfully!", {
-          autoClose: 3000,
-          style: {
-            backgroundColor: "green",
-            color: "white",
-            fontWeight: "medium",
-          },
-          progressClassName: "progress-style",
-        });
+        // toast.info("Message sent successfully!", {
+        //   autoClose: 3000,
+        //   style: {
+        //     backgroundColor: "green",
+        //     color: "white",
+        //     fontWeight: "medium",
+        //   },
+        //   progressClassName: "progress-style",
+        // });
 
         setFieldValues({
           name: "",
@@ -95,14 +100,14 @@ const Contact = memo(() => {
         });
       } else {
         setLoading(false);
-        toast.error("Failed to send message. Please try again later.", {
-          autoClose: 3000,
-          style: {
-            color: "white",
-            fontWeight: "medium",
-          },
-          progressClassName: "progress-style",
-        });
+        // toast.error("Failed to send message. Please try again later.", {
+        //   autoClose: 3000,
+        //   style: {
+        //     color: "white",
+        //     fontWeight: "medium",
+        //   },
+        //   progressClassName: "progress-style",
+        // });
       }
     } catch (err) {
       setLoading(false);
@@ -119,17 +124,17 @@ const Contact = memo(() => {
   };
 
   return (
-    <div className="basis-[75%] lg:pl-7 py-2 lg:py-7 text-black">
-      <h1 className="text-[28px] dark:text-white font-bold tracking-tight mb-2 hidden lg:block">
-        Contact Us
-      </h1>
-      <p className="text-[16px] mb-4 lg:mb-6 text-gray-700 dark:text-gray-200">
-        Have any questions or inquiries? We'd love to hear from you.
+    <div className={`text-black w-full flex flex-col justify-center gap-8 mt-2 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
+      <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 -mb-2.5 lg:mb-0 self-start">
+        Contact Me
+      </h2>
+      <p className="text-justify lg:text-lg tracking-wider font-medium font-content text-white">
+        Have a question, an opportunity, or just want to say hello? Drop me a message and I’ll get back to you soon.
       </p>
 
       <form
         ref={formRef}
-        className="p-4 lg:p-5 border-[1px] dark:border-2 border-primary w-[95%] lg:w-[70%] max-lg:mx-auto flex flex-col gap-2 rounded-xl"
+        className="p-4 lg:p-5 border-2 border-[#53eafd] w-[95%] lg:w-[55%] max-lg:mx-auto flex flex-col gap-2 rounded-xl mx-auto backdrop-blur-md"
       >
         <input
           type="hidden"
@@ -144,10 +149,10 @@ const Contact = memo(() => {
             onChange={fieldValuesHandler}
             name="name"
             placeholder="Enter your name"
-            className={`w-full bg-gray-100 dark:placeholder:text-gray-600 dark:bg-gray-200 py-2 lg:py-3 outline-none px-3 lg:px-4 rounded-md border-[1px] dark:border-2 ${errorIn === "name" ? "border-red-500" : "border-transparent"}`}
+            className={`w-full text-white bg-blue-500/40 placeholder:text-blue-300 py-2 lg:py-3 outline-none px-3 lg:px-4 rounded-md border dark:border-2 ${errorIn === "name" ? "border-red-500" : "border-transparent"}`}
           />
           <p
-            className={`absolute right-1 text-xs font-medium mt-1 ${fieldValues.name.length >= 100 ? "text-red-500" : "text-gray-600 dark:text-gray-300"
+            className={`absolute right-1 text-xs font-medium mt-1 ${fieldValues.name.length >= 100 ? "text-red-500" : "text-[#53eafd]"
               }`}
           >{`${fieldValues.name.length}/100`}</p>
         </div>
@@ -159,10 +164,10 @@ const Contact = memo(() => {
             onChange={fieldValuesHandler}
             name="email"
             placeholder="Enter your email"
-            className={`w-full bg-gray-100 dark:placeholder:text-gray-600 dark:bg-gray-200 py-2 lg:py-3 outline-none px-3 lg:px-4 rounded-md border-[1px] dark:border-2 ${errorIn === "email" ? "border-red-500" : "border-transparent"}`}
+            className={`w-full text-white bg-blue-500/40 placeholder:text-blue-300 py-2 lg:py-3 outline-none px-3 lg:px-4 rounded-md border dark:border-2 ${errorIn === "email" ? "border-red-500" : "border-transparent"}`}
           />
           <p
-            className={`absolute right-1 text-xs font-medium mt-1 ${fieldValues.email.length >= 254 ? "text-red-500" : "text-gray-600 dark:text-gray-300"
+            className={`absolute right-1 text-xs font-medium mt-1 ${fieldValues.email.length >= 254 ? "text-red-500" : "text-[#53eafd]"
               }`}
           >{`${fieldValues.email.length}/254`}</p>
         </div>
@@ -173,31 +178,24 @@ const Contact = memo(() => {
             value={fieldValues.query}
             onChange={fieldValuesHandler}
             placeholder="Type your message..."
-            className={`w-full bg-gray-100 dark:placeholder:text-gray-600 dark:bg-gray-200 py-2 lg:py-3 outline-none px-3 lg:px-4 rounded-md min-h-48 lg:min-h-60 border-[1px] dark:border-2 ${errorIn === "query" ? "border-red-500" : "border-transparent"}`}
+            className={`w-full text-white bg-blue-500/40 placeholder:text-blue-300 py-2 lg:py-3 outline-none px-3 lg:px-4 rounded-md min-h-48 lg:min-h-60 border-[1px] dark:border-2 ${errorIn === "query" ? "border-red-500" : "border-transparent"}`}
           ></textarea>
           <p
             className={`absolute right-1 text-xs font-medium ${fieldValues.query.length >= 1000
               ? "text-red-500"
-              : "text-gray-600 dark:text-gray-300"
+              : "text-[#53eafd]"
               }`}
           >{`${fieldValues.query.length}/1000`}</p>
         </div>
-
-        <input
-          type="checkbox"
-          name="botcheck"
-          className="hidden"
-          style={{ display: "none" }}
-        ></input>
       </form>
 
       <button
         onClick={submitHandler}
         disabled={loading}
-        className={`mt-6 py-2 px-6 max-lg:mx-auto font-semibold rounded-md border-[1px] ${loading ? "bg-gray-200 text-gray-400 border-gray-400" : "active:scale-95 hover:bg-primary bg-primary/90 border-primary dark:bg-darkPrimary text-white "} transition-transform ease-in-out duration-75 cursor-pointer flex items-center gap-2.5`}
+        className={`py-2 px-6 mx-auto font-semibold rounded-md ${loading ? "bg-blue-600/40 text-blue-300 border border-blue-400" : "active:scale-95 hover:bg-primary bg-blue-500 text-white "} transition-transform ease-in-out duration-75 cursor-pointer flex items-center gap-2.5`}
       >
-        Send Email
-        {loading && <div className="mx-auto block border-4 border-t-black border-white animate-spin rounded-[50%] h-6 w-6"></div>}
+        {loading ? "Sending" : "Send Email"}
+        {loading && <div className="mx-auto block border-4 border-t-black border-blue-400 animate-spin rounded-[50%] h-6 w-6"></div>}
       </button>
     </div>
   );

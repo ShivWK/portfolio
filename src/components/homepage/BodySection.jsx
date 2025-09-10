@@ -6,6 +6,7 @@ import Skills from "./about/Skills";
 // const GithubStats = lazy(() => import("./about/GithubStats"));
 import GithubStats from "./about/GithubStats";
 import Projects from "./projects/Projects";
+import Contact from "./contact/Contact";
 
 const BodySection = ({ scrollOffset, isSmall }) => {
     const [ready, setReady] = useState(false);
@@ -58,10 +59,10 @@ const BodySection = ({ scrollOffset, isSmall }) => {
         </section>
         {/* <section id="content" className="section scroll-mt-30">
 
-        </section>
-        <section id="contact" className="section scroll-mt-30">
-
         </section> */}
+        <section id="contact" className="section scroll-mt-30 mx-auto lg:w-[1024px] max-lg:px-3">
+         <Contact />
+        </section>
     </section>
 }
 

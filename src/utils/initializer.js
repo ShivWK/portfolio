@@ -18,7 +18,7 @@ let colors = ["#E34F2699", "#b0a10999", "#d44ab199", "#08b5c499", "#764ABC99", "
 
 export function circleInit(ctx, canvas) {
     const isSmall = window.innerWidth <= 768;
-    console.log(isSmall);
+    // console.log(isSmall);
 
     const count = isSmall ? 15 : 20
     for (let i = 0; i < count; i++) {
@@ -42,7 +42,7 @@ export function circleInit(ctx, canvas) {
 
 export const squareInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
-    console.log(isSmall)
+    // console.log(isSmall)
 
     const count  = isSmall ? 18 : 30;
     for (let i = 0; i < count; i++) {
@@ -70,7 +70,7 @@ export const squareInit = (ctx, canvas) => {
 
 export const triangleInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
-    console.log(isSmall)
+    // console.log(isSmall)
 
     const count = isSmall ? 10 : 20;
     for (let i = 0; i < count; i++) {
@@ -96,7 +96,7 @@ export const triangleInit = (ctx, canvas) => {
 
 export const pentagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
-    console.log(isSmall)
+    // console.log(isSmall)
 
     const count = isSmall ? 6 : 10;
     for (let i = 0; i < count; i++) {
@@ -122,7 +122,7 @@ export const pentagonInit = (ctx, canvas) => {
 
 export const hexagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
-    console.log(isSmall)
+    // console.log(isSmall)
 
     const count = isSmall ? 5 : 12;
     for (let i = 0; i < count; i++) {
@@ -148,7 +148,7 @@ export const hexagonInit = (ctx, canvas) => {
 
 export const diamondInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
-    console.log(isSmall)
+    // console.log(isSmall)
 
     const count = isSmall ? 8 : 20;
     for (let i = 0; i < count; i++) {
