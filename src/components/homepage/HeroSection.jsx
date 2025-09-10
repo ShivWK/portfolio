@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Download } from "lucide-react";
 
 const HeroSection = () => {
-    const [particles, setParticles] = useState(400);
+    const [particles, setParticles] = useState(200);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)");
     const [ready, setReady] = useState(false);
@@ -34,7 +34,7 @@ const HeroSection = () => {
         const small = window.innerWidth <= 768;
 
         if (small) {
-            setParticles(400);
+            setParticles(200);
         } else {
             setParticles(320);
         }
@@ -139,11 +139,11 @@ const HeroSection = () => {
                     let numberOfParticles = particles;
 
                     for (let i = 0; i < numberOfParticles; i++) {
-                        let size = (Math.random() * 3) + 1;
+                        let size = (Math.random() * (isSmall ? 8 : 4)) + 1;
                         let x = (Math.random() * ((canvas.width - (size * 2)) - (size * 2)) + (size * 2));
                         let y = (Math.random() * ((canvas.height - (size * 2)) - (size * 2)) + (size * 2));
-                        let directionX = (Math.random() * 1) - 0.5;
-                        let directionY = (Math.random() * 1) - 0.5;
+                        let directionX = (Math.random() * 1) - (isSmall ? 0.1 : 0.5);
+                        let directionY = (Math.random() * 1) - (isSmall ? 0.1 : 0.5);
                         let color = "#0099ffff";
 
                         particleArray.push(new Particle(x, y, directionX, directionY, size, color));
@@ -160,7 +160,7 @@ const HeroSection = () => {
 
                             if (distance < (canvas.width / 11) * (canvas.height) / 11) {
                                 ctx.strokeStyle = "rgba(24, 117, 179, 0.49)",
-                                    ctx.lineWidth = 1;
+                                ctx.lineWidth = isSmall ? 3 : 1;
                                 ctx.beginPath();
                                 ctx.moveTo(particleArray[a].x, particleArray[a].y);
                                 ctx.lineTo(particleArray[b].x, particleArray[b].y);
@@ -190,7 +190,7 @@ const HeroSection = () => {
 
 
                     if (window.innerWidth <= 768) {
-                        setParticles(400);
+                        setParticles(200);
                     } else {
                         setParticles(320);
                     }
