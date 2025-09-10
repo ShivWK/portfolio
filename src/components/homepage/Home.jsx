@@ -67,6 +67,7 @@ const Home = () => {
     function setupCanvas(canvas) {
         const ctx = canvas.getContext("2d");
         const dpr = window.devicePixelRatio || 1;
+        ctx.scale(dpr, dpr);
 
         const main = document.getElementById("main");
         const rect = main.getBoundingClientRect();
@@ -77,8 +78,7 @@ const Home = () => {
         canvas.style.width = `${rect.width}px`;
         canvas.style.height = `${rect.height}px`;
 
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.scale(dpr, dpr);
+        // ctx.setTransform(1, 0, 0, 1, 0, 0);
 
         circleParticlesArray.length = 0;
         squareParticlesArray.length = 0;
@@ -101,23 +101,6 @@ const Home = () => {
         const startCanvas = () => {
             if (canvasRef.current) {
                 const canvas = canvasRef.current;
-                // const ctx = canvas.getContext("2d");
-
-                // const dpr = window.devicePixelRatio || 1;
-
-                // const main = document.getElementById("main");
-                // canvas.width = window.innerWidth * dpr;
-                // canvas.height = main.scrollHeight * dpr;
-
-                // ctx.scale(dpr, dpr);
-
-                // circleInit(ctx, canvas);
-                // squareInit(ctx, canvas);
-                // triangleInit(ctx, canvas);
-                // pentagonInit(ctx, canvas);
-                // hexagonInit(ctx, canvas);
-                // diamondInit(ctx, canvas);
-
                 const ctx = setupCanvas(canvas);
 
                 function animateSquares() {

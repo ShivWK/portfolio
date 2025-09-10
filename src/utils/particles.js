@@ -21,22 +21,22 @@ export class CircleParticles {
     update(scrollOffset = 0, canvas) {
         const drift = scrollOffset * 0.02;
 
-        if (this.y > canvas.height + 60) {
+        if (this.y > canvas.height + 30) {
             this.directionY = -1;
-        } else if (this.y < 0 - 60) {
+        } else if (this.y < 0 - 30) {
             this.directionY = 1;
         }
 
         this.y += this.directionY * 0.3;
 
-        if (this.x > canvas.width + 10) {
+        if (this.x > canvas.width + 5) {
             this.directionX = -1;
-        } else if (this.x < 0 - 10) {
+        } else if (this.x < 0 - 5) {
             this.directionX = 1;
         }
 
         this.x += this.directionX * Math.random() * canvas.width * 0.0001;
-        this.y += drift
+        // this.y += drift
     }
 }
 
@@ -69,7 +69,7 @@ export class SquareParticles {
     update(scrollOffset = 0, canvas) {
         const drift = scrollOffset * 0.002;
         this.lineWidth = 0.5 + Math.sin(Date.now() * 0.0004 + this.x) * 0.5
-        this.y += drift
+        // this.y += drift
     }
 }
 
@@ -107,9 +107,9 @@ export class TriangleParticles {
         this.y1 += Math.sin(Date.now() * 0.0001 + this.x) * 0.8;
         this.y2 += Math.sin(Date.now() * 0.0001 + this.x) * 0.8;
 
-        this.y += drift;
-        this.y1 += drift;
-        this.y2 += drift;
+        // this.y += drift;
+        // this.y1 += drift;
+        // this.y2 += drift;
     }
 }
 
@@ -143,7 +143,7 @@ export class PentagonParticles {
     update(scrollOffset = 0, canvas) {
         const drift = scrollOffset * 0.02;
         this.y += Math.sin(Date.now() * 0.001 + this.x) * 0.2;
-        this.y += drift;
+        // this.y += drift;
     }
 }
 
@@ -179,7 +179,7 @@ export class HexagonParticles {
     update(scrollOffset = 0, canvas) {
         const drift = scrollOffset * 0.02;
         this.y += Math.sin(Date.now() * 0.001 + this.x) * 0.2;
-        this.y += drift;
+        // this.y += drift;
     }
 }
 
@@ -220,6 +220,6 @@ export class DiamondParticles {
         }
 
         this.y += this.direction * 0.38;
-        this.y += drift;
+        // this.y += drift;
     }
 }

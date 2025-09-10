@@ -47,6 +47,9 @@ const HeroSection = () => {
                 const rect = canvas.getBoundingClientRect();
                 const dpr = window.devicePixelRatio || 1;
 
+                const ctx = canvas.getContext("2d");
+                ctx.scale(dpr, dpr);
+
                 canvas.width = rect.width * dpr;
                 canvas.height = rect.height * dpr;
 
@@ -55,9 +58,6 @@ const HeroSection = () => {
 
                 // canvas.width = canvasRef.current.offsetWidth * dpr;
                 // canvas.height = canvasRef.current.offsetHeight * dpr;
-
-                const ctx = canvas.getContext("2d");
-                ctx.scale(dpr, dpr);
 
                 let particleArray = [];
 
@@ -132,7 +132,6 @@ const HeroSection = () => {
                         }
 
                         // if it is not colliding then move it by its direction value;
-
                         this.x += this.directionX;
                         this.y += this.directionY;
                     }
