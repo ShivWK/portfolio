@@ -18,20 +18,20 @@ export class CircleParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas) {
+    update(scrollOffset = 0, canvas, isSmall) {
         const drift = scrollOffset * 0.02;
 
-        if (this.y > canvas.height + 30) {
+        if (this.y > canvas.height) {
             this.directionY = -1;
-        } else if (this.y < 0 - 30) {
+        } else if (this.y < 0) {
             this.directionY = 1;
         }
 
-        this.y += this.directionY * 0.3;
+        this.y += this.directionY * (isSmall ? 0.6 : 0.2);
 
-        if (this.x > canvas.width + 5) {
+        if (this.x > canvas.width) {
             this.directionX = -1;
-        } else if (this.x < 0 - 5) {
+        } else if (this.x < 0) {
             this.directionX = 1;
         }
 

@@ -29,7 +29,8 @@ const Home = () => {
 
     function particleHandler(particleArray, canvas) {
         for (let i = 0; i < particleArray.length; i++) {
-            particleArray[i].update(scrollOffset, canvas);
+            const isSmall = size === "small";
+            particleArray[i].update(scrollOffset, canvas, isSmall);
             particleArray[i].draw();
         }
     }
