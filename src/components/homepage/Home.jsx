@@ -79,7 +79,7 @@ const Home = () => {
         canvas.style.height = `${rect.height}px`;
 
         // ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.scale(dpr, dpr);
+        // ctx.scale(dpr, dpr);
 
         circleParticlesArray.length = 0;
         squareParticlesArray.length = 0;

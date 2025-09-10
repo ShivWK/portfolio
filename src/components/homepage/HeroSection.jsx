@@ -55,7 +55,7 @@ const HeroSection = () => {
                 canvas.style.width = `${rect.width}px`;
                 canvas.style.height = `${rect.height}px`;
 
-                ctx.scale(dpr, dpr);
+                // ctx.scale(dpr, dpr);
 
                 let particleArray = [];
 
