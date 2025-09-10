@@ -38,7 +38,7 @@ export function circleInit(ctx, canvas, isSmall) {
 }
 
 export const squareInit = (ctx, canvas, isSmall) => {
-    const count  = isSmall ? 20 : 30;
+    const count  = isSmall ? 15 : 30;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -63,7 +63,7 @@ export const squareInit = (ctx, canvas, isSmall) => {
 }
 
 export const triangleInit = (ctx, canvas, isSmall) => {
-    const count = isSmall ? 10 : 20;
+    const count = isSmall ? 6 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -132,7 +132,7 @@ export const hexagonInit = (ctx, canvas, isSmall) => {
 }
 
 export const diamondInit = (ctx, canvas, isSmall) => {
-    const count = isSmall ? 10 : 20;
+    const count = isSmall ? 6 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
