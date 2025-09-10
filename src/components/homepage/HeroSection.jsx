@@ -1,13 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Download } from "lucide-react";
 
-const HeroSection = () => {
+const HeroSection = ({ isSmall }) => {
     const [particles, setParticles] = useState(200);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)");
     const [ready, setReady] = useState(false);
 
-    const isSmall = window.innerWidth <= 768;
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
 
@@ -31,31 +30,23 @@ const HeroSection = () => {
     // }
 
     useEffect(() => {
-        const small = window.innerWidth <= 768;
-
-        if (small) {
+        if (isSmall) {
             setParticles(200);
         } else {
             setParticles(320);
         }
-    }, [])
+    }, [isSmall])
 
     useEffect(() => {
         const startCanvas = () => {
             if (heroRef.current && canvasRef.current) {
                 const canvas = canvasRef.current;
                 const rect = heroRef.current;
-                // const dpr = window.devicePixelRatio || 1;
 
                 const ctx = canvas.getContext("2d");
 
                 canvas.width = rect.offsetWidth;
                 canvas.height = rect.offsetHeight;
-
-                // canvas.style.width = `${rect.width}px`;
-                // canvas.style.height = `${rect.height}px`;
-
-                // ctx.scale(dpr, dpr);
 
                 let particleArray = [];
 

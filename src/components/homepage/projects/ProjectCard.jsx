@@ -1,21 +1,21 @@
 import { CircleArrowRight, Cog } from "lucide-react";
 import { Icon } from "@iconify/react";
 
-const ProjectCard = ({ data, size }) => {
+const ProjectCard = ({ data, isSmall }) => {
     return <div className="flex flex-col items-center gap-0.5 lg:gap-1 lg:basis-[48%] basis-full backdrop-blur-md rounded-xl shadow-[0_0_15px_2px_rgba(3,165,252,0.6)]">
         <div id="projectPic" className="relative group w-full h-52 md:h-64 lg:h-72 overflow-hidden border-4 border-[#011932] rounded-xl">
             <img src={data.homeScreenPic} alt="Project home screen" className="object-cover w-full h-full  hover:scale-110 transition-all duration-300 ease-in-out" />
             <a href={data.liveLink} target="__blank" className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
                 <p>{data.underDevelopment ? "Live Demo" : "Live"}</p>
-                <CircleArrowRight size={size === "small" ? 18 : 20} strokeWidth={2.5} className="transform rotate-[-45deg] group-hover:animate-pulse" />
+                <CircleArrowRight size={isSmall ? 18 : 20} strokeWidth={2.5} className="transform rotate-[-45deg] group-hover:animate-pulse" />
             </a>
             <a href={data.githubLink} target="__blank" className="group projectTag z-10 tracking-wider -bottom-1 -right-1 rounded-tl-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
                 <p>github </p>
-                <Icon icon="skill-icons:github-light" width={size === "small" ? 18 : 20} height={size === "small" ? 18 : 20} className="group-hover:animate-pulse" />
+                <Icon icon="skill-icons:github-light" width={isSmall ? 18 : 20} height={isSmall ? 18 : 20} className="group-hover:animate-pulse" />
             </a>
             {
                 data.underDevelopment && <div className="absolute left-1 bottom-1 flex items-center gap-1.5 lg:gap-2 px-1.5 lg:px-2 py-0.5 rounded-md bg-[linear-gradient(to_right,#2575FC,#6A11CB,#667EEA)]">
-                    <Cog size={size === "small" ? 18 : 20} strokeWidth={2.5} className="animate-spin text-white" />
+                    <Cog size={isSmall ? 18 : 20} strokeWidth={2.5} className="animate-spin text-white" />
                     <p className="text-white max-lg:text-sm tracking-wide font-heading font-medium lg:font-semibold z-20">Under Development</p>
                 </div>
             }
@@ -26,7 +26,7 @@ const ProjectCard = ({ data, size }) => {
             </p>
             <div className="flex items-center gap-1.5 lg:gap-3 flex-wrap">
                 {
-                    data.techStack.map((data, index) => <Icon key={index} icon={data.icon} width={size === "small" ? 25 : 30} height={size === "small" ? 25 : 30} className="group-hover:animate-pulse" />)
+                    data.techStack.map((data, index) => <Icon key={index} icon={data.icon} width={isSmall ? 25 : 30} height={isSmall ? 25 : 30} className="group-hover:animate-pulse" />)
                 }
             </div>
             <div className="flex flex-wrap items-center gap-1 lg:gap-2 self-start">

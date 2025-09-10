@@ -7,7 +7,7 @@ import Skills from "./about/Skills";
 import GithubStats from "./about/GithubStats";
 import Projects from "./projects/Projects";
 
-const BodySection = ({ scrollOffset, size }) => {
+const BodySection = ({ scrollOffset, isSmall }) => {
     const [ready, setReady] = useState(false);
     const [currentSection, setCurrentSection] = useState("");
 
@@ -47,21 +47,21 @@ const BodySection = ({ scrollOffset, size }) => {
                 <About />
             </div>
             {/* <Suspense fallback={<p>Loading...</p>}> */}
-            <Skills size={size} />
+            <Skills isSmall={isSmall} />
             {/* </Suspense> */}
             {/* <Suspense fallback={<p>Loading...</p>}> */}
-            <GithubStats size={size} />
+            <GithubStats isSmall={isSmall} />
             {/* </Suspense> */}
         </section>
         <section id="projects" className="section scroll-mt-30">
-            <Projects size={size} />
+            <Projects isSmall={isSmall} />
         </section>
-        <section id="content" className="section scroll-mt-30">
+        {/* <section id="content" className="section scroll-mt-30">
 
         </section>
         <section id="contact" className="section scroll-mt-30">
 
-        </section>
+        </section> */}
     </section>
 }
 

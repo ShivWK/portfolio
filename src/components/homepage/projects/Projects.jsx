@@ -3,7 +3,7 @@ import useIntersection from "../../../utils/IntersectionObserver"
 import { majorProjects, minProjects } from "../../../utils/projectsData";
 import ProjectCard from "./ProjectCard";
 
-const Projects = ({ size }) => {
+const Projects = ({ isSmall }) => {
     const [ready, setReady] = useState(false);
     const containerRef = useRef();
 
@@ -20,7 +20,7 @@ const Projects = ({ size }) => {
 
         <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 w-full" >
             {majorProjects.map((data, index) => {
-                return <ProjectCard key={index} data={data} size={size} />
+                return <ProjectCard key={index} data={data} isSmall={isSmall} />
             })}
         </div>
 
@@ -28,7 +28,7 @@ const Projects = ({ size }) => {
 
         <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 w-full" >
             {minProjects.map((data, index) => {
-                return <ProjectCard key={index} data={data} size={size} />
+                return <ProjectCard key={index} data={data} isSmall={isSmall} />
             })}
         </div>
 

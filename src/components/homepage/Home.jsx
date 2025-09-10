@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useLayoutEffect } from "react";
 import HeroSection from "./HeroSection";
 import BodySection from "./BodySection";
 
@@ -24,13 +24,14 @@ import BackToTopButton from "../BackToTopButton";
 const Home = () => {
     const [scrollOffset, setScrollOffset] = useState(0);
     const [ready, setReady] = useState(false);
-    const [size, setSize] = useState("");
+    const [isSmall, setIsSmall] = useState("");
     const canvasRef = useRef(null);
     const lastClientHeight = useRef(0);
 
+    // console.log("home", isSmall)
+
     function particleHandler(particleArray, canvas, timestamp) {
         for (let i = 0; i < particleArray.length; i++) {
-                const isSmall = size === "small";
                 particleArray[i].update(scrollOffset, canvas, isSmall);
                 particleArray[i].draw();
         }
@@ -52,12 +53,12 @@ const Home = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const resizeHandler = () => {
             if (window.innerWidth <= 768) {
-                setSize("small");
+                setIsSmall(true);
             } else {
-                setSize("large");
+                setIsSmall(false);
             }
         }
         resizeHandler();
@@ -68,7 +69,6 @@ const Home = () => {
 
     function setupCanvas(canvas) {
         const ctx = canvas.getContext("2d");
-        const isSmall = size === "small";
 
         const main = document.getElementById("main");
         canvas.height = main.scrollHeight;
@@ -126,7 +126,7 @@ const Home = () => {
             setReady(true);
         }, { timeout: 1000 })
 
-    }, [])
+    }, [isSmall])
 
     // useEffect(() => {
     //     const canvas = canvasRef.current;
@@ -141,8 +141,8 @@ const Home = () => {
     // }, [scrollOffset]);
 
     return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
-        <HeroSection scrollOffset={scrollOffset} size={size} />
-        <BodySection scrollOffset={scrollOffset} size={size} />
+    <HeroSection scrollOffset={scrollOffset} isSmall={isSmall} />
+    <BodySection scrollOffset={scrollOffset} isSmall={isSmall} />
 
         <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
         <BackToTopButton />

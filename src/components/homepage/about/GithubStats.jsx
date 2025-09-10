@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import useIntersection from "../../../utils/IntersectionObserver";
 
-const GithubStats = ({ size }) => {
+const GithubStats = ({ isSmall }) => {
     const [ready, setReady] = useState(false);
     const containerRef = useRef(null);
     useIntersection(containerRef, setReady);
@@ -17,7 +17,7 @@ const GithubStats = ({ size }) => {
             </div>
         </div>
         <div className="hidden lg:block">
-            <img className="-z-50" src={`https://github-readme-activity-graph.vercel.app/graph?username=ShivWK&theme=react-dark&color=ffffff&border_color=53eafd&point=53eafd&radius=16&height=${size === "small" ? 500 : 350}&from=2024-14-20`} />
+            <img className="-z-50" src={`https://github-readme-activity-graph.vercel.app/graph?username=ShivWK&theme=react-dark&color=ffffff&border_color=53eafd&point=53eafd&radius=16&height=${isSmall ? 500 : 350}&from=2024-14-20`} />
         </div>
     </div>
 }
