@@ -29,19 +29,9 @@ const Home = () => {
 
     function particleHandler(particleArray, canvas, timestamp) {
         for (let i = 0; i < particleArray.length; i++) {
-            // const deltaTime = timestamp - particleArray[i].timestamp;
-            // particleArray[i].timestamp = timestamp;
-
-            // console.log("timer =", particleArray[i].timer, "Interval =", particleArray[i].interval, "deltaTime =", deltaTime, "timestamp =",timestamp)
-
-            // if (particleArray[i].timer > particleArray[i].interval) {
                 const isSmall = size === "small";
                 particleArray[i].update(scrollOffset, canvas, isSmall);
                 particleArray[i].draw();
-                // particleArray[i].timer = 0;
-            // } else {
-                // particleArray[i].timer += deltaTime;
-            // }
         }
     }
 
@@ -77,20 +67,24 @@ const Home = () => {
 
     function setupCanvas(canvas) {
         const ctx = canvas.getContext("2d");
-        const dpr = window.devicePixelRatio || 1;
+        // const dpr = window.devicePixelRatio || 1;
 
         const main = document.getElementById("main");
-        const rect = main.getBoundingClientRect();
+        canvas.height = main.scrollHeight;
+        canvas.width = window.innerWidth;
+        // const rect = canvas.getBoundingClientRect();
+        
+        // console.log(rect);
 
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
+        // canvas.width = rect.width * dpr;
+        // canvas.height = rect.height * dpr;
 
+        // ctx.scale(dpr, dpr);
 
-        canvas.style.width = `${rect.width}px`;
-        canvas.style.height = `${rect.height}px`;
+        // canvas.style.width = `${rect.width}px`;
+        // canvas.style.height = `${rect.height}px`;
 
         // ctx.setTransform(1, 0, 0, 1, 0, 0);
-        // ctx.scale(dpr, dpr);
 
         circleParticlesArray.length = 0;
         squareParticlesArray.length = 0;
@@ -159,10 +153,10 @@ const Home = () => {
     // }, [scrollOffset]);
 
     return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
-        {/* <HeroSection scrollOffset={scrollOffset} size={size} /> */}
+        <HeroSection scrollOffset={scrollOffset} size={size} />
         <BodySection scrollOffset={scrollOffset} size={size} />
 
-        <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
+        <canvas ref={canvasRef} className={`absolute top-0 left-0 w-full h-full bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
     </main>
 }
 
