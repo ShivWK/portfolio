@@ -167,7 +167,7 @@ const Home = () => {
         <HeroSection scrollOffset={scrollOffset} size={size} />
         <BodySection scrollOffset={scrollOffset} size={size} />
 
-        <canvas ref={canvasRef} className={`absolute top-0 left-0 w-full h-full bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
+        <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
     </main>
 }
 
