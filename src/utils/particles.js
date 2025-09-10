@@ -21,7 +21,8 @@ export class CircleParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas, isSmall) {
+    update(scrollOffset = 0, canvas) {
+        const isSmall = window.innerWidth <= 768;
         const drift = scrollOffset * 0.02;
 
         if (this.y > canvas.height) {
@@ -30,7 +31,7 @@ export class CircleParticles {
             this.directionY = 1;
         }
 
-        this.y += this.directionY * (isSmall ? 0.6 : 0.2);
+        this.y += this.directionY * (isSmall ? 0.3 : 0.2);
 
         if (this.x > canvas.width) {
             this.directionX = -1;
@@ -72,7 +73,7 @@ export class SquareParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas, isSmall) {
+    update(scrollOffset = 0, canvas) {
         const drift = scrollOffset * 0.002;
         this.lineWidth = 0.5 + Math.sin(Date.now() * 0.0004 + this.x) * 0.5
         // this.y += drift

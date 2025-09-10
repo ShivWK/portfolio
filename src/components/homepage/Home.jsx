@@ -126,7 +126,7 @@ const Home = () => {
             setReady(true);
         }, { timeout: 1000 })
 
-    }, [isSmall])
+    }, [])
 
     // useEffect(() => {
     //     const canvas = canvasRef.current;

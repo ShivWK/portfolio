@@ -68,7 +68,7 @@ export const squareInit = (ctx, canvas) => {
     }
 }
 
-export const triangleInit = (ctx, canvas, isSmall) => {
+export const triangleInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
@@ -94,7 +94,7 @@ export const triangleInit = (ctx, canvas, isSmall) => {
     }
 }
 
-export const pentagonInit = (ctx, canvas, isSmall) => {
+export const pentagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
@@ -120,7 +120,7 @@ export const pentagonInit = (ctx, canvas, isSmall) => {
     }
 }
 
-export const hexagonInit = (ctx, canvas, isSmall) => {
+export const hexagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
@@ -146,7 +146,7 @@ export const hexagonInit = (ctx, canvas, isSmall) => {
     }
 }
 
-export const diamondInit = (ctx, canvas, isSmall) => {
+export const diamondInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
