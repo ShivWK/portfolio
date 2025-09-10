@@ -44,20 +44,18 @@ const HeroSection = () => {
         const startCanvas = () => {
             if (heroRef.current && canvasRef.current) {
                 const canvas = canvasRef.current;
-                const rect = canvas.getBoundingClientRect();
+                const rect = heroRef.current;
                 const dpr = window.devicePixelRatio || 1;
 
                 const ctx = canvas.getContext("2d");
-                ctx.scale(dpr, dpr);
 
-                canvas.width = rect.width * dpr;
-                canvas.height = rect.height * dpr;
+                canvas.width = rect.offsetWidth * dpr;
+                canvas.height = rect.offsetHeight * dpr;
+
+                ctx.scale(dpr, dpr);
 
                 canvas.style.width = `${rect.width}px`;
                 canvas.style.height = `${rect.height}px`;
-
-                // canvas.width = canvasRef.current.offsetWidth * dpr;
-                // canvas.height = canvasRef.current.offsetHeight * dpr;
 
                 let particleArray = [];
 

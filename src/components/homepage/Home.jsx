@@ -67,13 +67,14 @@ const Home = () => {
     function setupCanvas(canvas) {
         const ctx = canvas.getContext("2d");
         const dpr = window.devicePixelRatio || 1;
-        ctx.scale(dpr, dpr);
 
         const main = document.getElementById("main");
         const rect = main.getBoundingClientRect();
 
         canvas.width = rect.width * dpr;
         canvas.height = rect.height * dpr;
+
+        ctx.scale(dpr, dpr);
 
         canvas.style.width = `${rect.width}px`;
         canvas.style.height = `${rect.height}px`;
