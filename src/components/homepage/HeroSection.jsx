@@ -45,15 +45,15 @@ const HeroSection = () => {
             if (heroRef.current && canvasRef.current) {
                 const canvas = canvasRef.current;
                 const rect = heroRef.current;
-                const dpr = window.devicePixelRatio || 1;
+                // const dpr = window.devicePixelRatio || 1;
 
                 const ctx = canvas.getContext("2d");
 
-                canvas.width = rect.offsetWidth * dpr;
-                canvas.height = rect.offsetHeight * dpr;
+                canvas.width = rect.offsetWidth;
+                canvas.height = rect.offsetHeight;
 
-                canvas.style.width = `${rect.width}px`;
-                canvas.style.height = `${rect.height}px`;
+                // canvas.style.width = `${rect.width}px`;
+                // canvas.style.height = `${rect.height}px`;
 
                 // ctx.scale(dpr, dpr);
 
@@ -139,11 +139,11 @@ const HeroSection = () => {
                     let numberOfParticles = particles;
 
                     for (let i = 0; i < numberOfParticles; i++) {
-                        let size = (Math.random() * (isSmall ? 8 : 4)) + 1;
+                        let size = (Math.random() * (isSmall ? 4 : 4)) + 1;
                         let x = (Math.random() * ((canvas.width - (size * 2)) - (size * 2)) + (size * 2));
                         let y = (Math.random() * ((canvas.height - (size * 2)) - (size * 2)) + (size * 2));
-                        let directionX = (Math.random() * 1) - (isSmall ? 2 : 0.5);
-                        let directionY = (Math.random() * 1) - (isSmall ? 2 : 0.5);
+                        let directionX = (Math.random() * 1) - (isSmall ? 0.4 : 0.5);
+                        let directionY = (Math.random() * 1) - (isSmall ? 0.4 : 0.5);
                         let color = "#0099ffff";
 
                         particleArray.push(new Particle(x, y, directionX, directionY, size, color));
@@ -160,7 +160,7 @@ const HeroSection = () => {
 
                             if (distance < (canvas.width / 11) * (canvas.height) / 11) {
                                 ctx.strokeStyle = "rgba(24, 117, 179, 0.49)",
-                                ctx.lineWidth = isSmall ? 3 : 1;
+                                ctx.lineWidth = isSmall ? 1 : 1;
                                 ctx.beginPath();
                                 ctx.moveTo(particleArray[a].x, particleArray[a].y);
                                 ctx.lineTo(particleArray[b].x, particleArray[b].y);

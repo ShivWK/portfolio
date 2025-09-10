@@ -71,8 +71,8 @@ const Home = () => {
         const isSmall = size === "small";
 
         const main = document.getElementById("main");
-        canvas.height = main.scrollHeight * dpr;
-        canvas.width = window.innerWidth * dpr;
+        canvas.height = main.scrollHeight;
+        canvas.width = window.innerWidth;
         // const rect = canvas.getBoundingClientRect();
         
         // console.log(rect);
