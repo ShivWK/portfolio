@@ -17,7 +17,7 @@ export let hexagonParticlesArray = [];
 let colors = ["rgba(3,252,157,0.46)", "rgba(8, 230, 0, 0.46)", "rgba(252, 69, 3, 0.46)", "rgba(248, 252, 3, 0.46)", "rgba(3, 177, 252, 0.46)", "rgba(252, 3, 3, 0.46)", "rgba(103, 122, 112, 0.46)", "rgba(122, 233, 174, 0.46)", "rgba(255, 255, 255, 0.46)"];
 
 export function circleInit(ctx, canvas, isSmall) {
-    const count = isSmall ? 15 : 20
+    const count = isSmall ? 10 : 20
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -63,7 +63,7 @@ export const squareInit = (ctx, canvas, isSmall) => {
 }
 
 export const triangleInit = (ctx, canvas, isSmall) => {
-    const count = isSmall ? 15 : 20;
+    const count = isSmall ? 10 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -109,7 +109,7 @@ export const pentagonInit = (ctx, canvas, isSmall) => {
 }
 
 export const hexagonInit = (ctx, canvas, isSmall) => {
-    const count = isSmall ? 6 : 12;
+    const count = isSmall ? 4 : 12;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
