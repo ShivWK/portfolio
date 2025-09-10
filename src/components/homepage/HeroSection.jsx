@@ -11,24 +11,24 @@ const HeroSection = () => {
     const canvasRef = useRef(null);
     const heroRef = useRef(null);
 
-    const setupCanvas = (canvas) => {
-        const canvas = canvasRef.current;
-        const rect = canvas.getBoundingClientRect();
-        const dpr = window.devicePixelRatio || 1;
+    // const setupCanvas = (canvas) => {
+    //     const canvas = canvasRef.current;
+    //     const rect = canvas.getBoundingClientRect();
+    //     const dpr = window.devicePixelRatio || 1;
 
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
+    //     canvas.width = rect.width * dpr;
+    //     canvas.height = rect.height * dpr;
 
-        canvas.style.width = `${rect.width}px`;
-        canvas.style.height = `${rect.height}px`;
+    //     canvas.style.width = `${rect.width}px`;
+    //     canvas.style.height = `${rect.height}px`;
 
-        // canvas.width = canvasRef.current.offsetWidth * dpr;
-        // canvas.height = canvasRef.current.offsetHeight * dpr;
+    //     // canvas.width = canvasRef.current.offsetWidth * dpr;
+    //     // canvas.height = canvasRef.current.offsetHeight * dpr;
 
-        const ctx = canvas.getContext("2d");
-        ctx.scale(dpr, dpr);
+    //     const ctx = canvas.getContext("2d");
+    //     ctx.scale(dpr, dpr);
 
-    }
+    // }
 
     useEffect(() => {
         const small = window.innerWidth <= 768;
