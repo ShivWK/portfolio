@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { selectLogInModal, selectLocationModal } from "../features/Login/loginSlice";
-import { selectMenuModel } from "../features/home/restaurantsSlice";
 
 const BackToTopButton = ({ extraMargin = false }) => {
     const [showBtn, setShowBtn] = useState(false);
-    const isLoginOpen = useSelector(selectLogInModal);
-    const isLocationOpen = useSelector(selectLocationModal);
-    const menuModel = useSelector(selectMenuModel);
 
     const clickHandler = () => {
         window.scrollTo({
@@ -31,7 +25,7 @@ const BackToTopButton = ({ extraMargin = false }) => {
         return () => window.removeEventListener("scroll", scrollHandler);
     }, [])
 
-    return <button onClick={clickHandler} className={`fixed flex items-center justify-center gap-1 left-1/2 -translate-x-1/2 bottom-5 bg-[rgba(0,0,0,0.6)] dark:bg-red-800/70 text-white py-1.5 px-2 rounded-md text-sm cursor-pointer transform transition-all duration-200 ease-linear font-semibold ${(isLocationOpen || isLoginOpen || menuModel) && "md:hidden"} ${extraMargin && "max-md:mb-12"} ${showBtn ? "translate-y-o" : "translate-y-[500%]"}`}>
+    return <button onClick={clickHandler} className={`fixed flex items-center justify-center gap-1 left-1/2 -translate-x-1/2 bottom-5 bg-[#03336698] border border-blue-400 text-white py-1.5 px-2 rounded-md text-sm cursor-pointer transform transition-all duration-200 ease-linear font-semibold ${showBtn ? "translate-y-o" : "translate-y-[500%]"}`}>
         <i className="ri-arrow-up-circle-line font-extralight text-xl"></i>
         <p className="">Back to top</p>
         </button>

@@ -19,6 +19,7 @@ import {
     hexagonParticlesArray,
     diamondParticlesArray
 } from "../../utils/initializer";
+import BackToTopButton from "../BackToTopButton";
 
 const Home = () => {
     const [scrollOffset, setScrollOffset] = useState(0);
@@ -144,6 +145,7 @@ const Home = () => {
         <BodySection scrollOffset={scrollOffset} size={size} />
 
         <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
+        <BackToTopButton />
     </main>
 }
 
