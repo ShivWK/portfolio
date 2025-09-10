@@ -14,13 +14,13 @@ export let pentagonParticlesArray = [];
 export let diamondParticlesArray = [];
 export let hexagonParticlesArray = [];
 
-let colors = ["rgba(3,252,157,0.46)", "rgba(8, 230, 0, 0.46)", "rgba(252, 69, 3, 0.46)", "rgba(248, 252, 3, 0.46)", "rgba(3, 177, 252, 0.46)", "rgba(230, 3, 3, 0.46)", "rgba(103, 122, 112, 0.46)", "rgba(122, 233, 174, 0.46)", "rgba(255, 255, 255, 0.46)"];
+let colors = ["#E34F2699", "#b0a10999", "#d44ab199", "#08b5c499", "#764ABC99", "#CA424599", "#06B6D499", "#007FFF99", "#E44EFD99", "#6E6E6E99", "#671DDF99", "#4285F499", "00000099", "#33993399", "#47A24899", "#FF6C3799", "rgba(8, 230, 0, 0.46)", "rgba(252, 69, 3, 0.46)", "rgba(248, 252, 3, 0.46)", "rgba(3, 177, 252, 0.46)", "rgba(230, 3, 3, 0.46)", "rgba(103, 122, 112, 0.46)", "rgba(122, 233, 174, 0.46)", "rgba(255, 255, 255, 0.46)"];
 
 export function circleInit(ctx, canvas) {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall);
 
-    const count = isSmall ? 10 : 20
+    const count = isSmall ? 15 : 20
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -44,7 +44,7 @@ export const squareInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
-    const count  = isSmall ? 15 : 30;
+    const count  = isSmall ? 18 : 30;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -72,7 +72,7 @@ export const triangleInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
-    const count = isSmall ? 6 : 20;
+    const count = isSmall ? 10 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -98,7 +98,7 @@ export const pentagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
-    const count = isSmall ? 5 : 10;
+    const count = isSmall ? 6 : 10;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -124,7 +124,7 @@ export const hexagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
-    const count = isSmall ? 4 : 12;
+    const count = isSmall ? 5 : 12;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -150,7 +150,7 @@ export const diamondInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     console.log(isSmall)
 
-    const count = isSmall ? 6 : 20;
+    const count = isSmall ? 8 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
