@@ -101,12 +101,12 @@ const Home = () => {
                 function animateSquares(timeStamp) {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                    particleHandler(pentagonParticlesArray, canvas, timeStamp);
+                    (!isSmall && particleHandler(pentagonParticlesArray, canvas, timeStamp))
                     particleHandler(hexagonParticlesArray, canvas, timeStamp)
                     particleHandler(squareParticlesArray, canvas, timeStamp);
                     particleHandler(circleParticlesArray, canvas, timeStamp);
                     particleHandler(triangleParticlesArray, canvas, timeStamp);
-                    particleHandler(diamondParticlesArray, canvas, timeStamp);
+                    (!isSmall && particleHandler(diamondParticlesArray, canvas, timeStamp));
 
                     requestAnimationFrame(animateSquares);
                 }
