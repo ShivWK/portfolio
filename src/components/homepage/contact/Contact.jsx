@@ -13,7 +13,7 @@ const Contact = memo(() => {
     query: "",
   });
 
-  useIntersection(formRef, setReady, 0.2);
+  useIntersection(formRef, setReady, 0.08);
 
   const fieldValuesHandler = (e) => {
     setFieldValues((prv) => ({
