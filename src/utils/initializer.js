@@ -24,8 +24,8 @@ export function circleInit(ctx, canvas) {
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let size = Math.random() * (isSmall ? 50 : 30 ) + (isSmall ? 30 : 20);
-        let lineWidth = Math.random() * (isSmall ? 40 : 20) + (isSmall ? 20 : 10);
+        let size = Math.random() * (isSmall ? 40 : 30 ) +  20;
+        let lineWidth = Math.random() * (isSmall ? 30 : 20) + 10;
 
         let color = colors[Math.floor(Math.random() * colors.length)];
 
@@ -76,15 +76,15 @@ export const triangleInit = (ctx, canvas) => {
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let h = Math.random() * (isSmall ? 80 : 60) + 40;
-        let b = Math.random() * (isSmall ? 80 : 60) + 20;
+        let h = Math.random() * (isSmall ? 70 : 60) + 40;
+        let b = Math.random() * (isSmall ? 70 : 60) + 20;
 
         let x1 = x + b / 2;
         let x2 = x - b / 2;
         let y1 = y + h;
         let y2 = y + h;
 
-        let lineWidth = Math.random() * (isSmall ? 10 : 3) + (isSmall ? 5 : 2);
+        let lineWidth = Math.random() * (isSmall ? 5 : 3) + 2;
 
         let color = colors[Math.floor(Math.random() * colors.length)];
 
