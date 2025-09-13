@@ -85,9 +85,9 @@ const Home = () => {
         circleInit(ctx, canvas, isSmall);
         squareInit(ctx, canvas, isSmall);
         triangleInit(ctx, canvas, isSmall);
-        pentagonInit(ctx, canvas, isSmall);
+        (!isSmall && pentagonInit(ctx, canvas, isSmall));
         hexagonInit(ctx, canvas, isSmall);
-        diamondInit(ctx, canvas, isSmall);
+        (!isSmall && diamondInit(ctx, canvas, isSmall));
 
         return ctx;
     }
