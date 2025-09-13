@@ -31,6 +31,8 @@ const BodySection = ({ scrollOffset, isSmall }) => {
 
             if (visibleSection) {
                 setCurrentSection(visibleSection.target);
+            } else {
+                setCurrentSection(null);
             }
         }, { threshold: 0.5});
 
