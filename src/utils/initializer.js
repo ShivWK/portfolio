@@ -18,14 +18,14 @@ let colors = ["#E34F2699", "#b0a10999", "#d44ab199", "#08b5c499", "#764ABC99", "
 
 export function circleInit(ctx, canvas) {
     const isSmall = window.innerWidth <= 768;
-    // console.log(isSmall);
+    // console.log(isSmall); (isSmall ? : )
 
-    const count = isSmall ? 15 : 20
+    const count = isSmall ? 8 : 20
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let size = Math.random() * 30 + 8;
-        let lineWidth = Math.random() * 10 + 3;
+        let size = Math.random() * (isSmall ? 50 : 30 ) + (isSmall ? 30 : 20);
+        let lineWidth = Math.random() * (isSmall ? 40 : 20) + (isSmall ? 20 : 10);
 
         let color = colors[Math.floor(Math.random() * colors.length)];
 
@@ -44,12 +44,12 @@ export const squareInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count  = isSmall ? 18 : 30;
+    const count  = isSmall ? 20 : 30;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let l = Math.random() * 50 + 10;
-        let b = Math.random() * 50 + 10;
+        let l = Math.random() * 60 + 20;
+        let b = Math.random() * 60 + 20;
 
         let lineWidth = Math.random() * 50 + 20;
 
@@ -72,19 +72,19 @@ export const triangleInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 10 : 20;
+    const count = isSmall ? 5 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let h = Math.random() * 40 + 20;
-        let b = Math.random() * 40 + 20;
+        let h = Math.random() * (isSmall ? 80 : 60) + 40;
+        let b = Math.random() * (isSmall ? 80 : 60) + 20;
 
         let x1 = x + b / 2;
         let x2 = x - b / 2;
         let y1 = y + h;
         let y2 = y + h;
 
-        let lineWidth = Math.random() * 3 + 1;
+        let lineWidth = Math.random() * (isSmall ? 10 : 3) + (isSmall ? 5 : 2);
 
         let color = colors[Math.floor(Math.random() * colors.length)];
 
@@ -98,13 +98,13 @@ export const pentagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 6 : 10;
+    const count = isSmall ? 4 : 10;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let radius = Math.random() * 40 + 10;
-        let sides = Math.random() * 5;
-        let lineWidth = Math.random() * 40 + 15;
+        let radius = Math.random() * 40 + 20;
+        let sides = Math.random() * (isSmall ? 8 : 5);
+        let lineWidth = Math.random() * 40 + 20;
         let color = colors[Math.floor(Math.random() * colors.length)];
 
         pentagonParticlesArray.push(new PentagonParticles(
@@ -124,11 +124,11 @@ export const hexagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 5 : 12;
+    const count = isSmall ? 4 : 12;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let sides = Math.random() * 80 + 20;
+        let sides = Math.random() * 70 + 30;
 
         let lineWidth = Math.random() * 30 + 8;
 
@@ -150,14 +150,14 @@ export const diamondInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 8 : 20;
+    const count = isSmall ? 4 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let h = Math.random() * 40 + 20;
-        let w = Math.random() * 15 + 20;
+        let h = Math.random() * (isSmall ? 50 : 40) + 30;
+        let w = Math.random() * (isSmall ? 50 : 30) + 20;
 
-        let lineWidth = Math.random() * 2 + 1;
+        let lineWidth = Math.random() * (isSmall ? 5 : 3) + 1;
         let color = colors[Math.floor(Math.random() * colors.length)];
 
         diamondParticlesArray.push(new DiamondParticles(
