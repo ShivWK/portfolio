@@ -128,7 +128,7 @@ export const hexagonInit = (ctx, canvas) => {
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
-        let sides = Math.random() * 70 + 30;
+        let sides = Math.random() * 50 + 30;
 
         let lineWidth = Math.random() * 20 + 8;
 
@@ -150,7 +150,7 @@ export const diamondInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 4 : 20;
+    const count = isSmall ? 3 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
