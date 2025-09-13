@@ -59,12 +59,12 @@ const Home = () => {
         canvas.height = main.scrollHeight;
         canvas.width = window.innerWidth;
 
-        circleParticlesArray.length = 0;
-        squareParticlesArray.length = 0;
-        triangleParticlesArray.length = 0;
-        pentagonParticlesArray.length = 0;
-        hexagonParticlesArray.length = 0;
-        diamondParticlesArray.length = 0;
+        // circleParticlesArray.length = 0;
+        // squareParticlesArray.length = 0;
+        // triangleParticlesArray.length = 0;
+        // pentagonParticlesArray.length = 0;
+        // hexagonParticlesArray.length = 0;
+        // diamondParticlesArray.length = 0;
 
         circleInit(ctx, canvas, isSmall);
         squareInit(ctx, canvas, isSmall);
@@ -144,8 +144,8 @@ const Home = () => {
             width: `${scrollWidth}%`
         }}></div>
 
-        <HeroSection isSmall={isSmall} />
-        <BodySection isSmall={isSmall} />
+        <HeroSection />
+        <BodySection />
         <BackToTopButton visible={footerVisible} />
         <Footer reference={footRef} />
 {/* 

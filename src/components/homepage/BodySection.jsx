@@ -8,9 +8,10 @@ import GithubStats from "./about/GithubStats";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 
-const BodySection = memo(({ isSmall }) => {
+const BodySection = memo(() => {
     const [ready, setReady] = useState(false);
     const [currentSection, setCurrentSection] = useState("");
+    const isSmall = window.innerWidth <= 768;
 
     useEffect(() => {
         setTimeout(() => {
