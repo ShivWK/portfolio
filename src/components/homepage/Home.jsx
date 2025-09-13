@@ -111,7 +111,6 @@ const Home = () => {
                     requestAnimationFrame(animateSquares);
                 }
                 requestAnimationFrame(animateSquares);
-
                 const resizeHandler = () => {
                     const ctx = setupCanvas(canvasRef.current);
                 }
