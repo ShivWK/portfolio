@@ -23,36 +23,18 @@ import BackToTopButton from "../BackToTopButton";
 import Footer from "./Footer";
 
 const Home = () => {
-    const [scrollOffset, setScrollOffset] = useState(0);
     const [footerVisible, setFooterVisible] = useState(false);
     const [ready, setReady] = useState(false);
     const [isSmall, setIsSmall] = useState("");
     const canvasRef = useRef(null);
-    const lastClientHeight = useRef(0);
     const footRef = useRef(null);
 
     function particleHandler(particleArray, canvas, timestamp) {
         for (let i = 0; i < particleArray.length; i++) {
-            particleArray[i].update(scrollOffset, canvas, isSmall);
+            particleArray[i].update(canvas);
             particleArray[i].draw();
         }
     }
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentClientHeight = window.scrollY;
-
-            if (lastClientHeight.current < currentClientHeight) {
-                setScrollOffset(-100);
-            } else {
-                setScrollOffset(100);
-            }
-            lastClientHeight.current = currentClientHeight;
-        }
-        window.addEventListener("scroll", handleScroll);
-
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     useLayoutEffect(() => {
         const resizeHandler = () => {
@@ -143,8 +125,8 @@ const Home = () => {
     }, []);
 
     return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
-        <HeroSection scrollOffset={scrollOffset} isSmall={isSmall} />
-        <BodySection scrollOffset={scrollOffset} isSmall={isSmall} />
+        <HeroSection isSmall={isSmall} />
+        <BodySection isSmall={isSmall} />
 
         <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
         <BackToTopButton visible={footerVisible} />

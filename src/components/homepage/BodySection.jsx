@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Suspense, lazy, useLayoutEffect } from "react";
+import { useState, useEffect, useRef, Suspense, lazy, useLayoutEffect, memo } from "react";
 import NavigationMenu from "./NavigationMenu";
 import About from "./about/About";
 // const Skills = lazy(() => import("./about/Skills"))
@@ -8,7 +8,7 @@ import GithubStats from "./about/GithubStats";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 
-const BodySection = ({ scrollOffset, isSmall }) => {
+const BodySection = memo(({ isSmall }) => {
     const [ready, setReady] = useState(false);
     const [currentSection, setCurrentSection] = useState("");
 
@@ -66,6 +66,6 @@ const BodySection = ({ scrollOffset, isSmall }) => {
          <Contact />
         </section>
     </section>
-}
+})
 
 export default BodySection;

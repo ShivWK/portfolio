@@ -21,9 +21,8 @@ export class CircleParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas) {
+    update(canvas) {
         const isSmall = window.innerWidth <= 768;
-        const drift = scrollOffset * 0.02;
 
         if (this.y > canvas.height) {
             this.directionY = -1;
@@ -40,7 +39,6 @@ export class CircleParticles {
         }
 
         this.x += this.directionX * Math.random() * canvas.width * 0.0001;
-        // this.y += drift
     }
 }
 
@@ -73,10 +71,8 @@ export class SquareParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas) {
-        const drift = scrollOffset * 0.002;
+    update() {
         this.lineWidth = 0.5 + Math.sin(Date.now() * 0.0004 + this.x) * 0.5
-        // this.y += drift
     }
 }
 
@@ -111,15 +107,10 @@ export class TriangleParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas, isSmall) {
-        const drift = scrollOffset * 0.02;
+    update() {
         this.y += Math.sin(Date.now() * 0.0001 + this.x) * 0.8;
         this.y1 += Math.sin(Date.now() * 0.0001 + this.x) * 0.8;
         this.y2 += Math.sin(Date.now() * 0.0001 + this.x) * 0.8;
-
-        // this.y += drift;
-        // this.y1 += drift;
-        // this.y2 += drift;
     }
 }
 
@@ -153,10 +144,8 @@ export class PentagonParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas, isSmall) {
-        const drift = scrollOffset * 0.02;
+    update() {
         this.y += Math.sin(Date.now() * 0.001 + this.x) * 0.2;
-        // this.y += drift;
     }
 }
 
@@ -192,10 +181,8 @@ export class HexagonParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas, isSmall) {
-        const drift = scrollOffset * 0.02;
+    update() {
         this.y += Math.sin(Date.now() * 0.001 + this.x) * 0.2;
-        // this.y += drift;
     }
 }
 
@@ -229,9 +216,7 @@ export class DiamondParticles {
         this.ctx.stroke();
     }
 
-    update(scrollOffset = 0, canvas, isSmall) {
-        const drift = scrollOffset * 0.002;
-
+    update(canvas) {
         if (this.y > canvas.height + 100) {
             this.direction = -1;
         } else if (this.y < 0 - 100) {
@@ -239,6 +224,5 @@ export class DiamondParticles {
         }
 
         this.y += this.direction * 0.38;
-        // this.y += drift;
     }
 }

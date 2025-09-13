@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, memo } from "react";
 import { Download } from "lucide-react";
 
-const HeroSection = () => {
-    const [particles, setParticles] = useState(200);
+const HeroSection = memo(() => {
+    const [particles, setParticles] = useState(170);
     const [hovered, setHovered] = useState(false);
     const [color, setColor] = useState("rgba(0,0,0,1)");
     const [ready, setReady] = useState(false);
@@ -13,7 +13,7 @@ const HeroSection = () => {
 
     useEffect(() => {
         if (isSmall) {
-            setParticles(200);
+            setParticles(170);
         } else {
             setParticles(320);
         }
@@ -131,7 +131,7 @@ const HeroSection = () => {
                             let dy = particleArray[a].y - particleArray[b].y;
                             let distance = dx * dx + dy * dy;
 
-                            if (distance < (canvas.width / 11) * (canvas.height) / 11) {
+                            if (distance < (canvas.width / 10) * (canvas.height) / 10) {
                                 ctx.strokeStyle = "rgba(24, 117, 179, 0.49)",
                                 ctx.lineWidth = isSmall ? 0.6 : 1;
                                 ctx.beginPath();
@@ -163,7 +163,7 @@ const HeroSection = () => {
 
 
                     if (window.innerWidth <= 768) {
-                        setParticles(200);
+                        setParticles(170);
                     } else {
                         setParticles(320);
                     }
@@ -289,6 +289,6 @@ const HeroSection = () => {
         </div>
         <canvas ref={canvasRef} className={`-z-30 ${ready && "animate-canvasFadeIn"}`} ></canvas>
     </section>
-}
+})
 
 export default HeroSection;
