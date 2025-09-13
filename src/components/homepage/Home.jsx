@@ -24,6 +24,7 @@ import Footer from "./Footer";
 
 const Home = () => {
     const [footerVisible, setFooterVisible] = useState(false);
+    const [ scrollWidth, setScrollWidth ] = useState(0);
     const [ready, setReady] = useState(false);
     const [isSmall, setIsSmall] = useState("");
     const canvasRef = useRef(null);
@@ -124,7 +125,24 @@ const Home = () => {
         observer.observe(footRef.current);
     }, []);
 
+    useEffect(() => {
+        const scrollHandler = () =>{
+            const scrollTop = window.scrollY;
+            const height = document.documentElement.scrollHeight - window.innerHeight;
+
+            const scrolledPercentage = ((scrollTop / height) * 100);
+            setScrollWidth(scrolledPercentage);
+        }
+
+        window.addEventListener("scroll", scrollHandler);
+        return () => window.removeEventListener("scroll", scrollHandler);
+    }, [])
+
     return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
+    <div className={`fixed h-1 bg-[#0099ffff] z-40`} style={{
+        width : `${scrollWidth}%`
+    }}></div>
+
         <HeroSection isSmall={isSmall} />
         <BodySection isSmall={isSmall} />
 

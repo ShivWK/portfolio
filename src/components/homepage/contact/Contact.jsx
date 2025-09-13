@@ -1,6 +1,5 @@
 import { memo, useRef, useState } from "react";
 import useIntersection from "../../../utils/IntersectionObserver";
-// import { toast } from "react-toastify";
 
 const Contact = memo(() => {
   const formRef = useRef(null);
