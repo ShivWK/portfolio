@@ -123,7 +123,7 @@ const Contact = memo(() => {
   };
 
   return (
-    <div className={`text-black w-full flex flex-col justify-center gap-8 mt-2 mb-8 lg:mb-24 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
+    <div className={`text-black w-full flex flex-col justify-center gap-8 mt-2 mb-8 lg:mb-18 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
       <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 -mb-2.5 lg:mb-0 self-start">
         Contact Me
       </h2>

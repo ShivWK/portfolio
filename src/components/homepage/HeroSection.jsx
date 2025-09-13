@@ -280,7 +280,7 @@ const HeroSection = memo(() => {
                         ></i>
                     </a>
 
-                    <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full z-10 ${hovered ? "[clip-path:circle(100%)]" : "[clip-path:circle(0%)]"} transition-all duration-200 ease-linear`}
+                    <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full z-10 ${hovered ? "[clip-path:circle(100%)]" : "[clip-path:circle(0%)]"} transition-all duration-300 ease-linear`}
                         style={{ background: color }}
                     ></span>
                 </div>

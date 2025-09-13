@@ -84,7 +84,7 @@ export const triangleInit = (ctx, canvas) => {
         let y1 = y + h;
         let y2 = y + h;
 
-        let lineWidth = Math.random() * (isSmall ? 5 : 3) + 2;
+        let lineWidth = Math.random() * (isSmall ? 4 : 3) + 2;
 
         let color = colors[Math.floor(Math.random() * colors.length)];
 

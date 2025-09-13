@@ -21,10 +21,11 @@ import {
 } from "../../utils/initializer";
 import BackToTopButton from "../BackToTopButton";
 import Footer from "./Footer";
+import BodyBg from "./BodyBg";
 
 const Home = () => {
     const [footerVisible, setFooterVisible] = useState(false);
-    const [ scrollWidth, setScrollWidth ] = useState(0);
+    const [scrollWidth, setScrollWidth] = useState(0);
     const [ready, setReady] = useState(false);
     const [isSmall, setIsSmall] = useState("");
     const canvasRef = useRef(null);
@@ -126,7 +127,7 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
-        const scrollHandler = () =>{
+        const scrollHandler = () => {
             const scrollTop = window.scrollY;
             const height = document.documentElement.scrollHeight - window.innerHeight;
 
@@ -139,16 +140,17 @@ const Home = () => {
     }, [])
 
     return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
-    <div className={`fixed h-1 bg-[#0099ffff] z-40 transition-all duration-[0.2] ease-linear`} style={{
-        width : `${scrollWidth}%`
-    }}></div>
+        <div className={`fixed h-1 bg-[#0099ffff] z-40 transition-all duration-[0.25s] ease-linear`} style={{
+            width: `${scrollWidth}%`
+        }}></div>
 
         <HeroSection isSmall={isSmall} />
         <BodySection isSmall={isSmall} />
-
-        <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
         <BackToTopButton visible={footerVisible} />
         <Footer reference={footRef} />
+{/* 
+        <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas> */}
+        <BodyBg canvasRef={canvasRef} ready={ready} />
     </main>
 }
 
