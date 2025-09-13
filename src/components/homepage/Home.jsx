@@ -20,20 +20,21 @@ import {
     diamondParticlesArray
 } from "../../utils/initializer";
 import BackToTopButton from "../BackToTopButton";
+import Footer from "./Footer";
 
 const Home = () => {
     const [scrollOffset, setScrollOffset] = useState(0);
+    const [footerVisible, setFooterVisible] = useState(false);
     const [ready, setReady] = useState(false);
     const [isSmall, setIsSmall] = useState("");
     const canvasRef = useRef(null);
     const lastClientHeight = useRef(0);
-
-    // console.log("home", isSmall)
+    const footRef = useRef(null);
 
     function particleHandler(particleArray, canvas, timestamp) {
         for (let i = 0; i < particleArray.length; i++) {
-                particleArray[i].update(scrollOffset, canvas, isSmall);
-                particleArray[i].draw();
+            particleArray[i].update(scrollOffset, canvas, isSmall);
+            particleArray[i].draw();
         }
     }
 
@@ -128,24 +129,27 @@ const Home = () => {
 
     }, [])
 
-    // useEffect(() => {
-    //     const canvas = canvasRef.current;
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setFooterVisible(true);
+                } else {
+                    setFooterVisible(false);
+                }
+            })
+        }, { threshold: 0.05 });
 
-    //     particleHandler(pentagonParticlesArray, canvas);
-    //     particleHandler(hexagonParticlesArray, canvas);
-    //     particleHandler(squareParticlesArray, canvas);
-    //     particleHandler(circleParticlesArray, canvas);
-    //     particleHandler(triangleParticlesArray, canvas);
-    //     particleHandler(diamondParticlesArray, canvas);
-
-    // }, [scrollOffset]);
+        observer.observe(footRef.current);
+    }, []);
 
     return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
-    <HeroSection scrollOffset={scrollOffset} isSmall={isSmall} />
-    <BodySection scrollOffset={scrollOffset} isSmall={isSmall} />
+        <HeroSection scrollOffset={scrollOffset} isSmall={isSmall} />
+        <BodySection scrollOffset={scrollOffset} isSmall={isSmall} />
 
         <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
-        <BackToTopButton />
+        <BackToTopButton visible={footerVisible} />
+        <Footer reference={footRef} />
     </main>
 }
 
