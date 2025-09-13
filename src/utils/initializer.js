@@ -124,13 +124,13 @@ export const hexagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 4 : 12;
+    const count = isSmall ? 4 : 10;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let sides = Math.random() * 70 + 30;
 
-        let lineWidth = Math.random() * 30 + 8;
+        let lineWidth = Math.random() * 20 + 8;
 
         let color = colors[Math.floor(Math.random() * colors.length)];
 

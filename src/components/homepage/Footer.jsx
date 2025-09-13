@@ -47,7 +47,7 @@ const Footer = ({ reference }) => {
 
         <p className="absolute bottom-3 text-center hidden lg:block font-medium text-white tracking-wider font-footer">Background crafted with Vanilla JavaScript, CSS and HTML.</p>
 
-        <p className="absolute bottom-3 text-center lg:hidden font-medium text-white tracking-wider font-footer">BG crafted with Vanilla JS, CSS & HTML.</p>
+        <p className="absolute bottom-3 text-center lg:hidden font-medium text-white tracking-wider font-footer">BG is crafted with Vanilla JS, CSS & HTML.</p>
 
     </footer>
 }
