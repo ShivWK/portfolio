@@ -38,6 +38,30 @@ const Home = () => {
         }
     }
 
+    function setupCanvas(canvas) {
+        const ctx = canvas.getContext("2d");
+
+        const main = document.getElementById("main");
+        canvas.height = main.scrollHeight;
+        canvas.width = window.innerWidth;
+
+        circleParticlesArray.length = 0;
+        squareParticlesArray.length = 0;
+        triangleParticlesArray.length = 0;
+        pentagonParticlesArray.length = 0;
+        hexagonParticlesArray.length = 0;
+        diamondParticlesArray.length = 0;
+
+        circleInit(ctx, canvas, isSmall);
+        squareInit(ctx, canvas, isSmall);
+        triangleInit(ctx, canvas, isSmall);
+        (!isSmall && pentagonInit(ctx, canvas, isSmall));
+        hexagonInit(ctx, canvas, isSmall);
+        (!isSmall && diamondInit(ctx, canvas, isSmall));
+
+        return ctx;
+    }
+
     useLayoutEffect(() => {
         const resizeHandler = () => {
             if (window.innerWidth <= 768) {
@@ -51,30 +75,6 @@ const Home = () => {
         window.addEventListener("resize", resizeHandler);
         return () => window.removeEventListener("resize", resizeHandler);
     }, []);
-
-    function setupCanvas(canvas) {
-        const ctx = canvas.getContext("2d");
-
-        const main = document.getElementById("main");
-        canvas.height = main.scrollHeight;
-        canvas.width = window.innerWidth;
-
-        // circleParticlesArray.length = 0;
-        // squareParticlesArray.length = 0;
-        // triangleParticlesArray.length = 0;
-        // pentagonParticlesArray.length = 0;
-        // hexagonParticlesArray.length = 0;
-        // diamondParticlesArray.length = 0;
-
-        circleInit(ctx, canvas, isSmall);
-        squareInit(ctx, canvas, isSmall);
-        triangleInit(ctx, canvas, isSmall);
-        (!isSmall && pentagonInit(ctx, canvas, isSmall));
-        hexagonInit(ctx, canvas, isSmall);
-        (!isSmall && diamondInit(ctx, canvas, isSmall));
-
-        return ctx;
-    }
 
     useEffect(() => {
         const startCanvas = () => {
@@ -95,12 +95,12 @@ const Home = () => {
                     requestAnimationFrame(animateSquares);
                 }
                 requestAnimationFrame(animateSquares);
-                const resizeHandler = () => {
-                    const ctx = setupCanvas(canvasRef.current);
-                }
+                // const resizeHandler = () => {
+                //     const ctx = setupCanvas(canvasRef.current);
+                // }
 
-                window.addEventListener("resize", resizeHandler);
-                return () => window.removeEventListener("resize", resizeHandler);
+                // window.addEventListener("resize", resizeHandler);
+                // return () => window.removeEventListener("resize", resizeHandler);
             }
         }
 
@@ -148,7 +148,7 @@ const Home = () => {
         <BodySection />
         <BackToTopButton visible={footerVisible} />
         <Footer reference={footRef} />
-{/* 
+        {/* 
         <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas> */}
         <BodyBg canvasRef={canvasRef} ready={ready} />
     </main>
