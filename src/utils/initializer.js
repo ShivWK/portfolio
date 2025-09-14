@@ -130,7 +130,7 @@ export const hexagonInit = (ctx, canvas) => {
         let y = Math.random() * canvas.height;
         let sides = Math.random() * 50 + 30;
 
-        let lineWidth = Math.random() * 20 + 10;
+        let lineWidth = Math.random() * 20 + 15;
 
         let color = colors[Math.floor(Math.random() * colors.length)];
 
