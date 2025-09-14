@@ -72,7 +72,7 @@ export const triangleInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 5 : 20;
+    const count = isSmall ? 8 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -98,7 +98,7 @@ export const pentagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 4 : 10;
+    const count = isSmall ? 5 : 10;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
@@ -124,13 +124,13 @@ export const hexagonInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 4 : 10;
+    const count = isSmall ? 6 : 10;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;
         let sides = Math.random() * 50 + 30;
 
-        let lineWidth = Math.random() * 20 + 8;
+        let lineWidth = Math.random() * 20 + 10;
 
         let color = colors[Math.floor(Math.random() * colors.length)];
 
@@ -150,7 +150,7 @@ export const diamondInit = (ctx, canvas) => {
     const isSmall = window.innerWidth <= 768;
     // console.log(isSmall)
 
-    const count = isSmall ? 3 : 20;
+    const count = isSmall ? 5 : 20;
     for (let i = 0; i < count; i++) {
         let x = Math.random() * canvas.width;
         let y = Math.random() * canvas.height;

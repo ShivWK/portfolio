@@ -55,9 +55,9 @@ const Home = () => {
         circleInit(ctx, canvas, isSmall);
         squareInit(ctx, canvas, isSmall);
         triangleInit(ctx, canvas, isSmall);
-        (!isSmall && pentagonInit(ctx, canvas, isSmall));
+        pentagonInit(ctx, canvas, isSmall);
         hexagonInit(ctx, canvas, isSmall);
-        (!isSmall && diamondInit(ctx, canvas, isSmall));
+        diamondInit(ctx, canvas, isSmall);
 
         return ctx;
     }
@@ -85,12 +85,12 @@ const Home = () => {
                 function animateSquares(timeStamp) {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                    (!isSmall && particleHandler(pentagonParticlesArray, canvas, timeStamp))
+                    particleHandler(pentagonParticlesArray, canvas, timeStamp);
                     particleHandler(hexagonParticlesArray, canvas, timeStamp)
                     particleHandler(squareParticlesArray, canvas, timeStamp);
                     particleHandler(circleParticlesArray, canvas, timeStamp);
                     particleHandler(triangleParticlesArray, canvas, timeStamp);
-                    (!isSmall && particleHandler(diamondParticlesArray, canvas, timeStamp));
+                    particleHandler(diamondParticlesArray, canvas, timeStamp);
 
                     requestAnimationFrame(animateSquares);
                 }
