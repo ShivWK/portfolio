@@ -153,7 +153,7 @@ const Home = () => {
     }, [])
 
     return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20 w-full">
-        <div className={`fixed h-1 bg-[#0099ffff] z-40 transition-all duration-[0.25s] ease-linear`} style={{
+        <div className={`fixed h-1 bg-[#0099ffff] z-40 transition-all duration-[0.2s] ease-linear`} style={{
             width: `${scrollWidth}%`
         }}></div>
 
