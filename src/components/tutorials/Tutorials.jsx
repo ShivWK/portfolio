@@ -14,9 +14,9 @@ const Tutorials = () => {
                         onClick={() => clickHandler("rgba(41,140,240)")}
                         className="fa-brands fa-linkedin text-xl  text-[rgb(41,140,240)] hover:text-black"
                     ></i>
-                    <Heart fill="red" size={isSmall ? 17 : 20} className="text-red-600" />
+                    <Heart fill="red" size={isSmall ? 18 : 20} className="text-red-600" />
                     <span>400</span>
-                    <Repeat size={isSmall ? 17 : 20} className="text-[#53eafd]" />
+                    <Repeat size={isSmall ? 18 : 20} className="text-[#53eafd]" />
                     <span>100</span>
                 </div>
                 <img src="/testimonials/axios.png" alt="testimonal" className="rounded-md" />
