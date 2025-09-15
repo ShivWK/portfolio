@@ -7,6 +7,7 @@ import Skills from "./about/Skills";
 import GithubStats from "./about/GithubStats";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
+import Tutorials from "../tutorials/Tutorials";
 
 const BodySection = memo(({ setToastMessage, setToastError, setShowToast }) => {
     const [ready, setReady] = useState(false);
@@ -60,9 +61,9 @@ const BodySection = memo(({ setToastMessage, setToastError, setShowToast }) => {
         <section id="projects" className="section scroll-mt-30">
             <Projects isSmall={isSmall} />
         </section>
-        {/* <section id="content" className="section scroll-mt-30">
-
-        </section> */}
+        <section id="content" className="section scroll-mt-30 mx-auto lg:w-[1024px]">
+            <Tutorials />
+        </section>
         <section id="contact" className="section scroll-mt-30 mx-auto lg:w-[1024px] max-lg:px-3">
             <Contact
                 setShowToast={setShowToast}
