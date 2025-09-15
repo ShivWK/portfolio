@@ -1,7 +1,7 @@
 import { memo, useRef, useState } from "react";
 import useIntersection from "../../../utils/IntersectionObserver";
 
-const Contact = memo(() => {
+const Contact = memo(({ setToastMessage, setToastError, setShowToast }) => {
   const formRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [errorIn, setErrorIn] = useState("");
@@ -12,7 +12,7 @@ const Contact = memo(() => {
     query: "",
   });
 
-  useIntersection(formRef, setReady, 0.08);
+  useIntersection(formRef, setReady, 0.05);
 
   const fieldValuesHandler = (e) => {
     setFieldValues((prv) => ({
@@ -29,43 +29,28 @@ const Contact = memo(() => {
 
     if (name.length === 0 || name.length > 100) {
       setErrorIn("name");
-      // toast.info("Name must be between 1 and 100 characters.", {
-      //   autoClose: 3000,
-      //   style: {
-      //     backgroundColor: "red",
-      //     color: "white",
-      //     fontWeight: "medium",
-      //   },
-      //   progressClassName: "progress-style",
-      // });
+      setToastMessage("Name must be between 1 and 100 characters.");
+      setToastError(true);
+      setShowToast(true);
+
       return;
     }
 
     if (email.length === 0 || email.length > 254 || !email.includes("@")) {
       setErrorIn("email");
-      // toast.info("Enter a valid email address.", {
-      //   autoClose: 3000,
-      //   style: {
-      //     backgroundColor: "red",
-      //     color: "white",
-      //     fontWeight: "medium",
-      //   },
-      //   progressClassName: "progress-style",
-      // });
+      setToastMessage("Enter a valid email address.");
+      setToastError(true);
+      setShowToast(true);
+
       return;
     }
 
     if (message.length === 0 || message.length > 1000) {
       setErrorIn("query");
-      // toast.info("Message must be between 1 and 1000 characters.", {
-      //   autoClose: 3000,
-      //   style: {
-      //     backgroundColor: "red",
-      //     color: "white",
-      //     fontWeight: "medium",
-      //   },
-      //   progressClassName: "progress-style",
-      // });
+      setToastMessage("Message must be between 1 and 1000 characters.");
+      setToastError(true);
+      setShowToast(true);
+
       return;
     }
 
@@ -82,15 +67,9 @@ const Contact = memo(() => {
 
       if (result.success) {
         setLoading(false);
-        // toast.info("Message sent successfully!", {
-        //   autoClose: 3000,
-        //   style: {
-        //     backgroundColor: "green",
-        //     color: "white",
-        //     fontWeight: "medium",
-        //   },
-        //   progressClassName: "progress-style",
-        // });
+        setToastMessage("Thanks for reaching out! Your email was delivered successfully.");
+        setToastError(false);
+        setShowToast(true);
 
         setFieldValues({
           name: "",
@@ -99,18 +78,15 @@ const Contact = memo(() => {
         });
       } else {
         setLoading(false);
-        // toast.error("Failed to send message. Please try again later.", {
-        //   autoClose: 3000,
-        //   style: {
-        //     color: "white",
-        //     fontWeight: "medium",
-        //   },
-        //   progressClassName: "progress-style",
-        // });
+        setToastMessage("Oops! Something went wrong. Please try again later");
+        setToastError(true);
+        setShowToast(true);
       }
     } catch (err) {
       setLoading(false);
-      toast.error("An error occurred. Please try again.");
+      setToastMessage("Something went wrong. Please try again.");
+      setToastError(true);
+      setShowToast(true);
     }
   };
 

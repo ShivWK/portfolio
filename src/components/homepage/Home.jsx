@@ -22,6 +22,7 @@ import {
 import BackToTopButton from "../BackToTopButton";
 import Footer from "./Footer";
 import BodyBg from "./BodyBg";
+import Toast from "../Toast";
 
 const Home = () => {
     const [footerVisible, setFooterVisible] = useState(false);
@@ -30,6 +31,10 @@ const Home = () => {
     const [isSmall, setIsSmall] = useState("");
     const canvasRef = useRef(null);
     const footRef = useRef(null);
+
+    const [showToast, setShowToast] = useState(false);
+    const [toastMessage, setToastMessage] = useState("");
+    const [toastError, setToastError] = useState(false);
 
     function particleHandler(particleArray, canvas, timestamp) {
         for (let i = 0; i < particleArray.length; i++) {
@@ -61,6 +66,14 @@ const Home = () => {
 
         return ctx;
     }
+
+    useEffect(() => {
+        if (showToast) {
+            setTimeout(() => {
+                setShowToast(false);
+            }, 4000);
+        }
+    }, [showToast])
 
     useLayoutEffect(() => {
         const resizeHandler = () => {
@@ -139,18 +152,21 @@ const Home = () => {
         return () => window.removeEventListener("scroll", scrollHandler);
     }, [])
 
-    return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20">
+    return <main id="main" className="relative bg-[linear-gradient(135deg,#000000_0%,#01111a_40%,#011d3a_70%,#021120_100%)] -z-20 w-full">
         <div className={`fixed h-1 bg-[#0099ffff] z-40 transition-all duration-[0.25s] ease-linear`} style={{
             width: `${scrollWidth}%`
         }}></div>
 
         <HeroSection />
-        <BodySection />
+        <BodySection
+            setToastMessage={setToastMessage}
+            setToastError={setToastError}
+            setShowToast={setShowToast}
+        />
         <BackToTopButton visible={footerVisible} />
         <Footer reference={footRef} />
-        {/* 
-        <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas> */}
-        <BodyBg canvasRef={canvasRef} ready={ready} />
+        <Toast showToast={showToast} message={toastMessage} error={toastError} />
+        <canvas ref={canvasRef} className={`absolute top-0 left-0 bg-transparent ${ready && "animate-canvasFadeIn"} -z-20`}></canvas>
     </main>
 }
 

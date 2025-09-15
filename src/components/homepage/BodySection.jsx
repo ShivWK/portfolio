@@ -8,7 +8,7 @@ import GithubStats from "./about/GithubStats";
 import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 
-const BodySection = memo(() => {
+const BodySection = memo(({ setToastMessage, setToastError, setShowToast }) => {
     const [ready, setReady] = useState(false);
     const [currentSection, setCurrentSection] = useState("");
     const isSmall = window.innerWidth <= 768;
@@ -35,7 +35,7 @@ const BodySection = memo(() => {
             } else {
                 setCurrentSection(null);
             }
-        }, { threshold: 0.5});
+        }, { threshold: 0.5 });
 
         sections.forEach(ele => {
             observer.observe(ele);
@@ -64,7 +64,11 @@ const BodySection = memo(() => {
 
         </section> */}
         <section id="contact" className="section scroll-mt-30 mx-auto lg:w-[1024px] max-lg:px-3">
-         <Contact />
+            <Contact
+                setShowToast={setShowToast}
+                setToastMessage={setToastMessage}
+                setToastError={setToastError}
+            />
         </section>
     </section>
 })
