@@ -1,4 +1,4 @@
-import { Repeat, Heart } from "lucide-react";
+import TutorialCard from "./TutorialCard";
 
 const Tutorials = () => {
     const isSmall = window.innerWidth <= 768;
