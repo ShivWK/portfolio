@@ -85,11 +85,11 @@ const Tutorials = () => {
                 <div className="basis-[45%] text-justify lg:text-center lg:text-lg tracking-wider font-medium font-conten">
                     <p>I regularly share JavaScript tips, tutorials, and insights on LinkedIn. Here’s a collection of my posts to help fellow developers learn and grow</p>
                 </div>
-                <div className="w-full basis-full lg:basis-[50%] shrink-0 flex flex-col gap-5 lg:gap-6">
+                <div className="w-full basis-full lg:basis-[52%] shrink-0 flex flex-col gap-5 lg:gap-6">
                     <div className="relative h-[29rem] lg:h-[31rem]" onMouseEnter={() => setStopScroll(true)} onMouseLeave={() => setStopScroll(false)}>
                         <button onClick={leftButtonClick} className="absolute left-0 top-1/2 -translate-y-1/2 max-lg:bg-blue-950 lg:backdrop-blur-sm rounded-full  shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] cursor-pointer active:scale-90 active:shadow-[0_0_5px_1px_rgba(3,165,252,0.6)] transition-all duration-150 ease-linear z-30"><CircleArrowLeft size={isSmall ? 30 : 35} /></button>
 
-                        <div className="relative lg:w-[80%] w-full h-full mx-auto">
+                        <div className="relative lg:w-[80%] w-full h-full mx-auto shadow-[0_0_8px_1px_rgba(3,165,252,0.6)] rounded-xl">
                             {tutorial.map((data, index) => {
                                 const show = currentIndex === index;
                                 return <TutorialCard key={index} index={index} cardData={data} show={show} />
