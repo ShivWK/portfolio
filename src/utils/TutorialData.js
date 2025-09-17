@@ -1,4 +1,4 @@
-const tutorial = [
+export const tutorial = [
     {
         link: "https://www.linkedin.com/posts/shivendra-dwivedi_master-javascript-promises-and-asyncawait-activity-7315339961111625728-00_B?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_Ipk4BSL5TQ-AFenBCwBDkgiAm3XWIPuM",
         pic: "Promise.png",

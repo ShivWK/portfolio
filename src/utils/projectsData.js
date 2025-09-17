@@ -81,45 +81,45 @@ export const majorProjects = [
         ]
     },
 
-    {
-        homeScreenPic: "/images/countries.png",
-        liveLink: "https://worldrestapi.netlify.app",
-        githubLink: "https://github.com/ShivWK/Country-Rest-API.git",
-        underDevelopment: true,
-        title: "World Explorer – Country Info with Theme Switcher",
-        techStack: [
-            {
-                icon: "devicon:html5",
-                text: "HTML5"
-            },
+    // {
+    //     homeScreenPic: "/images/countries.png",
+    //     liveLink: "https://worldrestapi.netlify.app",
+    //     githubLink: "https://github.com/ShivWK/Country-Rest-API.git",
+    //     underDevelopment: true,
+    //     title: "World Explorer – Country Info with Theme Switcher",
+    //     techStack: [
+    //         {
+    //             icon: "devicon:html5",
+    //             text: "HTML5"
+    //         },
 
-            {
-                icon: "devicon:css3",
-                text: "CSS3"
-            },
+    //         {
+    //             icon: "devicon:css3",
+    //             text: "CSS3"
+    //         },
 
-            {
-                icon: "skill-icons:javascript",
-                text: "JavaScript"
-            },
-        ],
+    //         {
+    //             icon: "skill-icons:javascript",
+    //             text: "JavaScript"
+    //         },
+    //     ],
 
-        badges: ["REST API", "Responsive Design", "Dark/Light Theme"],
+    //     badges: ["REST API", "Responsive Design", "Dark/Light Theme"],
         
-        description: "A web application that fetches and displays detailed information about countries using the REST Countries API. It includes features like region-based filtering, country search, and a color theme switcher (light/dark mode) for an enhanced user experience. Built with modern frontend practices to deliver a clean and responsive interface.",
+    //     description: "A web application that fetches and displays detailed information about countries using the REST Countries API. It includes features like region-based filtering, country search, and a color theme switcher (light/dark mode) for an enhanced user experience. Built with modern frontend practices to deliver a clean and responsive interface.",
 
-        featuredHeighLights: [
-            "<strong style='color: oklch(70.7% 0.165 254.624);'>Global Data:</strong> Search and explore countries with details like population, region, currencies, and borders.",
+    //     featuredHeighLights: [
+    //         "<strong style='color: oklch(70.7% 0.165 254.624);'>Global Data:</strong> Search and explore countries with details like population, region, currencies, and borders.",
 
-            "<strong style='color: oklch(70.7% 0.165 254.624);'>Smart Filtering:</strong> Find countries by region or name instantly",
+    //         "<strong style='color: oklch(70.7% 0.165 254.624);'>Smart Filtering:</strong> Find countries by region or name instantly",
 
-            "<strong style='color: oklch(70.7% 0.165 254.624);'>Theme Switcher:</strong> Toggle between light and dark modes for better accessibility",
+    //         "<strong style='color: oklch(70.7% 0.165 254.624);'>Theme Switcher:</strong> Toggle between light and dark modes for better accessibility",
 
-            "<strong style='color: oklch(70.7% 0.165 254.624);'>Responsive Design:</strong> Optimized for desktop and mobile screens.",
+    //         "<strong style='color: oklch(70.7% 0.165 254.624);'>Responsive Design:</strong> Optimized for desktop and mobile screens.",
 
-            "<strong style='color: oklch(70.7% 0.165 254.624);'>Clean Implementation:</strong> Built with modern frontend best practices.",
-        ]
-    }
+    //         "<strong style='color: oklch(70.7% 0.165 254.624);'>Clean Implementation:</strong> Built with modern frontend best practices.",
+    //     ]
+    // }
 ]
 
 export const minProjects = [

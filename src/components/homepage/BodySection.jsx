@@ -61,8 +61,8 @@ const BodySection = memo(({ setToastMessage, setToastError, setShowToast }) => {
         <section id="projects" className="section scroll-mt-30">
             <Projects isSmall={isSmall} />
         </section>
-        <section id="content" className="section scroll-mt-30 mx-auto lg:w-[1024px]">
-            {/* <Tutorials /> */}
+        <section id="content" className="section scroll-mt-30 mx-auto lg:w-[1024px] w-full max-lg:px-3">
+            <Tutorials />
         </section>
         <section id="contact" className="section scroll-mt-30 mx-auto lg:w-[1024px] max-lg:px-3">
             <Contact
