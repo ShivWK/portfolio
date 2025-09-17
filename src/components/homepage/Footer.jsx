@@ -49,7 +49,7 @@ const Footer = ({ reference }) => {
 
         <p className="absolute bottom-8 text-center lg:hidden font-medium text-white tracking-wider font-footer">Dynamic BG powered by Vanilla JS.</p>
 
-        <p class="absolute bottom-3 text-center text-sm text-gray-100 tracking-wider font-heading">
+        <p className="absolute bottom-3 text-center text-sm text-gray-100 tracking-wider font-heading">
             © 2025 Shivendra Dwivedi. All rights reserved.
         </p>
 
