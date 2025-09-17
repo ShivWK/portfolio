@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import TutorialsCarousel from "./TutorialsCarousel";
+import { useEffect, useRef, useState } from "react";
+import TutorialCard from "./TutorialCard";
 import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
 import { tutorial } from "../../../utils/TutorialData";
 
@@ -7,9 +7,14 @@ const Tutorials = () => {
     const isSmall = window.innerWidth <= 768;
     const [currentIndex, setCurrentIndex] = useState(0);
     const [stopScroll, setStopScroll] = useState(false);
+    const stopScrollRef = useRef(stopScroll);
     const totalCount = tutorial.length;
     const dotArray = Array.from({ length: totalCount }, (_, i) => i);
 
+    useEffect(() => {
+        stopScrollRef.current = stopScroll;
+    }, [stopScroll])
+    
     useEffect(() => {
         if (stopScroll) {
             const timer = setTimeout(() => {
@@ -18,7 +23,20 @@ const Tutorials = () => {
 
             return () => clearTimeout(timer);
         }
-    }, [stopScroll])
+    }, [stopScroll]);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            if (stopScrollRef.current) return;
+
+            setCurrentIndex((prv) => {
+                if (prv === (tutorial.length - 1)) return 0;
+                return prv + 1;
+            })
+        }, 5000);
+
+        return () => clearInterval(timer);
+    }, []);
 
     const leftButtonClick = () => {
         setCurrentIndex(prv => {
@@ -62,15 +80,20 @@ const Tutorials = () => {
                 <div className="basis-[45%] text-justify lg:text-center lg:text-lg tracking-wider font-medium font-conten">
                     <p>I regularly share JavaScript tips, tutorials, and insights on LinkedIn. Here’s a collection of my posts to help fellow developers learn and grow</p>
                 </div>
-                <div className="basis-[50%] shrink-0 flex flex-col gap-4">
-                    <div className="relative">
-                        <button onClick={leftButtonClick} className="absolute left-0 top-1/2 -translate-y-1/2 bg-transparent rounded-full  shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] cursor-pointer active:scale-90 active:shadow-[0_0_5px_1px_rgba(3,165,252,0.6)] transition-all duration-150 ease-linear"><CircleArrowLeft size={35} /></button>
+                <div className="relative w-full basis-full lg:basis-[50%] shrink-0 flex flex-col gap-6">
+                    <div className="h-[27rem] lg:h-[31rem]">
+                        <button onClick={leftButtonClick} className="absolute left-0 top-1/2 -translate-y-1/2 max-lg:bg-blue-950 lg:backdrop-blur-sm rounded-full  shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] cursor-pointer active:scale-90 active:shadow-[0_0_5px_1px_rgba(3,165,252,0.6)] transition-all duration-150 ease-linear z-30"><CircleArrowLeft size={35} /></button>
 
-                        <TutorialsCarousel stopScroll={stopScroll} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
+                        <div className="relative lg:w-[80%] w-full h-full mx-auto">
+                            {tutorial.map((data, index) => {
+                                const show = currentIndex === index;
+                                return <TutorialCard key={index} index={index} cardData={data} show={show} />
+                            })}
+                        </div>
 
-                        <button onClick={rightButtonClick} className="absolute right-0 top-1/2 -translate-y-1/2 bg-transparent rounded-full  shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] cursor-pointer active:scale-90 active:shadow-[0_0_5px_1px_rgba(3,165,252,0.6)] transition-all duration-150 ease-linear"><CircleArrowRight size="35" /></button>
+                        <button onClick={rightButtonClick} className="absolute right-0 top-1/2 -translate-y-1/2 max-lg:bg-blue-950 lg:backdrop-blur-sm rounded-full  shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] cursor-pointer active:scale-90 active:shadow-[0_0_5px_1px_rgba(3,165,252,0.6)] transition-all duration-150 ease-linear"><CircleArrowRight size="35" /></button>
                     </div>
-                    <div id="dots" className="w-fit mx-auto flex gap-2">
+                    <div id="dots" className="w-fit mx-auto flex gap-3">
                         {dotArray.map((_, index) => <Dot key={index} index={index} />)}
                     </div>
                 </div>
