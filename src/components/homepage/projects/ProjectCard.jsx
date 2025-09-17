@@ -2,7 +2,7 @@ import { CircleArrowRight, Cog } from "lucide-react";
 import { Icon } from "@iconify/react";
 
 const ProjectCard = ({ data, isSmall }) => {
-    return <div className="flex flex-col items-center gap-0.5 lg:gap-1 lg:basis-[48%] basis-full backdrop-blur-md rounded-xl shadow-[0_0_15px_2px_rgba(3,165,252,0.6)]">
+    return <div className="flex flex-col items-center gap-0.5 lg:gap-1 lg:basis-[48%] basis-full backdrop-blur-md rounded-xl shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] text-white">
         <div id="projectPic" className="relative group w-full h-52 md:h-64 lg:h-72 overflow-hidden border-4 border-[#011932] rounded-xl">
             <img src={data.homeScreenPic} alt="Project home screen" className="object-cover w-full h-full  hover:scale-110 transition-all duration-300 ease-in-out" />
             <a href={data.liveLink} target="__blank" className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
@@ -41,7 +41,7 @@ const ProjectCard = ({ data, isSmall }) => {
 
             <ul className="list-disc pl-4 lg:pl-5 mt-1 marker:text-blue-400">
                 {data.featuredHeighLights.map((data, index) => {
-                    return <li key={index} className="" dangerouslySetInnerHTML={{ __html: data }}></li>
+                    return <li key={index} className="text-white" dangerouslySetInnerHTML={{ __html: data }}></li>
                 })}
             </ul>
         </div>

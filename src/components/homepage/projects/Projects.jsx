@@ -12,7 +12,7 @@ const Projects = ({ isSmall }) => {
     return <div ref={containerRef} className={`mx-auto mt-4 lg:w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
         <h2 className="text-3xl lg:text-4xl w-fit font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-6 lg:mb-9 self-start">Projects</h2>
 
-        <p className="text-justify lg:text-lg tracking-wider font-medium font-content">
+        <p className="text-justify lg:text-lg tracking-wider font-medium font-content text-white">
            A showcase of my work, divided into Fullstack Applications with real-world integrations and Frontend Mini Projects focusing on UI, usability, and performance.
         </p>
 
