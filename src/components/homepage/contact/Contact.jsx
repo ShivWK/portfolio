@@ -12,7 +12,7 @@ const Contact = memo(({ setToastMessage, setToastError, setShowToast }) => {
     query: "",
   });
 
-  useIntersection(formRef, setReady, 0.04);
+  useIntersection(formRef, setReady, 0.03);
 
   const fieldValuesHandler = (e) => {
     setFieldValues((prv) => ({
