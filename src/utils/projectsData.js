@@ -3,7 +3,7 @@ export const majorProjects = [
         homeScreenPic: "/images/zestyeats.png",
         liveLink: "https://zestyeats.shivendra.site",
         githubLink: "https://github.com/ShivWK/ZestyEats.git",
-        underDevelopment: false,
+        underDevelopment: true,
         title: "ZestyEats – Online Food Delivery App",
         techStack: [
             {
