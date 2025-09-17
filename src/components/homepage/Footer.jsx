@@ -1,6 +1,6 @@
 const Footer = ({ reference }) => {
-    return <footer ref={reference} className="flex items-center justify-center h-24 lg:h-40 overflow-hidden">
-            <svg
+    return <footer ref={reference} className="flex items-center justify-center h-36 lg:h-52 overflow-hidden">
+        <svg
             className="h-full w-full"
             viewBox="0 24 150 28"
             preserveAspectRatio="none"
@@ -45,9 +45,13 @@ const Footer = ({ reference }) => {
             </g>
         </svg>
 
-        <p className="absolute bottom-3 text-center hidden lg:block font-medium text-white tracking-wider font-footer">Background is crafted with Vanilla JavaScript, CSS and HTML.</p>
+        <p className="absolute bottom-8 text-center hidden lg:block font-medium text-white tracking-wider font-footer">Background is crafted with Vanilla JavaScript, CSS and HTML.</p>
 
-        <p className="absolute bottom-3 text-center lg:hidden font-medium text-white tracking-wider font-footer">Dynamic BG powered by Vanilla JS.</p>
+        <p className="absolute bottom-8 text-center lg:hidden font-medium text-white tracking-wider font-footer">Dynamic BG powered by Vanilla JS.</p>
+
+        <p class="absolute bottom-3 text-center text-sm text-gray-100 tracking-wider font-heading">
+            © 2025 Shivendra Dwivedi. All rights reserved.
+        </p>
 
     </footer>
 }

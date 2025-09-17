@@ -71,7 +71,7 @@ const NavigationMenu = ({ currentSection }) => {
         <a href="#projects" ref={ProjectsNavLink} onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2 lg:px-5 py-1.5 lg:py-2">Projects</a>
         <a href="#content" ref={ContentNavLink} onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2 lg:px-5 py-1.5 lg:py-2">Tutorials</a>
         <a href="#contact" ref={ContactNavLink} onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2 lg:px-5 pr-3.5 lg:pr-6 py-1.5 lg:py-2">Contact</a>
-        <span className={`absolute h-full bg-[linear-gradient(90deg,rgba(2,0,36,1)_0%,rgba(9,9,121,1)_35%,rgba(0,212,255,0.5)_100%)] rounded-[1.3rem] lg:rounded-3xl -z-10 transition-all duration-200 ease-linear`} style={{
+        <span className={`absolute h-full bg-[linear-gradient(90deg,rgba(2,0,36,1)_0%,rgba(9,9,121,1)_35%,rgba(0,212,255,0.5)_100%)] rounded-[1.3rem] lg:rounded-3xl -z-10 transition-all duration-300 ease-linear`} style={{
             left: navSliderStyle.left,
             width: navSliderStyle.width
         }}></span>
