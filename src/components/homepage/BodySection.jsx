@@ -19,24 +19,15 @@ const BodySection = memo(({ setToastMessage, setToastError, setShowToast }) => {
             setReady(true);
         }, 300)
 
-        const sections = document.querySelectorAll(".section");
-        let visibleSection = null;
-
+        const sections = document.querySelectorAll("section");
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    if (!visibleSection || entry.intersectionRatio > visibleSection.intersectionRatio) {
-                        visibleSection = entry
-                    }
+                    setCurrentSection(entry.target);
                 }
             })
 
-            if (visibleSection) {
-                setCurrentSection(visibleSection.target);
-            } else {
-                setCurrentSection(null);
-            }
-        }, { threshold: 0.5 });
+        }, { threshold: 0.2 });
 
         sections.forEach(ele => {
             observer.observe(ele);
