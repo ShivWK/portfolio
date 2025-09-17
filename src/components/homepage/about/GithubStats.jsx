@@ -7,7 +7,7 @@ const GithubStats = ({ isSmall }) => {
     useIntersection(containerRef, setReady);
 
     return <div ref={containerRef} className={`flex flex-col items-center gap-6 lg:gap-8 mx-auto lg:max-w-[1024px] max-lg:px-3 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
-        <h3 className="self-start text-2xl lg:text-3xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Github Stats</h3>
+        <h3 className="self-start text-2xl lg:text-3xl w-fit font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Github Stats</h3>
 
         <div className="flex items-center justify-center">
             <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-4">

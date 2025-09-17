@@ -78,11 +78,11 @@ const Tutorials = () => {
 
     return (
         <div ref={containerRef} className={`flex items-center justify-center flex-col mt-4 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
-            <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent justify-self-start bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-5 lg:mb-12 self-start">
+            <h2 className="text-3xl lg:text-4xl w-fit font-bold font-heading tracking-wide text-transparent justify-self-start bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-5 lg:mb-12 self-start">
                 Sharing Knowledge
             </h2>
             <div className="flex flex-col max-lg:gap-8 lg:flex-row items-center justify-between">
-                <div className="basis-[45%] text-justify lg:text-center lg:text-lg tracking-wider font-medium font-conten">
+                <div className="basis-[45%] text-justify lg:text-center lg:text-lg tracking-wider font-medium font-content text-white">
                     <p>I regularly share JavaScript tips, tutorials, and insights on LinkedIn. Here’s a collection of my posts to help fellow developers learn and grow</p>
                 </div>
                 <div className="w-full basis-full lg:basis-[52%] shrink-0 flex flex-col gap-5 lg:gap-6">

@@ -165,7 +165,7 @@ export const mainSkills = {
     ],
 
     frameworks: [
-        "Frameworks & Libraries",
+        "Frameworks And Libraries",
         {
             icon: "ri:reactjs-line",
             text: "ReactJS",
@@ -210,7 +210,7 @@ export const mainSkills = {
     ],
 
     dataFetchingApis: [
-        "Data Fetching & APIs",
+        "Data Fetching And APIs",
         {
             icon: "mdi:api",
             text: "Fetch API",
@@ -242,7 +242,7 @@ export const mainSkills = {
     ],
 
     auth: [
-        "Authentication & Security",
+        "Authentication And Security",
         {
             icon: "simple-icons:jsonwebtokens",
             text: "JWT",
@@ -269,7 +269,7 @@ export const mainSkills = {
     ],
 
     backend: [
-        "Backend & Databases",
+        "Backend And Databases",
         {
             icon: "mdi:nodejs",
             text: "Node.js",
@@ -296,7 +296,7 @@ export const mainSkills = {
     ],
 
     tools: [
-        "Tools & Platforms",
+        "Tools And Platforms",
         {
             icon: "mdi:github",
             text: "git & github",

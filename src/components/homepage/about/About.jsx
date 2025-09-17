@@ -1,7 +1,7 @@
 const About = () => {
     return <div className="pb-6 lg:pb-8 mt-2">
         <div>
-            <h2 className="text-3xl lg:text-4xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-4 lg:mb-6">About</h2>
+            <h2 className="text-3xl lg:text-4xl w-fit font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-4 lg:mb-6">About</h2>
 
             <p className="text-justify my-4 lg:text-lg tracking-wider font-medium font-content hidden lg:block">
                 I’m Shivendra Dwivedi, a passionate Web Developer skilled in building modern, fast, and user-focused applications.

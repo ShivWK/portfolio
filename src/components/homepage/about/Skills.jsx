@@ -46,7 +46,7 @@ const Skills = ({ isSmall }) => {
 
     return <div>
         <div className="mx-auto lg:max-w-[1024px] max-lg:px-3">
-            <h3 className="text-2xl lg:text-3xl w-fit font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Skills</h3>
+            <h3 className="text-2xl lg:text-3xl w-fit font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Skills</h3>
         </div>
 
         <div ref={rowRef} id="skillsRow" className="w-full my-6 lg:my-7 px-1 flex items-center gap-4 lg:gap-6 overflow-auto hide-scrollbar">
@@ -56,7 +56,7 @@ const Skills = ({ isSmall }) => {
         <div ref={mainSkillRef} className={`lg:max-w-[1024px] max-lg:px-3 mx-auto my-10 transform ${ready ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"} transition-all duration-400 ease-linear`}>
             {Object.entries(mainSkills).map((data, index) => {
                 return <div key={index} className={`${data[0] === "coreSkills" ? "lg:mb-6 lg:-mt-1 mb-4 -mt-4" : "lg:my-8 my-6"}`}>
-                    <h4 className="w-fit lg:text-2xl text-xl font-semibold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">{data[1][0]}</h4>
+                    <h4 className="w-fit lg:text-2xl text-xl font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">{data[1][0]}</h4>
                     <div className="flex items-center lg:gap-3 gap-2 flex-wrap my-2">
                         {
                             data[1].slice(1).map((data, index) => <SkillBadge2 key={index} icon={data.icon} text={data.text} bgColor={data.bgColor} isSmall={isSmall} />)

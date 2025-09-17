@@ -66,7 +66,7 @@ const NavigationMenu = ({ currentSection }) => {
         setNavSliderStyle({ left, width });
     }
 
-    return <nav className="sticky top-10 flex items-center mx-auto text-lg lg:text-xl font-semibold backdrop-blur-md bg-white/5 w-fit rounded-4xl overflow-hidden shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] select-none font-heading z-50 mt-18 lg:mt-36">
+    return <nav className="sticky top-10 flex items-center mx-auto text-lg lg:text-xl font-bold backdrop-blur-md bg-white/5 w-fit rounded-4xl overflow-hidden shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] select-none font-heading z-50 mt-18 lg:mt-36 text-white">
         <a href="#about" ref={HomeNavLink} onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2.5 lg:px-5 pl-3.5 lg:pl-6 py-1.5 lg:py-2">About</a>
         <a href="#projects" ref={ProjectsNavLink} onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2 lg:px-5 py-1.5 lg:py-2">Projects</a>
         <a href="#content" ref={ContentNavLink} onMouseEnter={hoverHandler} className="hover:text-blue-300 px-2 lg:px-5 py-1.5 lg:py-2">Tutorials</a>
