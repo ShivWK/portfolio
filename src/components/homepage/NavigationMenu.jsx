@@ -7,8 +7,6 @@ const NavigationMenu = ({ currentSection }) => {
     const ContentNavLink = useRef(null);
     const ContactNavLink = useRef(null);
 
-    // console.log(currentSection)
-
     useEffect(() => {
         if (HomeNavLink.current) {
             const width = HomeNavLink.current.offsetWidth;

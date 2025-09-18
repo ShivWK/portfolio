@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import useIntersection from "../../../utils/IntersectionObserver";
 
 const GithubStats = ({ isSmall }) => {
