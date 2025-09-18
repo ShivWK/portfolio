@@ -1,7 +1,9 @@
 export const majorProjects = [
     {
         homeScreenPic: "/images/zestyeats.png",
+        linkAvailable: true,
         liveLink: "https://zestyeats.shivendra.site",
+        alternateLinkText: "Coming Soon",
         githubLink: "https://github.com/ShivWK/ZestyEats.git",
         underDevelopment: true,
         title: "ZestyEats – Online Food Delivery App",
@@ -85,7 +87,9 @@ export const majorProjects = [
 export const minProjects = [
     {
         homeScreenPic: "/images/countries.png",
+        linkAvailable: true,
         liveLink: "https://worldrestapi.netlify.app",
+        alternateLinkText: "Coming Soon",
         githubLink: "https://github.com/ShivWK/Country-Rest-API.git",
         underDevelopment: false,
         title: "World Explorer – Country Info with Theme Switcher",
@@ -107,7 +111,7 @@ export const minProjects = [
         ],
 
         badges: ["REST API", "Responsive Design", "Dark/Light Theme"],
-        
+
         description: "A web application that fetches and displays detailed information about countries using the REST Countries API. It includes features like region-based filtering, country search, and a color theme switcher (light/dark mode) for an enhanced user experience. Built with modern frontend practices to deliver a clean and responsive interface.",
 
         featuredHeighLights: [
@@ -115,11 +119,71 @@ export const minProjects = [
 
             "<strong style='color: oklch(70.7% 0.165 254.624);'>Smart Filtering:</strong> Find countries by region or name instantly.",
 
-            "<strong style='color: oklch(70.7% 0.165 254.624);'>Theme Switcher:</strong> Toggle between light and dark modes for better accessibility",
+            "<strong style='color: oklch(70.7% 0.165 254.624);'>Theme Switcher:</strong> Toggle between light and dark modes for better accessibility.",
 
             "<strong style='color: oklch(70.7% 0.165 254.624);'>Responsive Design:</strong> Optimized for desktop and mobile screens.",
 
             "<strong style='color: oklch(70.7% 0.165 254.624);'>Clean Implementation:</strong> Built with modern frontend best practices.",
+        ]
+    },
+
+    {
+        homeScreenPic: "/images/portfolio.png",
+        linkAvailable: false,
+        liveLink: "https://portfolio.shivendra.site",
+        alternateLinkText: "Current",
+        githubLink: "https://github.com/ShivWK/portfolio.git",
+        underDevelopment: true,
+        title: "World Explorer – Country Info with Theme Switcher",
+        techStack: [
+            {
+                icon: "vscode-icons:file-type-reactjs",
+                text: "ReactJS"
+            },
+
+            {
+                icon: "devicon:reactrouter",
+                text: "React Router"
+            },
+
+            {
+                icon: "devicon:html5",
+                text: "HTML5"
+            },
+
+            {
+                icon: "devicon:css3",
+                text: "CSS3"
+            },
+
+            {
+                icon: "devicon:tailwindcss",
+                text: "TailwindCSS"
+            },
+
+            {
+                icon: "skill-icons:javascript",
+                text: "JavaScript"
+            },
+
+            {
+                icon: "tabler:brand-framer-motion",
+                text: "Framer Motion"
+            },
+        ],
+
+        badges: ["HTML Canvas API", "Responsive Design"],
+
+        description: "A modern, responsive portfolio built with React.js and Tailwind CSS to showcase my skills, projects, and technical journey. Designed with performance, accessibility, and aesthetics in mind, it serves as both a personal brand identity and a demonstration of my frontend expertise.",
+
+        featuredHeighLights: [
+            "<strong style='color: oklch(70.7% 0.165 254.624);'>Performance-first:</strong> Fast-loading, <span style='font-weight: 500; color: #53eafd'>mobile-friendly</span>, and SEO-ready",
+
+            "<strong style='color: oklch(70.7% 0.165 254.624);'>Clean UI/UX:</strong> Elegant design with smooth animations using <span style='font-weight: 500; color: #53eafd'>CSS3 & Framer Motion</span>.",
+
+            "<strong style='color: oklch(70.7% 0.165 254.624);'>Interactive Sections:</strong> Projects carousel, skills highlights, and <span style='font-weight: 500; color: #53eafd'>LinkedIn tutorials integration</span>.",
+
+            "<strong style='color: oklch(70.7% 0.165 254.624);'>Scalable Structure:</strong> Built with best practices in React for easy future expansion.",
         ]
     }
 ]

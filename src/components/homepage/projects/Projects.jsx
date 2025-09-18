@@ -18,7 +18,7 @@ const Projects = ({ isSmall }) => {
 
         <h3 className="text-2xl text-center lg:text-3xl w-fit font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mt-8 lg:mt-10 mb-8 lg:mb-8">Major Projects</h3>
 
-        <div className="flex flex-col lg:flex-row lg:gap-14 gap-12 w-full" >
+        <div className="flex flex-wrap flex-col lg:flex-row lg:gap-8 gap-12 w-full" >
             {majorProjects.map((data, index) => {
                 return <ProjectCard key={index} data={data} isSmall={isSmall} />
             })}
@@ -26,7 +26,7 @@ const Projects = ({ isSmall }) => {
 
         <h3 className="text-2xl text-center lg:text-3xl w-fit font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mt-12 lg:mt-14 mb-8 lg:mb-8">Frontend Only Projects</h3>
 
-        <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 w-full" >
+        <div className="flex flex-col lg:flex-row lg:gap-8 gap-12 w-full" >
             {minProjects.map((data, index) => {
                 return <ProjectCard key={index} data={data} isSmall={isSmall} />
             })}

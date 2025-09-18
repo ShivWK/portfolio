@@ -349,7 +349,7 @@ export const mainSkills = {
 
         {
             icon: "hugeicons:study-desk",
-            text: "Advance Backend",
+            text: "Advanced Backend",
             bgColor: "#4CAF50",
         },
 
@@ -382,7 +382,7 @@ export const mainSkills = {
 
         {
            icon: "tabler:brand-threejs",
-            text: "React three fibre",
+            text: "React Three Fiber",
             bgColor: "#08b5c4", 
         },
     ]
