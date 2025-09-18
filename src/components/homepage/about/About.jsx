@@ -9,7 +9,7 @@ const About = () => {
             </p>
 
             <p className="text-justify my-4 lg:text-lg tracking-wider font-medium font-content hidden lg:block">
-                Currently, I’m focused on frontend development roles where I can contribute to product-based companies, solve real-world problems, and keep growing my technical expertise.
+                Currently, I’m focused on frontend development and web developer roles where I can contribute to impactful projects, solve real-world problems, and keep growing my technical expertise.
             </p>
 
             <p className="text-justify my-3  sm:text-base tracking-wide font-medium font-content lg:hidden">
@@ -17,7 +17,7 @@ const About = () => {
             </p>
 
             <p className="text-justify my-3  sm:text-base tracking-wide font-medium font-content lg:hidden">
-                Currently focused on frontend roles where I can contribute to product-based companies and grow my expertise.
+                Currently focused on frontend and web developer roles where I can contribute and grow my expertise.
             </p>
         </div>
     </div>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useLayoutEffect } from "react";
-import HeroSection from "./HeroSection";
+import HeroSection from "./HeroSection/HeroSection";
 import BodySection from "./BodySection";
 
 import {

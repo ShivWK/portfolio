@@ -83,7 +83,7 @@ const Tutorials = () => {
             </h2>
             <div className="flex flex-col max-lg:gap-8 lg:flex-row items-center justify-between">
                 <div className="basis-[45%] text-justify lg:text-center lg:text-lg tracking-wider font-medium font-content text-white">
-                    <p>I regularly share JavaScript tips, tutorials, and insights on LinkedIn. Here’s a collection of my posts to help fellow developers learn and grow</p>
+                    <p>I regularly share web development tips, tutorials, and insights on LinkedIn. Here’s a collection of my carousel posts to help fellow developers learn and grow.</p>
                 </div>
                 <div className="w-full basis-full lg:basis-[52%] shrink-0 flex flex-col gap-5 lg:gap-6">
                     <div className="relative h-[29rem] lg:h-[31rem]" onMouseEnter={() => setStopScroll(true)} onMouseLeave={() => setStopScroll(false)}>

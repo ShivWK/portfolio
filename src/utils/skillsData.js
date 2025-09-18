@@ -295,6 +295,28 @@ export const mainSkills = {
         },
     ],
 
+     AI: [
+        "AI-Powered Development Tools",
+
+        {
+            icon: "hugeicons:chat-gpt",
+            text: "Chat GPT",
+            bgColor: "#10A37F",
+        },
+
+        {
+            icon: "simple-icons:githubcopilot",
+            text: "Github Copilot",
+            bgColor: "linear-gradient(to right, #0098FF 10%, #6F42C1, #20C997)",
+        },
+
+        {
+            icon: "ri:code-ai-fill",
+            text: "Cursor AI",
+            bgColor: "#9B6DFF",
+        },
+    ],
+
     tools: [
         "Tools And Platforms",
         {
@@ -320,5 +342,5 @@ export const mainSkills = {
             text: "Render",
             bgColor: "#000000",
         },
-    ]
+    ],
 }

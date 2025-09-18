@@ -13,7 +13,7 @@ const Projects = ({ isSmall }) => {
         <h2 className="text-3xl lg:text-4xl w-fit font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mb-6 lg:mb-9 self-start">Projects</h2>
 
         <p className="text-justify lg:text-lg tracking-wider font-medium font-content text-white">
-           A showcase of my work, divided into Fullstack Applications with real-world integrations and Frontend Mini Projects focusing on UI, usability, and performance.
+           A showcase of my work, divided into Fullstack Applications with real-world integrations and Frontend Only Projects focusing on UI, usability, and performance.
         </p>
 
         <h3 className="text-2xl text-center lg:text-3xl w-fit font-bold font-heading tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 mt-8 lg:mt-10 mb-8 lg:mb-8">Major Projects</h3>

@@ -1,10 +1,9 @@
 import { useState, useRef, useEffect, memo } from "react";
 import { Download } from "lucide-react";
+import SocialLinks from "./SocialLinks";
 
 const HeroSection = memo(() => {
     const [particles, setParticles] = useState(170);
-    const [hovered, setHovered] = useState(false);
-    const [color, setColor] = useState("rgba(0,0,0,1)");
     const [ready, setReady] = useState(false);
     const isSmall = window.innerWidth <= 768;
 
@@ -183,33 +182,15 @@ const HeroSection = memo(() => {
         }, { timeout: 1000 })
     }, [particles])
 
-    const hoverHandler = (color) => {
-        if (window.innerWidth <= 768) return;
-
-        setColor(color);
-        setHovered(true);
-    }
-
-    const clickHandler = (color) => {
-        if (window.innerWidth <= 768) {
-            setColor(color);
-            setHovered(true);
-        }
-
-        setTimeout(() => {
-            setHovered(false);
-        }, 300)
-    }
-
-    return <section ref={heroRef} id="hero" className="relative w-full h-[29rem] lg:h-[26rem] animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)] z-30 pt-1">
+    return <section ref={heroRef} id="hero" className="relative w-full h-[29rem] lg:h-[27rem] animate-waveSm lg:animate-waveLg bg-[linear-gradient(135deg,#0d0d0f,#040427,#0a294e)] z-30 pt-1">
         <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col max-lg:gap-3 lg:flex-row items-center justify-center lg:justify-between -mt-12 lg:-mt-8 w-[85%] lg:w-[63%] z-50 ">
             <div className="lg:order-1 order-2 text-white flex flex-col gap-1 lg:gap-2 justify-center items-center basis-[60%] lg:basis-[75%] font-heading">
                 <p className="text-2xl flex items-center lg:text-3xl font-semibold tracking-wider leading-5 lg:leading-6 text-center">Shivendra Dwivedi
                     <span className="hidden lg:inline">︱</span>
-                    <span className="hidden lg:inline">Frontend Developer</span>
+                    <span className="hidden lg:inline">Web Developer</span>
                 </p>
-                <p className="lg:hidden text-lg font-semibold">Hi, I’m Frontend Web Developer </p>
-                <p className="text-xl hidden lg:block">I build modern, fast, and user-focused web applications</p>
+                <p className="lg:hidden text-lg font-semibold">Hi, I’m Web Developer</p>
+                <p className="text-xl hidden lg:block">I build modern, fast, and user-focused web applications.</p>
 
                 <p className="font-medium lg:text-xl lg:hidden leading-5 tracking-wide text-center">I create sleek, fast, user-centric web applications.</p>
 
@@ -218,74 +199,9 @@ const HeroSection = memo(() => {
                     <span className="tracking-wide z-10 lg:text-lg">Resume</span>
                     <Download size={18} strokeWidth={3} className="z-10 group-hover:animate-pulse" />
                 </button>
-
-                <div className="flex relative items-center gap-3 mt-1 lg:mt-1 overflow-hidden rounded-4xl bg-blue-950 px-4 py-1.5">
-                    <a
-                        href="https://www.linkedin.com/in/shivendra-dwivedi"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
-                        target="__block"
-                    >
-                        <i
-                            onMouseEnter={() => hoverHandler("rgba(41,140,240)")}
-                            onMouseOut={() => setHovered(false)}
-                            onClick={() => clickHandler("rgba(41,140,240)")}
-                            className="fa-brands fa-linkedin text-2xl text-[rgb(41,140,240)] hover:text-black"
-                        ></i>
-                    </a>
-                    <a
-                        href="https://github.com/ShivWK"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
-                        target="__block"
-                    >
-                        <i
-                            onMouseEnter={() => hoverHandler("#d1d5dc")}
-                            onMouseOut={() => setHovered(false)}
-                            onClick={() => clickHandler("#d1d5dc")}
-                            className="fa-brands fa-square-github text-2xl text-gray-300 hover:text-black"
-                        ></i>
-                    </a>
-                    <a
-                        href="https://x.com/Shivendrawk"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
-                        target="__block"
-                    >
-                        <i
-                            onMouseEnter={() => hoverHandler("#000000")}
-                            onMouseOut={() => setHovered(false)}
-                            onClick={() => clickHandler("#000000")}
-                            className="fa-brands fa-square-x-twitter text-2xl text-black hover:text-gray-300"
-                        ></i>
-                    </a>
-                    <a
-                        href="https://instagram.com/shivendrawk"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
-                        target="__block"
-                    >
-                        <i
-                            onMouseEnter={() => hoverHandler("linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)")}
-                            onMouseOut={() => setHovered(false)}
-                            onClick={() => clickHandler("linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5)")}
-                            className="fa-brands fa-instagram text-2xl text-[#e13030] hover:text-black"
-                        ></i>
-                    </a>
-                    <a
-                        href="mailto:shivendra@shivendra.site"
-                        className="hover:scale-[1.2] active:scale-95 hover:shadow-lg transition-all duration-100 ease-linear mt-1 z-20"
-                    >
-                        <i
-                            onMouseEnter={() => hoverHandler("#d93025")}
-                            onMouseOut={() => setHovered(false)}
-                            onClick={() => clickHandler("#d93025")}
-                            className="fa-solid fa-envelope text-2xl text-[#d93025] hover:text-black"
-                        ></i>
-                    </a>
-
-                    <span className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full z-10 ${hovered ? "[clip-path:circle(100%)]" : "[clip-path:circle(0%)]"} transition-all duration-300 ease-linear`}
-                        style={{ background: color }}
-                    ></span>
-                </div>
+                <SocialLinks />
             </div>
-            <div className="rounded-full lg:order-2 order-1 bg-[url(/images/me4.jpeg)] bg-[position:center] h-32 lg:h-44 w-32 lg:w-44 bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
+            <div className="rounded-full lg:order-2 order-1 bg-[url(/images/me4.jpeg)] bg-[position:center] h-32 lg:h-[12rem] w-32 lg:w-[12rem] bg-cover overflow-hidden p-4 border-2 border-blue-500 shadow-[0_0_15px_2px_rgba(3,165,252,0.7)]"></div>
         </div>
         <canvas ref={canvasRef} className={`-z-30 ${ready && "animate-canvasFadeIn"}`} ></canvas>
     </section>
