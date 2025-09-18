@@ -11,7 +11,7 @@ const GithubStats = ({ isSmall }) => {
 
         <div className="flex items-center justify-center">
             <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-4">
-                <img src="https://github-readme-streak-stats.herokuapp.com/?user=ShivWK&theme=highcontrast&border_color=53eafd&bg_color=011026" />
+                <img src="https://github-readme-streak-stats-eight.vercel.app?user=ShivWK&theme=dark" alt="GitHub Streak" />
 
                 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShivWK&layout=compact&theme=highcontrast&show_icons=true&title_color=53eafd&border_color=53eafd&bg_color=011026&card_width=500px" />
             </div>
