@@ -8,7 +8,7 @@ export const skillRowData = [
         icon: "skill-icons:typescript",
         text: "TypeScript"
     },
-    
+
     {
         icon: "skill-icons:redux",
         text: "Redux"
@@ -295,7 +295,7 @@ export const mainSkills = {
         },
     ],
 
-     AI: [
+    AI: [
         "AI-Powered Development Tools",
 
         {
@@ -343,4 +343,47 @@ export const mainSkills = {
             bgColor: "#000000",
         },
     ],
+
+    current: [
+        "Currently Learning",
+
+        {
+            icon: "hugeicons:study-desk",
+            text: "Advance Backend",
+            bgColor: "#4CAF50",
+        },
+
+        {
+            icon: "carbon:data-structured",
+            text: "DSA",
+            bgColor: "#FF9800",
+        },
+
+        {
+            icon: "skill-icons:nextjs-light",
+            text: "NextJS",
+            bgColor: "#000000",
+        },
+    ],
+
+    future: [
+        "Future Roadmap", 
+        {
+           icon: "mdi:architecture",
+            text: "System Design",
+            bgColor: "#673AB7", 
+        },
+
+        {
+           icon: "skill-icons:threejs-light",
+            text: "ThreeJS",
+            bgColor: "#000000", 
+        },
+
+        {
+           icon: "tabler:brand-threejs",
+            text: "React three fibre",
+            bgColor: "#08b5c4", 
+        },
+    ]
 }
