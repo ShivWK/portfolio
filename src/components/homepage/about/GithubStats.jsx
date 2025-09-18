@@ -16,7 +16,7 @@ const GithubStats = ({ isSmall }) => {
                 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ShivWK&layout=compact&theme=highcontrast&show_icons=true&title_color=53eafd&border_color=53eafd&bg_color=011026&card_width=500px" />
             </div>
         </div>
-        <div className="hidden lg:block">
+        <div className="">
             <img className="-z-50" src={`https://github-readme-activity-graph.vercel.app/graph?username=ShivWK&theme=react-dark&color=ffffff&border_color=53eafd&point=53eafd&radius=16&height=${isSmall ? 500 : 350}&from=2024-14-20`} />
         </div>
     </div>

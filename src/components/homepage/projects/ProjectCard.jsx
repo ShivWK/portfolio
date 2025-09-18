@@ -7,23 +7,23 @@ const ProjectCard = ({ data, isSmall }) => {
             <img src={data.homeScreenPic} alt="Project home screen" className="object-cover w-full h-full  hover:scale-110 transition-all duration-300 ease-in-out" />
 
             {data.linkAvailable
-                ? <a href={data.liveLink} target="__blank" className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
+                ? <a href={data.liveLink} target="__blank" className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5 select-none">
                     <p>{data.underDevelopment ? "Live Demo" : "Live"}</p>
                     <CircleArrowRight size={isSmall ? 18 : 20} strokeWidth={2.5} className="transform rotate-[-45deg] group-hover:animate-pulse" />
                 </a>
-                : <div target="__blank" className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
+                : <div target="__blank" className="group projectTag -top-1 -left-1 tracking-wider rounded-br-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5 select-none">
                     <p>{data.alternateLinkText}</p>
                     {data.alternateLinkText === "Coming Soon"
                         ? <Hourglass size={isSmall ? 18 : 20} strokeWidth={2.5} className="group-hover:animate-pulse" />
                         : <CircleDot fill="red" size={isSmall ? 18 : 20} strokeWidth={2.5} className="group-hover:animate-pulse" />}
                 </div>
             }
-            <a href={data.githubLink} target="__blank" className="group projectTag z-10 tracking-wider -bottom-1 -right-1 rounded-tl-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5">
+            <a href={data.githubLink} target="__blank" className="group projectTag z-10 tracking-wider -bottom-1 -right-1 rounded-tl-xl flex items-center gap-1.5 lg:gap-2 lg:text-lg font-medium lg:font-semibold px-2 lg:px-3 py-0.5 select-none">
                 <p>github </p>
                 <Icon icon="skill-icons:github-light" width={isSmall ? 18 : 20} height={isSmall ? 18 : 20} className="group-hover:animate-pulse" />
             </a>
             {
-                data.underDevelopment && <div className="absolute left-1 bottom-1.5 flex items-center gap-1.5 lg:gap-2 px-1.5 lg:px-2 py-0.5 rounded-md bg-[linear-gradient(to_right,#2575FC,#6A11CB,#667EEA)]">
+                data.underDevelopment && <div className="absolute left-1 bottom-1.5 flex items-center gap-1.5 lg:gap-2 px-1.5 lg:px-2 py-0.5 rounded-md bg-[linear-gradient(to_right,#2575FC,#6A11CB,#667EEA)] select-none">
                     <Cog size={isSmall ? 18 : 20} strokeWidth={2.5} className="animate-spin text-white" />
                     <p className="text-white max-lg:text-sm tracking-wide font-heading font-medium lg:font-semibold z-20">Under Development</p>
                 </div>
