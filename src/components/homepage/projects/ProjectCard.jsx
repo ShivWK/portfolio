@@ -2,7 +2,7 @@ import { CircleArrowRight, Cog, Hourglass, CircleDot } from "lucide-react";
 import { Icon } from "@iconify/react";
 
 const ProjectCard = ({ data, isSmall }) => {
-    return <div className="flex flex-col items-center gap-0.5 lg:gap-1 lg:basis-[48%] basis-full backdrop-blur-md rounded-xl shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] text-white shrink-0">
+    return <div className="flex flex-col items-center gap-0.5 lg:gap-1 lg:basis-[48%] basis-full backdrop-blur-md rounded-xl shadow-[0_0_15px_2px_rgba(3,165,252,0.6)] text-white shrink-0 self-start">
         <div id="projectPic" className="relative group w-full h-52 md:h-64 lg:h-72 overflow-hidden border-4 border-[#011932] rounded-xl">
             <img src={data.homeScreenPic} alt="Project home screen" className="object-cover w-full h-full  hover:scale-110 transition-all duration-300 ease-in-out" />
 
