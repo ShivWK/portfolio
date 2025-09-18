@@ -172,7 +172,7 @@ export const minProjects = [
             },
         ],
 
-        badges: ["HTML Canvas API", "Intersection Observer API", "Responsive Design"],
+        badges: ["HTML Canvas API", "Responsive Design", "Intersection Observer API" ],
 
         description: "A modern, responsive portfolio built with React.js and Tailwind CSS to showcase my skills, projects, and technical journey. Designed with performance, accessibility, and aesthetics in mind, it serves as both a personal brand identity and a demonstration of my frontend expertise.",
 
