@@ -92,7 +92,7 @@ export const minProjects = [
         alternateLinkText: "Current",
         githubLink: "https://github.com/ShivWK/portfolio.git",
         underDevelopment: true,
-        title: "World Explorer – Country Info with Theme Switcher",
+        title: "Personal Portfolio Website",
         techStack: [
             {
                 icon: "vscode-icons:file-type-reactjs",
