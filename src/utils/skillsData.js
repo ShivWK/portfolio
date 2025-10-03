@@ -367,23 +367,41 @@ export const mainSkills = {
     ],
 
     future: [
-        "Future Roadmap", 
+        "Future Roadmap",
         {
-           icon: "mdi:architecture",
+            icon: "mdi:architecture",
             text: "System Design",
-            bgColor: "#673AB7", 
+            bgColor: "#673AB7",
         },
 
         {
-           icon: "skill-icons:threejs-light",
+            icon: "skill-icons:threejs-light",
             text: "ThreeJS",
-            bgColor: "#000000", 
+            bgColor: "#000000",
         },
 
         {
-           icon: "tabler:brand-threejs",
+            icon: "tabler:brand-threejs",
             text: "React Three Fiber",
-            bgColor: "#08b5c4", 
+            bgColor: "#08b5c4",
+        },
+
+        {
+            icon: "mingcute:ai-fill",
+            text: "Generative AI",
+            bgColor: "linear-gradient(135deg, #6A5ACD, #FF6EC7)",
+        },
+
+        {
+            icon: "mingcute:ai-line",
+            text: "Agentic AI",
+            bgColor: "linear-gradient(135deg, #0F9D58, #4285F4)",
+        },
+
+        {
+            icon: "logos:python",
+            text: "Python",
+            bgColor: "linear-gradient(to right, #3776AB, #FFD43B)",
         },
     ]
 }
