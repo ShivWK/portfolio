@@ -173,6 +173,12 @@ export const mainSkills = {
         },
 
         {
+            icon: "skill-icons:nextjs-light",
+            text: "NextJS",
+            bgColor: "#000000",
+        },
+
+        {
             icon: "akar-icons:redux-fill",
             text: "Redux Toolkit",
             bgColor: "#764ABC"
@@ -357,13 +363,7 @@ export const mainSkills = {
             icon: "carbon:data-structured",
             text: "DSA",
             bgColor: "#FF9800",
-        },
-
-        {
-            icon: "skill-icons:nextjs-light",
-            text: "NextJS",
-            bgColor: "#000000",
-        },
+        }
     ],
 
     future: [
