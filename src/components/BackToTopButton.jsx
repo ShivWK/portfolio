@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const BackToTopButton = ({ extraMargin = false, visible }) => {
+const BackToTopButton = ({ visible }) => {
     const [showBtn, setShowBtn] = useState(false);
 
     const clickHandler = () => {
